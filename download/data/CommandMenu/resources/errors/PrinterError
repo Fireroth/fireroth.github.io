@@ -1,0 +1,1 @@
+X=MsgBox("Printing is not supported in this printer!",0+48,"Failed to print a document") 
