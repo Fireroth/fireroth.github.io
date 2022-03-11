@@ -21,7 +21,7 @@ if not exist Command_Miner_Update md Command_Miner_Update & echo [0;94m[Startup
 cd Command_Miner_Update & echo [0;94m[Startup][0;0m Entering Command_Miner_Update folder
 if errorlevel=1 echo [0;94m[Startup][0;0m Failed to create folder! & pause >nul & exit
 echo [0;94m[Startup][0;0m Setting up update feature...
-if not exist Update.bat echo cd.. ^& cd.. ^& curl https://fireroth.netlify.app/download/data/commandMiner/latest^>CommandMiner.bat ^& cd Command_Miner_Data ^& cd Command_Miner_Update ^& start Updated.vbs ^& exit>Update.bat
+if not exist Update.bat echo cd.. ^& cd.. ^& curl https://fireroth.github.io/download/data/CommandMiner/latest^>CommandMiner.bat ^& cd Command_Miner_Data ^& cd Command_Miner_Update ^& start Updated.vbs ^& exit>Update.bat
 if not exist Updated.vbs echo X=MsgBox("Successfully installed latest version.",0+64,"Updated Command Miner")>Updated.vbs
 cd..
 if not exist Config md Config & echo [0;94m[Startup][0;0m Creating Config folder
@@ -151,7 +151,7 @@ cd..
 
 cls
 :main
-curl https://fireroth.netlify.app/download/data/commandMiner/logo
+curl https://fireroth.github.io/download/data/CommandMiner/logo
 echo.
 echo.
 echo [0;91mUse [0;93mhelp[0;0m[0;91m for list of all available commands[0;0m 
@@ -813,7 +813,7 @@ goto cmdselect
 if %internet%==none echo No internet connection & goto cmdselect
 echo.
 echo Are you sure you want to download latest version of Command Miner from 
-echo https://fireroth.netlify.app/download/data/commandMiner/latest?
+echo https://fireroth.github.io/download/data/CommandMiner/latest?
 echo [Y/N]
 set /p UpdateConfirm=
 if %UpdateConfirm%==y del allcomm.bat &cd Command_Miner_Update & start /min Update.bat & exit
@@ -857,7 +857,7 @@ goto cmdselect
 
 :version 
 echo Current version: %ver%
-curl https://fireroth.netlify.app/download/data/commandMiner/latestVer
+curl https://fireroth.github.io/download/data/CommandMiner/latestVer
 goto cmdselect
 
 :allcomm
