@@ -80,7 +80,7 @@
 }
 
 .bottom-home {
-  margin-top: 1000px;
+  margin-top: 2000px;
   margin-bottom: 250px;
 }
 
@@ -166,4 +166,22 @@
   width: 400px;
   white-space: nowrap;
 }
+
+.info-box{
+  font-size: 20px;
+  background-color: #86c5ff;
+  border-color: #4b4b4b;
+  color: #000000;
+  border-radius: 10px;
+  border-width: 5px;
+  border-style: solid;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.body-home{
+  background: linear-gradient(180deg, #3f3e3b, #2c2c2c);
+}
+
 

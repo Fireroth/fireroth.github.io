@@ -5,9 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/classes.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="/styles/globalContent.css">
+    <script type="text/javascript" src="/scripts/externalMain.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta property="og:title" content="Máta's web">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fireroth.netlify.app">
+    <meta property="og:url" content="https://fireroth.netlify.app/websites">
     <meta property="og:image" content="https://fireroth.netlify.app/images/logo_256x256.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="300">
@@ -15,31 +22,22 @@
     <meta property="og:image:alt" content="Máta's web Logo">
     <meta property="og:description" content="A really bad website.">
     <meta name="theme-color" content="#3f3e3b">
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/classes.css">
-    <link rel="stylesheet" href="/styles/responsive.css">
-    <link rel="stylesheet" href="/styles/globalContent.css">
-    <link rel="image" href="images/logo.png">
-    <script type="text/javascript" src="/scripts/externalMain.js"></script>
-    <script type="text/javascript" src="/scripts/alert.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="description" content="A really bad website.">
 
-    <title>Máta's web</title>
+    <title>Máta's web - Projects</title>
 </head>
 
 <body>
-
     <header id="top">
         <!-- Navigation bar-->
         <nav>
             <ul>
                 <!-- Desktop view-->
-                <li class="logo desktop-view"><a class="logo-click" href="/"></a></li>
+                <li class="logo desktop-view"><a class="logo-click" href="/">Logo</a></li>
                 <li class="desktop-view"><a class="hover-animation" href="/">Home</a></li>
                 <li class="desktop-view"><a class="hover-animation" href="/projects">Projects</a></li>
                 <li class="desktop-view"><a class="hover-animation" href="/contact">Contact</a></li>
-
+                
                 <!-- Mobile view-->
                 <li class="mobile-view logo-nav drop-content-button"><a href="/"></a>
                     <ul class="drop-content drop-menu">
@@ -50,21 +48,14 @@
                 </li>
             </ul>
         </nav>
-        <h1 class="hi-text center">Update Log</h1>
+        <h1 class="center">Side Projects</h1>
     </header>
-
-    <!-- Top section-->
     <section>
-        <p>
-            + Added 1 new website to "Websites for boredom"<br>
-			+ Added Command Miner v1.0.4<br>
-            + Added informations for projects<br>
-			Fixed some files not downloading
-			
-        </p>
-    </section>
-    <footer id="footer" class="globalFooter" onclick="setRandomColor()"></footer>
-
+        <button onclick="location.href = '/download/file/FolderLocker/FolderLocker.bat';" class="buttonmain"><span>Folder Locker</span></button>
+        <button onclick="location.href = '/download/file/CFSG/CFSG.bat';" class="buttonmain"><span>Custom file size gen.</span></button><br><br>
+        <button onclick="location.href = '/projects';" class="buttonmain"><span>Back</span></button>
+      </section>
+      <footer id="footer" class="globalFooter" onclick="setRandomColor()"></footer>
 </body>
 
 </html>

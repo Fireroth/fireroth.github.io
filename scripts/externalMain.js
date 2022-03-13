@@ -6,7 +6,7 @@ console.log("%cHi!", "color:#EB5E28; font-size: 50px; text-shadow: 3px 3px #3f3e
 
 document.addEventListener('keydown', (event) => {
   var name = event.key;
-  if (name === 'I') {
+  if (name === 'K') {
     $("#all").css("filter", "invert()");
     console.log("Filter = invert");
     return;}}, false);

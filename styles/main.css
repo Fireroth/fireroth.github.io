@@ -14,6 +14,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #fffcf2;
   background-color: #3f3e3b;
+
   /*overflow: hidden;*/
   /*background: linear-gradient(to right, #3f3e3b, #353532);*/
 }
@@ -44,6 +45,7 @@ nav ul {
   text-align: right;
   width: 100%;
   user-select: none;
+  height: 50px;
 }
 
 nav li {
@@ -58,6 +60,7 @@ header {
   height: 150px;
   padding: 20px;
   margin: 0px;
+  padding-bottom: 0;
 }
 
 header a {
