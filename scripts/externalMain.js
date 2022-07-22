@@ -54,3 +54,7 @@ function setRandomColor() {
   $("#footer").css("color", getRandomColor());
   console.log("Color of footer was set to "+getRandomColor());
 }
+
+function edit() {
+  document.desgnMode="on";
+}
