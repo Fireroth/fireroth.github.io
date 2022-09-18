@@ -1,5 +1,7 @@
 @set menuPath=%cd%
 @set dataPath=%cd%\Command_Miner_Data
+@set modsPath=%cd%\Command_Miner_Data\Mods
+@set accountsPath=%cd%\Command_Miner_Data\Accounts
 @if [%1]==[] (echo.>nul) else call %1
 @title Starting up...
 @set key=0
@@ -8,17 +10,17 @@
 @echo off
 
 call:%~1 >nul 2>nul
-mode con cols=120 lines=30
 chcp 65001
-echo [0;94m[PreStartup][0;0m Checking permissions...
+echo|set /p= [0;94m[PreStartup][0;0m Checking permissions...
 net session >nul 2>&1
 if %errorlevel% == 0 (
   goto errorAdmin
 )
-echo [0;94m[PreStartup][0;0m Permission OK
-echo [0;94m[PreStartup][0;0m Checking internet connection...
+echo [0;32mPASSED[0;0m
+echo|set /p=  [0;94m[PreStartup][0;0m Checking internet connection...
 ping www.google.com -n 1 -w 1000>nul
-if errorlevel 1 (set internet=none) else (set internet=connected & echo [0;94m[PreStartup][0;0m Connected)
+if errorlevel 1 (set internet=none & echo [0;31mFAILED[0;0m) else (set internet=connected & echo [0;32mPASSED[0;0m)
+
 
 
 :reload
@@ -28,18 +30,23 @@ title Starting up...
 if not exist Command_Miner_Data md Command_Miner_Data & echo [0;94m[Startup][0;0m Creating Command_Miner_Data folder
 cd Command_Miner_Data & echo [0;94m[Startup][0;0m Entering Command_Miner_Data folder
 if errorlevel=1 echo [0;94m[Startup][0;0m Failed to create folder! & pause >nul & exit
-if not exist Command_Miner_Update md Command_Miner_Update & echo [0;94m[Startup][0;0m Creating Command_Miner_Update folder
-cd Command_Miner_Update & echo [0;94m[Startup][0;0m Entering Command_Miner_Update folder
-if errorlevel=1 echo [0;94m[Startup][0;0m Failed to create folder! & pause >nul & exit
-if not exist Update.bat echo cd.. ^& cd.. ^& curl https://fireroth.github.io/download/data/CommandMiner/latest^>CommandMiner.bat ^& cd Command_Miner_Data ^& cd Command_Miner_Update ^& start Updated.vbs ^& exit>Update.bat & echo [0;94m[Startup][0;0m Creating Update.bat file
-if not exist Updated.vbs echo X=MsgBox("Successfully installed latest version.",0+64,"Updated Command Miner")>Updated.vbs & echo [0;94m[Startup][0;0m Creating Updated.vbs file
-cd..
 
 if not exist Config md Config & echo [0;94m[Startup][0;0m Creating Config folder
+cd Config
+if not exist unlockedScreenSize.cmd echo set unlockedScreenSize=false>unlockedScreenSize.cmd& echo [0;94m[Startup][0;0m Creating unlockedScreenSize.cmd file
+call unlockedScreenSize.cmd & echo [0;94m[Startup][0;0m Calling unlockedScreenSize.cmd file
+if not %unlockedScreenSize% == true mode con cols=120 lines=30
+cd..
+
+if not exist UpdateFiles md UpdateFiles & echo [0;94m[Startup][0;0m Creating UpdateFiles folder
+cd UpdateFiles & echo [0;94m[Startup][0;0m Entering UpdateFiles folder
+if errorlevel=1 echo [0;94m[Startup][0;0m Failed to create folder! & pause >nul & exit
+if not exist Update.bat echo cd.. ^& cd.. ^& curl https://fireroth.github.io/download/data/CommandMiner/latest^>CommandMiner.bat ^& cd Command_Miner_Data ^& cd UpdateFiles ^& mshta.exe vbscript:Execute^("msgbox ""Successfully installed latest version""& VbCrLf & VbCrLf &""Click 'Ok' to exit"",0+64,""Updated Command Miner"":close"^) ^& exit>Update.bat & echo [0;94m[Startup][0;0m Creating Update.bat file
+cd..
+
 cd Config & echo [0;94m[Startup][0;0m Entering Config folder
 if not exist CFT.cmd echo set /a consoleFreezeTime=^0>CFT.cmd & echo [0;94m[Startup][0;0m Creating CFT.cmd file
 if not exist cheatPerm.cmd echo set cheatPermission=false>cheatPerm.cmd& echo [0;94m[Startup][0;0m Creating cheatPerm.cmd file
-if not exist debugPerm.cmd echo set debugPermission=false>debugPerm.cmd& echo [0;94m[Startup][0;0m Creating debugPerm.cmd file
 if not exist bootType.cmd echo set boot=normal>bootType.cmd& echo [0;94m[Startup][0;0m Creating bootType.cmd file
 if not exist accounts.cmd echo set accEnabled=false>accounts.cmd& echo [0;94m[Startup][0;0m Creating accounts.cmd file
 call bootType.cmd & echo [0;94m[Startup][0;0m Calling bootType.cmd file
@@ -58,22 +65,29 @@ cd Accounts
 if not exist all.data echo ^> Main>all.data & echo [0;94m[Startup][0;0m Creating all.data file
 if %accEnabled%==true (
 					echo. 
-					echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+					echo [0;0m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 					echo [0;93mList of public accounts: 
 					type all.data
 					echo [0;0m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 					echo. 
+					title Accounts...
 					set /p account=[0;93mEnter account name ^(blank for Main^):[0;0m
 					)
-if /i %account% == Debug echo Forbidden account name detected & pause & exit
-for /f "delims=/\:*?<>|" %%a in ("%account%") do if not "%%a"=="%account%" echo Banned character has been used. & pause & exit
+					
+cmd /v:on /c echo(^^!account^^! | findstr /r "^[^^^\\/?%%*:|<>\.\"]*$^" > nul
+if not %errorlevel% equ 0 echo [0;91mBanned character has been used & echo List of banned characters[0;0m ^\^/^|^<^>^%^.^?^* &pause&goto reload
 if not exist %account% md %account%
+cd %account%
+if not exist Mods (md Mods)
+cd..
 cd..
 
 if not exist Mods md Mods & echo [0;94m[Startup][0;0m Creating Mods folder
 echo [0;94m[Startup][0;0m Calling Startup.bat from Mods
-cd Mods
-set back=%cd%
+
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rem Mod loader (startup.bat)
+cd %modsPath%
 title Modding...
 for /D %%i in (.\*) do (
 cd "%%i"
@@ -81,13 +95,24 @@ call Startup.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
+
+cd %accountsPath%\%account%\Mods
+for /D %%i in (.\*) do (
+cd "%%i"
+call Startup.bat
+if errorlevel=1 goto ErrorMod
+cd..
+)
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 cd %dataPath%
 title Starting up...
 echo [0;94m[Startup][0;0m Setting up important stuff...
 set cheats=false
 set command=invalid
 set cheatPermission=false
-set ver=1.0.6
+set ver=1.0.7
+set command3=1
 
 set /a minimumMined=0
 set pickaxe=Wooden
@@ -106,7 +131,6 @@ set /a rebirthReward=0
 set /a autosell=0
 set /a rebirthCount=0
 set /a starterPack=0
-set command3=0
 
 cd save & echo [0;94m[Startup][0;0m Entering Save folder
 echo [0;94m[Startup][0;0m Calling save file...
@@ -136,8 +160,6 @@ call cheatPerm.cmd
 if errorlevel=1 echo [0;94m[Startup][0;0m Failed to find cheatPerm.cmd
 call CFT.cmd
 if errorlevel=1 echo [0;94m[Startup][0;0m Failed to find consoleFreezeTime.cmd
-call debugPerm.cmd
-if errorlevel=1 echo [0;94m[Startup][0;0m Failed to find debugPerm.cmd
 cd..
 timeout %consoleFreezeTime%>nul
 cls
@@ -155,15 +177,26 @@ echo [0;91mUse [0;93msave[0;0m[0;91m to save your progress[0;0m
 if %internet%==none echo [0;91mSlow or no internet connection[0;0m
 if %accEnabled% == true echo [0;94mLogged as %account%[0;0m
 :cmdselect
-cd %dataPath%
-cd Mods
-set back=%cd%
+
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rem Mod loader (InitializationBefore.bat)
+cd %modsPath%
 for /D %%i in (.\*) do (
 cd "%%i"
 call InitializationBefore.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
+
+cd %accountsPath%\%account%\Mods
+for /D %%i in (.\*) do (
+cd "%%i"
+call InitializationBefore.bat
+if errorlevel=1 goto ErrorMod
+cd..
+)
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 cd %dataPath%
 set title=Command Miner       Money: %money%^$      Tokens: %token%      Pickaxe: %pickaxe%      Backpack: %backpack%      Ore: %orename%
 if %autosell%==1 (if %ore% == %maxBPSize% goto sell) else echo.>nul
@@ -293,17 +326,27 @@ if %starterPack% == 1 set nextStarterPack=2
 if not defined maxBPSize goto ErrorVariables
 if not defined maxMined goto ErrorVariables
 
-cd Mods
-set back=%cd%
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rem Mod loader (InitializationAfter.bat)
+cd %modsPath%
 for /D %%i in (.\*) do (
 cd "%%i"
 call InitializationAfter.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
+
+cd %accountsPath%\%account%\Mods
+for /D %%i in (.\*) do (
+cd "%%i"
+call InitializationAfter.bat
+if errorlevel=1 goto ErrorMod
+cd..
+)
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:input
 cd %dataPath%
 title %title%
-
 
 echo.
 set /p "command=Enter command:"
@@ -313,14 +356,26 @@ for %%a in (%command%) do (
   set command!count!=%%a
 )
 
-cd Mods
-set back=%cd%
+
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rem Mod loader (commands.bat)
+cd %modsPath%
 for /D %%i in (.\*) do (
 cd "%%i"
 call Commands.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
+
+cd %accountsPath%\%account%\Mods
+for /D %%i in (.\*) do (
+cd "%%i"
+call Commands.bat
+if errorlevel=1 goto ErrorMod
+cd..
+)
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 cd %dataPath%
 
 if /i "%command%" == "mine" goto mine
@@ -369,7 +424,7 @@ if /i "%command%" == "mod" goto Mods
 if /i "%command%" == "mods" goto Mods
 if /i "%command1%" == "mod" echo>nul& if /i "%command2%" == "install" goto ModsCheck
 if /i "%command1%" == "mods" echo>nul& if /i "%command2%" == "install" goto ModsCheck
-if /i "%command1%" == "mods" echo>nul& if /i "%command2%" == "loaded" cd %dataPath%\Mods & dir /a:d /b & goto cmdselect
+if /i "%command1%" == "mods" echo>nul& if /i "%command2%" == "loaded" cd %dataPath%\Mods & dir /a:d /b & cd %accountsPath%\%account%\Mods & dir /a:d /b & goto cmdselect
 if /i "%command%" == "dailyReward" goto claimDailyReward
 
 REM Aliases
@@ -424,13 +479,15 @@ if /i "%command%" == "dR" goto claimDailyReward
 if /i "%command%" == "claim" goto claimDailyReward
 
 REM cheats
-if /i "%command%" == "cheat_moremoney" if not %cheatPermission%==true (goto noPerms) else set /a money=%money%+2500 & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
-if /i "%command%" == "cheat_bestpickaxe" if not %cheatPermission%==true (goto noPerms) else set pickaxe=Netherite & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
-if /i "%command%" == "cheat_bestbackpack" if not %cheatPermission%==true (goto noPerms) else set backpack=Netherite & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
-if /i "%command%" == "cheat_moretokens" if not %cheatPermission%==true (goto noPerms) else set /a token=%token%+5 & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
-if /i "%command%" == "cheat_bestore" if not %cheatPermission%==true (goto noPerms) else set oreName=Netherite & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
-if /i "%command%" == "cheat_givemecrates" if not %cheatPermission%==true (goto noPerms) else set /a commonCrate=%commonCrate%+3 & set /a uncommonCrate=%uncommonCrate%+3 & set /a rareCrate=%rareCrate%+3 & set /a epicCrate=%epicCrate%+3 & set /a legendaryCrate=%legendaryCrate%+3 & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
-if /i "%command%" == "krabicky" set /a commonCrate=%commonCrate%+20 & set /a uncommonCrate=%uncommonCrate%+20 & set /a rareCrate=%rareCrate%+20 & set /a epicCrate=%epicCrate%+20 & set /a legendaryCrate=%legendaryCrate%+20 & echo Cheat activated & goto cmdselect
+if /i "%command%" == "cheat_freeDreward" if not %cheatPermission%==true (goto noPerms) else set cheats=true & set command=invalid & echo Cheat activated & echo [0;92mSuccesfully claimed daily reward, come back tomorrow for more![0;0m&set /a uncommonCrate=%uncommonCrate% +1 &echo You got 1 [0;92mUncommon[0;0m crate&set /a rareCrate=%rareCrate% +1 &echo You got 1 [0;94mRare[0;0m crate & goto cmdselect
+if /i "%command%" == "cheat_infiniteInv" if not %cheatPermission%==true (goto noPerms) else set backpack=Infinite & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
+if /i "%command%" == "cheat_iAmBroke" if not %cheatPermission%==true (goto noPerms) else set money=-5000 & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
+if /i "%command%" == "cheat_iWantMoney" if not %cheatPermission%==true (goto noPerms) else set /a money=%money%+25000 & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
+if /i "%command%" == "cheat_oreMiner" if not %cheatPermission%==true (goto noPerms) else set pickaxe=Obsidian & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
+if /i "%command%" == "cheat_betterInventory" if not %cheatPermission%==true (goto noPerms) else set backpack=Obsidian & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
+if /i "%command%" == "cheat_bigTokens" if not %cheatPermission%==true (goto noPerms) else set /a token=%token%+5 & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
+if /i "%command%" == "cheat_bestOreName" if not %cheatPermission%==true (goto noPerms) else set oreName=Netherite & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
+if /i "%command%" == "cheat_giveMeBigBoxes" if not %cheatPermission%==true (goto noPerms) else set /a commonCrate=%commonCrate%+5 & set /a uncommonCrate=%uncommonCrate%+5 & set /a rareCrate=%rareCrate%+5 & set /a epicCrate=%epicCrate%+5 & set /a legendaryCrate=%legendaryCrate%+5 & set cheats=true & set command=invalid & echo Cheat activated & goto cmdselect
 
 REM settings
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "cheats" goto setCheats
@@ -443,6 +500,7 @@ if /i "%command1%" == "set" echo>nul& if "%command2%" == "ore" if not %cheatPerm
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "consoleFreezeTime" goto setCFT
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "cft" goto setCFT
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "accounts" goto setACC
+if /i "%command1%" == "set" echo>nul& if "%command2%" == "unlockedScreenSize" goto setUnlockedScreenSize
 
 if /i "%command%" == "valid" goto cmdselect
 echo [0;31mPlease enter valid command![0;0m
@@ -467,7 +525,14 @@ goto cmdselect
 set accEnabled=%command3%
 echo accEnabled was set to %command3% 
 cd Config & echo set accEnabled=%command3%>accounts.cmd& cd..
-if %key%==ACCService goto ACCS
+if %key%==ACCService echo Done...&timeout 1 >nul&goto ACCS
+goto cmdselect
+
+
+:setUnlockedScreenSize
+set unlockedScreenSize=%command3%
+echo unlockedScreenSize was set to %command3% 
+cd Config & echo set unlockedScreenSize=%command3%>unlockedScreenSize.cmd& cd..
 goto cmdselect
 
 
@@ -486,6 +551,7 @@ echo set cheats [[0;32mtrue[0;0m/[0;31mfalse[0;0m] [0;35m(c=%cheatPermissio
 echo set accounts [[0;32mtrue[0;0m/[0;31mfalse[0;0m] [0;35m(c=%accEnabled%) (d=false)[0;0m
 echo set consoleFreezeTime [[0;94mvalue[0;0m] [0;35m(c=%consoleFreezeTime%) (d=0)[0;0m
 echo set boot [[0;94mnormal[0;0m/[0;94mnoSave[0;0m] [0;35m(c=%boot%) (d=normal)[0;0m
+echo set unlockedScreenSize [[0;32mtrue[0;0m/[0;31mfalse[0;0m] [0;35m(c=%unlockedScreenSize%) (d=false)[0;0m
 echo [[0;35mc=current [0;0m^| [0;35md=default[0;0m]
 echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m
 if %cheatPermission% == true (
@@ -776,34 +842,28 @@ goto cmdselect
 
 
 :help
-echo.
-echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m 
-echo mine = Mine ores
-echo sell = Sell ores that you mined
-echo upgrade pick = Upgrade your pickaxe
-echo upgrade bp = Upgrade your backpack
-echo upgrade ore = Upgrade your ore
-echo clear = Clear your screen
-echo reload = Reload Command Miner
-echo shop = Upgrade prices
-echo tokenshop = Place where you can spend your Tokens
-echo save = Save your progress
-echo ore info = Info about ores
-echo crates = Shows how many crates you have
-echo open common = Open common crate
-echo open uncommon = Open uncommon crate
-echo open rare = Open rare crate
-echo open epic = Open epic crate
-echo open legendary = Open legendary crate
-echo update = Update CM to latest version
-echo set help = Settings
-echo accounts = Account manager
-echo mods = List of some mods
-echo dreward = Claim daily reward
-echo.
-echo [0;94m[NOTE][0;0m There is a lot of aliases like [0;93mo l[0;0m
-echo [0;94m[NOTE][0;0m for [0;93mopen legendary[0;0m and many more!
-echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m 
+echo [0;33m╔═══════════════════════════════════════════════════════════════╗
+echo ║mine = Mine ores                                               ║
+echo ║sell = Sell ores that you mined                                ║
+echo ║upgrade pick = Upgrade your pickaxe                            ║
+echo ║upgrade bp = Upgrade your backpack                             ║
+echo ║upgrade ore = Upgrade your ore                                 ║
+echo ║clear = Clear your screen                                      ║
+echo ║reload = Reload Command Miner                                  ║
+echo ║shop = Upgrade prices                                          ║
+echo ║tokenshop = Place where you can spend your Tokens              ║
+echo ║save = Save your progress                                      ║
+echo ║ore info = Info about ores                                     ║
+echo ║crates = Shows how many crates you have                        ║
+echo ║open ^<crate_tier^> = Open crate                                 ║
+echo ║update = Update CM to latest version                           ║
+echo ║set help = Settings                                            ║
+echo ║accounts = Account manager                                     ║
+echo ║mods = List of some mods                                       ║
+echo ║dreward = Claim daily reward                                   ║
+echo ╚═══════════════════════════════════════════════════════════════╝[0;0m
+echo [0;94m[NOTE][0;0m There is a lot of aliases like [0;93mo l[0;0m for [0;93mopen legendary[0;0m and many more!
+echo [0;94m[NOTE][0;0m Use help ^<mod_name^> for mods help
 goto cmdselect
 
 
@@ -870,7 +930,7 @@ goto cmdselect
 
 
 :resetConfirm
-echo Are you sure you want to start over? (y/n)
+echo Are you sure you want to start over? [Y/N]
 set command=invalid
 set /p resetNY=
 if /i %resetNY%==y goto reset
@@ -1014,10 +1074,8 @@ echo Are you sure you want to download latest version of Command Miner from
 echo https://fireroth.github.io/download/data/CommandMiner/latest?
 echo [Y/N]
 set /p UpdateConfirm=
-if %UpdateConfirm%==y cd Command_Miner_Update & start /min Update.bat & exit
-if %UpdateConfirm%==Y cd Command_Miner_Update & start /min Update.bat & exit
-if %UpdateConfirm%==n goto cmdselect
-if %UpdateConfirm%==N goto cmdselect
+if /i %UpdateConfirm%==y cd UpdateFiles & start /min Update.bat & exit
+if /i %UpdateConfirm%==n goto cmdselect
 goto update
 
 
@@ -1048,18 +1106,16 @@ goto cmdselect
 
 :ModDownload
 echo|set /p= [0;93m[Mods][0;0m Downloading...
-curl --no-progress-meter https://fireroth.github.io/download/file/CommandMiner/mods/%modName%.zip>%modName%.zip
-if errorlevel 1 echo [0;91m[Error][0;0m An unknown error has occurred! & goto cmdselect
-
+curl --no-progress-meter https://fireroth.github.io/download/file/CommandMiner/mods7/%modName%.zip>%modName%.zip
 echo DONE
 echo|set /p= [0;93m[Mods][0;0m Extracting...
 chcp 852>nul
-powershell -Command "Expand-Archive %modName%.zip -DestinationPath %dataPath%\Mods -Force"
+powershell -Command Expand-Archive %modName%.zip -DestinationPath "%dataPath%\Mods" -Force
 chcp 65001>nul
 echo DONE
 echo|set /p= [0;93m[Mods][0;0m Removing .zip file...
 del %modName%.zip
-echo DONE
+if errorlevel 1 (echo [0;91m[Error][0;0m An unknown error has occurred!) else (echo DONE)
 echo|set /p= [0;93m[Mods] Please restart Command Miner[0;0m
 echo.
 goto cmdselect
@@ -1110,6 +1166,7 @@ goto cmdselect
 
 :ACCS
 title %account%
+set ACCSOption2=%account%
 cls
 echo 				[1;36m--------------------------------------------[0;0m 
 echo.
@@ -1119,7 +1176,9 @@ echo 				[1;36m--------------------------------------------[0;0m
 echo add ^<account_name^> = Adds an account to public list
 echo reset = Reset public list
 echo enable = Enable accounts
+echo disable = Disable accounts
 echo exit
+echo.
 set /p ACCSOption=--^>
 set count2=0
 for %%a in (%ACCSOption%) do (
@@ -1127,9 +1186,10 @@ for %%a in (%ACCSOption%) do (
   set ACCSOption!count2!=%%a
 )
 if "%ACCSOption1%" == "exit" cls & cd.. & goto reload
-if "%ACCSOption1%" == "add" cd Accounts & echo ^> %ACCSOption2%>>all.data & cd..
-if "%ACCSOption1%" == "reset" cd Accounts & del all.data & cd..
+if "%ACCSOption1%" == "add" cd Accounts & echo ^> %ACCSOption2%>>all.data & echo Added %ACCSOption2% to public account list & timeout 1 >nul & cd..
+if "%ACCSOption1%" == "reset" cd Accounts & del all.data & echo Successfully removed all.data & timeout 1 >nul & cd..
 if "%ACCSOption1%" == "enable" set command3=true& set key=ACCService& goto setACC
+if "%ACCSOption1%" == "disable" set command3=false& set key=ACCService& goto setACC
 goto ACCS
 
 
@@ -1171,6 +1231,7 @@ goto main
 
 
 :ErrorAdmin
+echo [0;31mFAILED[0;0m
 echo [0;91m[Error][0;31m Administrator mode is not supported!
 echo [0;91m[Error][0;31m Command Miner cannot be loaded
 pause>nul
