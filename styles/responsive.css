@@ -2,17 +2,25 @@
   .mobile-view {
     display: inline-block;
   }
+
   .desktop-view {
     display: none;
   }
-  .info-box{
+
+  .info-box {
     font-size: 15px;
   }
-  .info-box a{
+
+  .info-box a {
     font-size: 15px;
   }
-  .hi-text{
+
+  .hi-text {
     font-size: 60px;
+  }
+
+  nav ul {
+    height: auto;
   }
 }
 
@@ -26,6 +34,7 @@
   .center--websites-- {
     display: unset;
   }
+
   .mobile-no-show--websites-- {
     margin: 0px;
     width: 0px;
