@@ -15,7 +15,6 @@
     <meta property="og:image:alt" content="Máta's web Logo">
     <meta property="og:description" content="A really bad website.">
     <meta name="theme-color" content="#3f3e3b">
-    <meta name="description" content="A really bad website.">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/classes.css">
@@ -29,14 +28,14 @@
     <title>Máta's web</title>
 </head>
 
-<body class="body-home">
+<body>
 
     <header id="top">
         <!-- Navigation bar-->
         <nav>
             <ul>
                 <!-- Desktop view-->
-                <li class="logo desktop-view"><a class="logo-click" href="/">Logo</a></li>
+                <li class="logo desktop-view"><a class="logo-click" href="/"></a></li>
                 <li class="desktop-view"><a class="hover-animation" href="/">Home</a></li>
                 <li class="desktop-view"><a class="hover-animation" href="/projects">Projects</a></li>
                 <li class="desktop-view"><a class="hover-animation" href="/contact">Contact</a></li>
@@ -51,28 +50,25 @@
                 </li>
             </ul>
         </nav>
-        <h1 class="hi-text center">Hello!</h1>
+        <h1 class="hi-text center">Update Log</h1>
     </header>
 
     <!-- Top section-->
     <section>
-        <noscript>
-            <!-- text when sripts are disabled -->
-            <p class="warn">Warning! JavaScript is disabled!<br>Some features may not work.</p>
-        </noscript>
-        <p>Not much here yet. For now.<br> You should check out my <a href="/projects">Projects</a>, such as Command Miner<br>Or you can <a href="#bottom">Click Here</a> for more very useful stuff</p>
-    </section>
-    
-    <!-- Bottom section-->
-    <section id="bottom" class="bottom-home">
-        <h1 class="center">:></h1>
-        <button onclick="location.href = '/update/log';" class="buttonmain "><span>Update Log</span></button>
-        <button onclick="location.href = '/sottau/color';" class="buttonmain "><span>Click Colors</span></button><br>
-        <button onclick="location.href = '/websites';" class="buttonmain "><span>Websites for boredom</span></button>
-        <button onclick="location.href = '/sottau/live.edit';" class="buttonmain "><span>Live CSS Edit</span></button><br>
-        <button onclick="location.href = '/sottau/text.spammer';" class="buttonmain "><span>Text Spammer</span></button>
-        <button onclick="location.href = 'https://github.com/Fireroth';" class="buttonmain "><span>GitHub</span></button><br><br>
-        <button onclick="location.href = '#top';" class="buttonmain "><span>Back</span></button>
+        <p>
+            + Reworked project pages<br>
+            + Changed font to Minecraft font<br>
+            + Fixed nav bar scaling<br>
+            + Added Live CSS Edit<br>
+            + Added GitHub link<br>
+            + Added Text Spammer<br>
+            - Removed Command Miner 1.7 setup file
+
+			
+        </p>
+        <br>
+        <br>
+        <button onclick="location.href = '/';" class="buttonmain "><span>Back</span></button>
     </section>
     <footer id="footer" class="globalFooter" onclick="setRandomColor()"></footer>
 
