@@ -35,7 +35,9 @@
             var DispText = document.getElementsByName("DisplayText")[0].value;
             var ClassAmount = document.getElementsByName("AmountOfClasses")[0].value;
             var Timeout = document.getElementsByName("BreakTime")[0].value;
-
+            document.write(" ");
+            $("body").css("background-color", "black");
+            $("body").css("margin", "0px");
             setInterval(() => {
                 window.scrollBy(0, 9);
                 var classID = Math.floor(Math.random() * ClassAmount);
@@ -44,9 +46,8 @@
                 $("." + classID).css("color", getRandomColor());
                 $("." + classID).css("background-color", getRandomColor());
                 $("." + classID).css("display", "inline");
-                $("." + classID).css("font-size", "25px");
-                $("body").css("margin", "0px");
-                $("body").css("background-color", "black");
+                $("." + classID).css("font-size", "30px");
+                
             }, Timeout)
         }
 
