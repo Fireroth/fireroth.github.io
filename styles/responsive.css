@@ -2,8 +2,25 @@
   .mobile-view {
     display: inline-block;
   }
+
   .desktop-view {
     display: none;
+  }
+
+  .info-box {
+    font-size: 15px;
+  }
+
+  .info-box a {
+    font-size: 15px;
+  }
+
+  .hi-text {
+    font-size: 60px;
+  }
+
+  nav ul {
+    height: auto;
   }
 }
 
@@ -17,6 +34,7 @@
   .center--websites-- {
     display: unset;
   }
+
   .mobile-no-show--websites-- {
     margin: 0px;
     width: 0px;
@@ -36,9 +54,5 @@
   button {
     width: 200px;
     font-size: 12px;
-  }
-  header {
-    margin: 10px;
-    margin-bottom: -50px;
   }
 }

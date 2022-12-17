@@ -4,13 +4,15 @@ body{
     background-color: #3f3e3b;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    font-family: Minecraft;
 }
 
 
 ::-webkit-scrollbar {
   display: none;
 }
+
 
 nav{
   position:fixed;
@@ -31,6 +33,7 @@ nav ul{
   text-align: right;
   width: 100%;
   user-select: none;
+  height: 50px;
 }
 
 nav li {
