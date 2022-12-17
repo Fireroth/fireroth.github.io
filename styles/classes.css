@@ -1,0 +1,167 @@
+.down-text {
+  padding: 50px;
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+}
+
+.logo {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url("/images/logo.png");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 30px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+}
+
+.logo-click {
+  padding: 0;
+  margin: 0px;
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  left: -5px;
+  top: -5px;
+}
+
+.logo-nav {
+  background-image: url("/images/nav-mobile.png");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 35px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  width: 35px;
+}
+
+.buttonmain span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonmain span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  color: #eb5e28;
+}
+
+.buttonmain:hover span {
+  padding-right: 25px;
+  color: #eb5e28;
+}
+
+.buttonmain:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.bottom-home {
+  margin-top: 2000px;
+  margin-bottom: 250px;
+}
+
+.center--websites-- {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+.mobile-no-show--websites-- {
+  text-align: center;
+}
+
+.drop-content {
+  display: none;
+  position: relative;
+  float: left;
+  padding-right: 20px;
+  width: 200px;
+}
+
+.drop-menu {
+  border-radius: 0px 15px 15px 15px;
+  background-color: rgb(43, 40, 40);
+  align-items: center;
+}
+
+.drop-content-button {
+  cursor: pointer;
+  float: left;
+  align-items: center;
+}
+
+.drop-content-button:hover .drop-content {
+  display: block;
+}
+
+.desktop-view {
+  display: inline-block;
+}
+
+.mobile-view {
+  display: none;
+}
+
+.hover-animation {
+  background: linear-gradient(currentColor 0 0) var(--p, 0) 100% / var(--d, 0) 3px no-repeat;
+  transition: 0.3s, background-position 0s 0.3s;
+}
+
+.hover-animation:hover {
+  --d: 100%;
+  --p: 100%;
+}
+
+.hi-text {
+  text-shadow: 3px 3px #3f3e3b, 6px 6px #302f2f, 9px 9px #181818;
+  color: #eb5e28;
+  font-size: 80px;
+  margin-top: 50px;
+}
+
+.warn {
+  color: #ffc917;
+  text-decoration: underline;
+}
+
+.info-box {
+  font-size: 20px;
+  background-color: #86c5ff;
+  border-color: #4b4b4b;
+  color: #000000;
+  border-radius: 10px;
+  border-width: 5px;
+  border-style: solid;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.body-home {
+  background: linear-gradient(180deg, #3f3e3b, #2c2c2c);
+}
+
+.download-table {
+  width: 100%;
+}
