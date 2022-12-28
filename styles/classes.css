@@ -59,12 +59,12 @@
   top: 0;
   right: -20px;
   transition: 0.5s;
-  color: #eb5e28;
+  color: var(--selectedColor);
 }
 
 .buttonmain:hover span {
   padding-right: 25px;
-  color: #eb5e28;
+  color: var(--selectedColor);
 }
 
 .buttonmain:hover span:after {
@@ -101,7 +101,7 @@
 
 .drop-menu {
   border-radius: 0px 15px 15px 15px;
-  background-color: rgb(43, 40, 40);
+  background-color: var(--backgroundColorDark);
   align-items: center;
 }
 
@@ -135,7 +135,7 @@
 
 .hi-text {
   text-shadow: 3px 3px #3f3e3b, 6px 6px #302f2f, 9px 9px #181818;
-  color: #eb5e28;
+  color: var(--selectedColor);
   font-size: 80px;
   margin-top: 50px;
 }

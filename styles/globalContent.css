@@ -1,3 +1,10 @@
+:root{
+  --selectedColor: #eb5e28;
+  --backgroundColor: #3f3e3b;
+  --backgroundColorDark: #302f2f;
+  --whiteColor: #fffcf2;
+}
+
 .globalFooter:before {
   content: "©2022 Máta ";
 }
