@@ -145,9 +145,14 @@ table,
 th,
 td {
   border: 1px solid black;
-  background-color: var(--backgroundColor)
+  background-color: var(--backgroundColorLight)
 }
 
 tr td a {
   color: var(--whiteColor);
+}
+
+h3{
+  font-size: 25px;
+  color: var(--projectHeaderColor);
 }

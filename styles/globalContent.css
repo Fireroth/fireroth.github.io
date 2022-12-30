@@ -2,7 +2,9 @@
   --selectedColor: #eb5e28;
   --backgroundColor: #3f3e3b;
   --backgroundColorDark: #302f2f;
+  --backgroundColorLight: #686868;
   --whiteColor: #fffcf2;
+  --projectHeaderColor: #ff7944;
 }
 
 .globalFooter:before {
