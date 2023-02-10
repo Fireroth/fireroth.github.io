@@ -2,9 +2,9 @@ var filter = "none";
 var dMode = "off";
 document.getElementById("all").style.filter = filter;
 
-console.log("%cHi!", "color:#EB5E28; font-size: 50px; text-shadow: 3px 3px #3f3e3b , 6px 6px #302f2f , 9px 9px #181818 ;");
+console.log("%cHello!", "color:#EB5E28; font-size: 50px; text-shadow: 3px 3px #3f3e3b , 6px 6px #302f2f , 9px 9px #181818 ;");
 console.log("JQuery version: 3.6.0")
-console.log("Website version: 2.133")
+console.log("Website version: 2.134")
 
 
 document.addEventListener("keydown", e => {
