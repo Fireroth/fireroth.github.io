@@ -7,9 +7,10 @@ html {
 }
 
 body {
-  background-color: #5984b6;
-  /*background: linear-gradient(to right, #006494, #0582ca);*/
-  background: linear-gradient(to right, #1174a1, #9f1cc0);
+  /*background-color: #3f3e3b;
+  /*background-color: #5984b6;*/
+  background: linear-gradient(to right, #a45fff, #60b5fc);
+  /*background: linear-gradient(to right, #1174a1, #9f1cc0);*/
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -43,13 +44,15 @@ a {
   background-size: 60px;
   position: relative;
   text-align: center;
-  border-style: inset;
-  border-radius: 6px;
-  font-size: 15px;
+  border-style: solid;
+  border-radius: 0px;
+  border-color: #9748ff;
+  font-size: 14px;
   text-decoration: none;
-  color: #fffcf2;
+  color: #000000;
+  background-color: #8fffe748;
 }
 
 a:hover {
-  background-color: rgba(79, 107, 121, 0.534);
+  background-color: rgba(0, 0, 0, 0.247);
 }
