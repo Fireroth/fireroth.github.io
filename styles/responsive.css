@@ -22,6 +22,20 @@
   nav ul {
     height: auto;
   }
+
+  .update-log a{
+    font-size: 15px;
+  }
+  .update-log{
+    font-size: 15px;
+  }
+
+  .info a{
+    font-size: 17px;
+  }
+  .info{
+    font-size: 17px;
+  }
 }
 
 @media screen and (max-height: 600px) {

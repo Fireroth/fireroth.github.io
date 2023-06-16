@@ -158,9 +158,6 @@
   margin-right: 30px;
 }
 
-.body-home {
-  background: linear-gradient(180deg, #3f3e3b, #2c2c2c);
-}
 
 .download-table {
   width: 100%;
@@ -196,3 +193,45 @@
 .projects a:hover {
   color: var(--selectedColor);
 }
+
+.update-log {
+  border-color: #f15151;
+  border-style: ridge;
+  border-width: 3px;
+  margin: auto;
+  width: 60vw;
+  text-align: center;
+
+}
+
+.update-log legend {
+  color: #eb3636;
+}
+
+.update-log p {
+  margin: 3px;
+}
+
+.viewProjects{
+  display: inline-block;
+  background: #333;
+  padding: 20px 35px;
+  border-radius: 5px;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.info {
+  border-color: #5169f1;
+  border-style: ridge;
+  border-width: 3px;
+  margin: auto;
+  width: 60vw;
+  text-align: center;
+
+}
+
+.info legend {
+  color: #2544f0;
+}
+

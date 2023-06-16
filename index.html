@@ -60,18 +60,22 @@
             <!-- text when sripts are disabled -->
             <p class="warn">Warning! JavaScript is disabled!<br>Some features may not work.</p>
         </noscript>
-        <p>Not much here yet. For now.<br> You should check out my <a href="/projects">Projects</a>, such as Command Miner<br>Or you can <a href="#bottom">Click Here</a> for more very useful stuff</p>
-        <p>If you encounter any bugs or other issues report them on my discord server. Thanks!</p>
-        <p><span style="color: #f15151;"> Update: </span>Added functional Eaglercraft to <a href="/websites/index.html">Websites for boredom</a></p>
+        <fieldset class="info">
+            <legend>INFO</legend>
+            <p>This is my personal website where I post my projects and more.</p>
+            <p>You should check out <a href="/projects/cmdminer/">Command Miner</a> since its my biggest project so far ;)</p>
+            <p>If you encounter any bugs or other issues report them on my <a onclick="alertDS()">discord server</a>. Thanks!</p>
+            <a href="/projects/" class="viewProjects">View projects</a>
+            <a href="https://github.com/Fireroth/fireroth.github.io" class="viewProjects">View on GitHub</a>
+        </fieldset><br>
+        <fieldset class="update-log">
+            <legend>UPDATE LOG</legend>
+            <p>Added new websites to <a href="/websites/index.html">Websites for boredom</a></p>
+            <p>Redesigned Websites for boredom</p>
+            <p>Reworked home page</p>
+        </fieldset>
     </section>
     
-    <!-- Bottom section-->
-    <section id="bottom" class="bottom-home">
-        <h1 class="center">:></h1>
-        <button onclick="location.href = '/sottau/color';" class="buttonmain "><span>Click Colors</span></button>
-        <button onclick="location.href = '/websites';" class="buttonmain "><span>Websites for boredom</span></button><br><br>
-        <button onclick="location.href = '#top';" class="buttonmain "><span>Back</span></button>
-    </section>
     <footer id="footer" class="globalFooter" onclick="setRandomColor()"></footer>
 
 </body>
