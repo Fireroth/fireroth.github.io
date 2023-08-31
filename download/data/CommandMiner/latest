@@ -2,14 +2,14 @@
 @set dataPath=%cd%\Command_Miner_Data
 @set modsPath=%cd%\Command_Miner_Data\Mods
 @set accountsPath=%cd%\Command_Miner_Data\Accounts
-@if [%1]==[] (echo.>nul) else call %1
+@if [%1]==[] (echo No file attached.) else call %1
 @title Starting up...
 @set key=0
 @color 07
 @setlocal EnableDelayedExpansion
 @echo off
-
 call:%~1 >nul 2>nul
+echo|set /p= [0;94m[PreStartup][0;0m 
 chcp 65001
 echo|set /p= [0;94m[PreStartup][0;0m Checking permissions...
 net session >nul 2>&1
@@ -20,22 +20,34 @@ echo [0;32mPASSED[0;0m
 echo|set /p=  [0;94m[PreStartup][0;0m Checking internet connection...
 ping www.google.com -n 1 -w 1000>nul
 if errorlevel 1 (set internet=none & echo [0;31mFAILED[0;0m) else (set internet=connected & echo [0;32mPASSED[0;0m)
+echo.
 
-
-
+if not exist Command_Miner_Data (cls
+								title Welcome
+								echo Welcome to [0;96mCommand Miner[0;0m
+								echo.
+								echo.
+								echo Command Miner is a text based game written only in Batch originally inspired by Discord bot Idle Miner
+								echo [0;91mDon't forget to save your progress as it is not saved automatically^^![0;0m
+								echo.
+								echo [0;94m[NOTE][0;0m A folder will be created to save all user data and other important files at the following location
+								echo [0;94m[NOTE][0;0m %cd%
+								echo.
+								echo [0;32mPress any key to start mining...[0;0m
+								pause>nul)
 :reload
 cd %menuPath%
-echo Starting up...
+echo [0;94mStarting up...[0;0m
 title Starting up...
 if not exist Command_Miner_Data md Command_Miner_Data & echo [0;94m[Startup][0;0m Creating Command_Miner_Data folder
 cd Command_Miner_Data & echo [0;94m[Startup][0;0m Entering Command_Miner_Data folder
 if errorlevel=1 echo [0;94m[Startup][0;0m Failed to create folder! & pause >nul & exit
 
 if not exist Config md Config & echo [0;94m[Startup][0;0m Creating Config folder
-cd Config
+cd Config & echo [0;94m[Startup][0;0m Entering Config folder
 if not exist unlockedScreenSize.cmd echo set unlockedScreenSize=false>unlockedScreenSize.cmd& echo [0;94m[Startup][0;0m Creating unlockedScreenSize.cmd file
 call unlockedScreenSize.cmd & echo [0;94m[Startup][0;0m Calling unlockedScreenSize.cmd file
-if not %unlockedScreenSize% == true mode con cols=120 lines=30
+if not %unlockedScreenSize% == true (mode con cols=120 lines=30) else echo.>nul
 cd..
 
 if not exist UpdateFiles md UpdateFiles & echo [0;94m[Startup][0;0m Creating UpdateFiles folder
@@ -55,19 +67,18 @@ if not defined boot set boot=normal
 cd..
 
 if not exist Save md Save & echo [0;94m[Startup][0;0m Creating Save folder
-cd Save
+cd Save & echo [0;94m[Startup][0;0m Entering Save folder
 if not exist main.save echo.>main.save& echo [0;94m[Startup][0;0m Creating main.save file
 cd..
 
 if not exist Accounts md Accounts & echo [0;94m[Startup][0;0m Creating Accounts folder 
-set account=Main
-cd Accounts
-if not exist all.data echo ^> Main>all.data & echo [0;94m[Startup][0;0m Creating all.data file
+set account=Main&  echo [0;94m[Startup][0;0m Setting account to Main
+cd Accounts &  echo [0;94m[Startup][0;0m Entering Accounts folder
 if %accEnabled%==true (
 					echo. 
 					echo [0;0m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-					echo [0;93mList of public accounts: 
-					type all.data
+					echo [0;93mList of all accounts:[0;96m
+					dir /a:d /b
 					echo [0;0m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 					echo. 
 					title Accounts...
@@ -75,9 +86,10 @@ if %accEnabled%==true (
 					)
 					
 cmd /v:on /c echo(^^!account^^! | findstr /r "^[^^^\\/?%%*:|<>\.\"]*$^" > nul
-if not %errorlevel% equ 0 echo [0;91mBanned character has been used & echo List of banned characters[0;0m ^\^/^|^<^>^%^.^?^* &pause&goto reload
+if not %errorlevel% equ 0 echo [0;91mBanned character has been used & echo List of banned characters:[0;0m ^\^/^|^<^>^%^.^?^*^: &pause&goto reload
 if not exist %account% md %account%
 cd %account%
+if errorlevel=1 goto ErrorFile
 if not exist Mods (md Mods)
 cd..
 cd..
@@ -91,7 +103,7 @@ cd %modsPath%
 title Modding...
 for /D %%i in (.\*) do (
 cd "%%i"
-call Startup.bat
+if exist Startup.bat call Startup.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
@@ -99,7 +111,7 @@ cd..
 cd %accountsPath%\%account%\Mods
 for /D %%i in (.\*) do (
 cd "%%i"
-call Startup.bat
+if exist Startup.bat call Startup.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
@@ -111,10 +123,13 @@ echo [0;94m[Startup][0;0m Setting up important stuff...
 set cheats=false
 set command=invalid
 set cheatPermission=false
-set ver=1.0.7
+set ver=1.0.8
+set command2=1
 set command3=1
-
 set /a minimumMined=0
+set maxBPSize=
+set maxMined=
+set multi=															
 set pickaxe=Wooden
 set backpack=Wooden
 set money=0
@@ -163,6 +178,8 @@ if errorlevel=1 echo [0;94m[Startup][0;0m Failed to find consoleFreezeTime.cmd
 cd..
 timeout %consoleFreezeTime%>nul
 cls
+
+
 :main
 if %internet%==none (echo 				[1;36m---------------------------------------------[0;0m 
 					 echo.
@@ -172,18 +189,18 @@ if %internet%==none (echo 				[1;36m-------------------------------------------
 					 echo 				[1;36m---------------------------------------------[0;0m 
 					)else curl https://fireroth.github.io/download/data/CommandMiner/logo
 					 
-echo [0;91mUse [0;93mhelp[0;0m[0;91m for list of all available commands[0;0m 
+echo [0;91mUse [0;93mhelp[0;0m[0;91m for list of all available commands[0;0m
 echo [0;91mUse [0;93msave[0;0m[0;91m to save your progress[0;0m
 if %internet%==none echo [0;91mSlow or no internet connection[0;0m
 if %accEnabled% == true echo [0;94mLogged as %account%[0;0m
-:cmdselect
 
 rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-rem Mod loader (InitializationBefore.bat)
+rem Mod loader (splash.txt)
 cd %modsPath%
+title Modding...
 for /D %%i in (.\*) do (
 cd "%%i"
-call InitializationBefore.bat
+if exist splash.txt type splash.txt
 if errorlevel=1 goto ErrorMod
 cd..
 )
@@ -191,7 +208,28 @@ cd..
 cd %accountsPath%\%account%\Mods
 for /D %%i in (.\*) do (
 cd "%%i"
-call InitializationBefore.bat
+if exist splash.txt type splash.txt
+if errorlevel=1 goto ErrorMod
+cd..
+)
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:cmdselect
+set command2=1
+rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rem Mod loader (InitializationBefore.bat)
+cd %modsPath%
+for /D %%i in (.\*) do (
+cd "%%i"
+if exist InitializationBefore.bat call InitializationBefore.bat
+if errorlevel=1 goto ErrorMod
+cd..
+)
+
+cd %accountsPath%\%account%\Mods
+for /D %%i in (.\*) do (
+cd "%%i"
+if exist InitializationBefore.bat call InitializationBefore.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
@@ -200,6 +238,7 @@ rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cd %dataPath%
 set title=Command Miner       Money: %money%^$      Tokens: %token%      Pickaxe: %pickaxe%      Backpack: %backpack%      Ore: %orename%
 if %autosell%==1 (if %ore% == %maxBPSize% goto sell) else echo.>nul
+if %money% GTR 2000000000 set money=2000000000
 
 set tier1=300
 set tier2=1500
@@ -210,6 +249,7 @@ set tier6=75000
 set tier7=140000
 set tier8=300000
 set tier9=900000
+set tier10=2500000
 
 set maxPickaxe=Obsidian
 set maxBackpack=Obsidian
@@ -217,22 +257,24 @@ set maxOre=Netherite
 
 if %oreName% == Coal set /a multi=1
 if %oreName% == Iron set /a multi=1
+if %oreName% == Copper set /a multi=2
 if %oreName% == Lapis set /a multi=2
-if %oreName% == Quartz set /a multi=2
+if %oreName% == Quartz set /a multi=3
 if %oreName% == Gold set /a multi=3
-if %oreName% == Redstone set /a multi=3
+if %oreName% == Redstone set /a multi=4
 if %oreName% == Diamond set /a multi=4
-if %oreName% == Emerald set /a multi=4
-if %oreName% == Netherite set /a multi=5
+if %oreName% == Emerald set /a multi=5
+if %oreName% == Netherite set /a multi=6
 if %oreName% == Negative set /a multi=2147483647
 if %oreName% == OverLimit set /a multi=2147483648
 
-if %orename% == Emerald set /a upOrePrice=8
-if %orename% == Diamond set /a upOrePrice=7
-if %oreName% == Redstone set /a upOrePrice=6
-if %orename% == Gold set /a upOrePrice=5
-if %orename% == Quartz set /a upOrePrice=4
-if %orename% == Lapis set /a upOrePrice=3
+if %orename% == Emerald set /a upOrePrice=9
+if %orename% == Diamond set /a upOrePrice=8
+if %oreName% == Redstone set /a upOrePrice=7
+if %orename% == Gold set /a upOrePrice=6
+if %orename% == Quartz set /a upOrePrice=5
+if %orename% == Lapis set /a upOrePrice=4
+if %orename% == Copper set /a upOrePrice=3
 if %orename% == Iron set /a upOrePrice=2
 if %orename% == Coal set /a upOrePrice=1
 
@@ -242,19 +284,21 @@ if %oreName% == Redstone set nextore=Diamond
 if %orename% == Gold set nextore=Redstone
 if %orename% == Quartz set nextore=Gold
 if %orename% == Lapis set nextore=Quartz
-if %orename% == Iron set nextore=Lapis
+if %orename% == Copper set nextore=Lapis
+if %orename% == Iron set nextore=Copper
 if %orename% == Coal set nextore=Iron
 
 if %pickaxe% == Wooden set maxMined=10
 if %pickaxe% == Stone set maxMined=20
-if %pickaxe% == Iron set maxMined=40
-if %pickaxe% == Quartz set maxMined=60
-if %pickaxe% == Golden set maxMined=90
-if %pickaxe% == Redstone set maxMined=120
-if %pickaxe% == Diamond set maxMined=180
-if %pickaxe% == Emerald set maxMined=250
-if %pickaxe% == Netherite set maxMined=450
-if %pickaxe% == Obsidian set maxMined=800
+if %pickaxe% == Copper set maxMined=40
+if %pickaxe% == Iron set maxMined=60
+if %pickaxe% == Quartz set maxMined=90
+if %pickaxe% == Golden set maxMined=120
+if %pickaxe% == Redstone set maxMined=180
+if %pickaxe% == Diamond set maxMined=250
+if %pickaxe% == Emerald set maxMined=450
+if %pickaxe% == Netherite set maxMined=800
+if %pickaxe% == Obsidian set maxMined=1500
 
 if %pickaxe% == Netherite set nextpickaxe=Obsidian
 if %pickaxe% == Emerald set nextpickaxe=Netherite
@@ -263,19 +307,21 @@ if %pickaxe% == Redstone set nextpickaxe=Diamond
 if %pickaxe% == Golden set nextpickaxe=Redstone
 if %pickaxe% == Quartz set nextpickaxe=Golden
 if %pickaxe% == Iron set nextpickaxe=Quartz
-if %pickaxe% == Stone set nextpickaxe=Iron
+if %pickaxe% == Copper set nextpickaxe=Iron
+if %pickaxe% == Stone set nextpickaxe=Copper
 if %pickaxe% == Wooden set nextpickaxe=Stone
 
 if %backpack% == Wooden set maxBPSize=25
 if %backpack% == Stone set maxBPSize=75
-if %backpack% == Iron set maxBPSize=150
-if %backpack% == Quartz set maxBPSize=250
-if %backpack% == Golden set maxBPSize=500
-if %backpack% == Redstone set maxBPSize=700
-if %backpack% == Diamond set maxBPSize=1200
-if %backpack% == Emerald set maxBPSize=3000
-if %backpack% == Netherite set maxBPSize=6000
-if %backpack% == Obsidian set maxBPSize=12500
+if %backpack% == Copper set maxBPSize=150
+if %backpack% == Iron set maxBPSize=250
+if %backpack% == Quartz set maxBPSize=500
+if %backpack% == Golden set maxBPSize=700
+if %backpack% == Redstone set maxBPSize=1200
+if %backpack% == Diamond set maxBPSize=3000
+if %backpack% == Emerald set maxBPSize=6000
+if %backpack% == Netherite set maxBPSize=12500
+if %backpack% == Obsidian set maxBPSize=25000
 if %backpack% == Infinite set maxBPSize=nul
 
 if %backpack% == Netherite set nextbp=Obsidian
@@ -285,7 +331,8 @@ if %backpack% == Redstone set nextbp=Diamond
 if %backpack% == Golden set nextbp=Redstone
 if %backpack% == Quartz set nextbp=Golden
 if %backpack% == Iron set nextbp=Quartz
-if %backpack% == Stone set nextbp=Iron
+if %backpack% == Copper set nextbp=Iron
+if %backpack% == Stone set nextbp=Copper
 if %backpack% == Wooden set nextbp=Stone
 
 set /a upMinMinedPrice=1
@@ -323,15 +370,12 @@ if %starterPack% == 0 set nextStarterPack=1
 if %starterPack% == 1 set nextStarterPack=2
 
 
-if not defined maxBPSize goto ErrorVariables
-if not defined maxMined goto ErrorVariables
-
 rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 rem Mod loader (InitializationAfter.bat)
 cd %modsPath%
 for /D %%i in (.\*) do (
 cd "%%i"
-call InitializationAfter.bat
+if exist InitializationAfter.bat call InitializationAfter.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
@@ -339,11 +383,16 @@ cd..
 cd %accountsPath%\%account%\Mods
 for /D %%i in (.\*) do (
 cd "%%i"
-call InitializationAfter.bat
+if exist InitializationAfter.bat call InitializationAfter.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
 rem  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+if not defined maxBPSize goto ErrorVariables
+if not defined maxMined goto ErrorVariables
+if not defined multi goto ErrorVariables
+
 :input
 cd %dataPath%
 title %title%
@@ -362,7 +411,7 @@ rem Mod loader (commands.bat)
 cd %modsPath%
 for /D %%i in (.\*) do (
 cd "%%i"
-call Commands.bat
+if exist Commands.bat call Commands.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
@@ -370,7 +419,7 @@ cd..
 cd %accountsPath%\%account%\Mods
 for /D %%i in (.\*) do (
 cd "%%i"
-call Commands.bat
+if exist Commands.bat call Commands.bat
 if errorlevel=1 goto ErrorMod
 cd..
 )
@@ -395,8 +444,6 @@ if /i "%command%" == "reset" goto resetConfirm
 if /i "%command%" == "upgrade ore" goto upgradeore
 if /i "%command%" == "upgrade backpack" goto upgradebp
 if /i "%command%" == "upgrade pickaxe" goto upgradePick
-if /i "%command%" == "ore" goto oreInfo
-if /i "%command%" == "ores" goto oreInfo
 if /i "%command%" == "ore info" goto oreInfo
 if /i "%command1%" == "open" echo>nul& if /i "%command2%" == "common" goto openCrateCommon
 if /i "%command1%" == "open" echo>nul& if /i "%command2%" == "uncommon" goto openCrateUncommon
@@ -409,6 +456,8 @@ if /i "%command%" == "update" goto Update
 if /i "%command%" == "version" goto version
 if /i "%command%" == "tokenshop" goto tokenShop
 if /i "%command%" == "tokenshop2" goto tokenShop2
+if /i "%command1%" == "token" echo>nul& if /i "%command2%" == "shop" goto tokenshop
+if /i "%command1%" == "token" echo>nul& if /i "%command2%" == "shop2" goto tokenshop2
 if /i "%command%" == "buy1" goto upgradeMinMined
 if /i "%command%" == "open" echo Invalid syntax, use [0;93mopen CRATE_NAME[0;0m & goto cmdselect
 if /i "%command%" == "set" echo Invalid syntax, use [0;93mset SETTING_NAME[0;0m & goto cmdselect
@@ -426,6 +475,8 @@ if /i "%command1%" == "mod" echo>nul& if /i "%command2%" == "install" goto ModsC
 if /i "%command1%" == "mods" echo>nul& if /i "%command2%" == "install" goto ModsCheck
 if /i "%command1%" == "mods" echo>nul& if /i "%command2%" == "loaded" cd %dataPath%\Mods & dir /a:d /b & cd %accountsPath%\%account%\Mods & dir /a:d /b & goto cmdselect
 if /i "%command%" == "dailyReward" goto claimDailyReward
+
+::if /i "%command1%" == "help" echo>nul& if /i "%command2%" == "%command2%" echo [0;91m[Error][0;31m Cannot find help page [0;31m%command2%[0;0m & goto cmdselect
 
 REM Aliases
 if /i "%command%" == "m" goto mine
@@ -453,6 +504,8 @@ if /i "%command%" == "u o" goto upgradeore
 if /i "%command%" == "u ore" goto upgradeore
 if /i "%command%" == "up ore" goto upgradeore
 if /i "%command%" == "up o" goto upgradeore
+if /i "%command%" == "ore" goto oreInfo
+if /i "%command%" == "ores" goto oreInfo
 if /i "%command1%" == "o" echo>nul& if /i "%command2%" == "c" goto openCrateCommon
 if /i "%command1%" == "o" echo>nul& if /i "%command2%" == "u" goto openCrateUncommon
 if /i "%command1%" == "o" echo>nul& if /i "%command2%" == "r" goto openCrateRare
@@ -491,7 +544,6 @@ if /i "%command%" == "cheat_giveMeBigBoxes" if not %cheatPermission%==true (goto
 
 REM settings
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "cheats" goto setCheats
-if /i "%command1%" == "set" echo>nul& if "%command2%" == "boot" goto setBoot
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "money" if not %cheatPermission%==true (goto noPerms) else set /a money=%command3%& if errorlevel=1 (goto Error0) else set cheats=true & echo money was set to %command3% & goto cmdselect
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "token" if not %cheatPermission%==true (goto noPerms) else set /a token=%command3%& if errorlevel=1 (goto Error0) else set cheats=true & echo token was set to %command3% & goto cmdselect
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "pickaxe" if not %cheatPermission%==true (goto noPerms) else set pickaxe=%command3%& if errorlevel=1 (goto Error0) else set cheats=true & echo pickaxe was set to %command3% & goto cmdselect
@@ -501,9 +553,10 @@ if /i "%command1%" == "set" echo>nul& if "%command2%" == "consoleFreezeTime" got
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "cft" goto setCFT
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "accounts" goto setACC
 if /i "%command1%" == "set" echo>nul& if "%command2%" == "unlockedScreenSize" goto setUnlockedScreenSize
+if /i "%command1%" == "set" echo>nul& if defined command2 echo [0;91m[Error][0;31m Unknown setting[0;0m& goto cmdselect
 
 if /i "%command%" == "valid" goto cmdselect
-echo [0;31mPlease enter valid command![0;0m
+echo [0;91m[Error][0;31m This command does not exist[0;0m
 goto cmdselect
 
 
@@ -536,33 +589,23 @@ cd Config & echo set unlockedScreenSize=%command3%>unlockedScreenSize.cmd& cd..
 goto cmdselect
 
 
-:setBoot
-echo This command is disabled.&goto cmdselect
-
-set boot=%command3%
-echo boot was set to %command3%
-cd Config & echo set boot=%command3%>bootType.cmd & cd..
-goto cmdselect
-
-
 :setHelp
 echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m 
 echo set cheats [[0;32mtrue[0;0m/[0;31mfalse[0;0m] [0;35m(c=%cheatPermission%) (d=false)[0;0m
 echo set accounts [[0;32mtrue[0;0m/[0;31mfalse[0;0m] [0;35m(c=%accEnabled%) (d=false)[0;0m
 echo set consoleFreezeTime [[0;94mvalue[0;0m] [0;35m(c=%consoleFreezeTime%) (d=0)[0;0m
-echo set boot [[0;94mnormal[0;0m/[0;94mnoSave[0;0m] [0;35m(c=%boot%) (d=normal)[0;0m
 echo set unlockedScreenSize [[0;32mtrue[0;0m/[0;31mfalse[0;0m] [0;35m(c=%unlockedScreenSize%) (d=false)[0;0m
 echo [[0;35mc=current [0;0m^| [0;35md=default[0;0m]
 echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m
 if %cheatPermission% == true (
 echo.
-echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m 
+echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m 
 echo set money [[0;94mvalue[0;0m]
 echo set token [[0;94mvalue[0;0m]
 echo set ore [[0;94mCoal[0;0m/[0;94mIron[0;0m/[0;94mLapis[0;0m/[0;94mQuartz[0;0m/[0;94mGold[0;0m/[0;94mResdtone[0;0m/[0;94mDiamond[0;0m/[0;94mNetherite[0;0m/[0;31mNegative[0;0m/[0;31mOverLimit[0;0m]
-echo set pickaxe [[0;94mWooden[0;0m/[0;94mStone[0;0m/[0;94mIron[0;0m/[0;94mQuartz[0;0m/[0;94mGolden[0;0m/[0;94mResdtone[0;0m/[0;94mDiamond[0;0m/[0;94mEmerald[0;0m/[0;94mNetherite[0;0m]/[0;94mObsidian[0;0m]
-echo set backpack [[0;94mWooden[0;0m/[0;94mStone[0;0m/[0;94mIron[0;0m/[0;94mQuartz[0;0m/[0;94mGolden[0;0m/[0;94mResdtone[0;0m/[0;94mDiamond[0;0m/[0;94mEmerald[0;0m/[0;94mNetherite[0;0m/[0;94mObsidian[0;0m]/[0;31mInfinite[0;0m]
-echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m )
+echo set pickaxe [[0;94mWooden[0;0m/[0;94mStone[0;0m/[0;94mCopper[0;0m/[0;94mIron[0;0m/[0;94mQuartz[0;0m/[0;94mGolden[0;0m/[0;94mResdtone[0;0m/[0;94mDiamond[0;0m/[0;94mEmerald[0;0m/[0;94mNetherite[0;0m/[0;94mObsidian[0;0m]
+echo set backpack [[0;94mWooden[0;0m/[0;94mStone[0;0m/[0;94mCopper[0;0m/[0;94mIron[0;0m/[0;94mQuartz[0;0m/[0;94mGolden[0;0m/[0;94mResdtone[0;0m/[0;94mDiamond[0;0m/[0;94mEmerald[0;0m/[0;94mNetherite[0;0m/[0;94mObsidian[0;0m/[0;31mInfinite[0;0m]
+echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m )
 
 goto cmdselect
 
@@ -609,15 +652,17 @@ goto cmdselect
 
 
 :upgradePick
-if %pickaxe% == Netherite set /a upPickPrice=%tier9%
-if %pickaxe% == Emerald set /a upPickPrice=%tier8%
-if %pickaxe% == Diamond set /a upPickPrice=%tier7%
-if %pickaxe% == Redstone set /a upPickPrice=%tier6%
-if %pickaxe% == Golden set /a upPickPrice=%tier5%
-if %pickaxe% == Quartz set /a upPickPrice=%tier4%
-if %pickaxe% == Iron set /a upPickPrice=%tier3%
+if %pickaxe% == Netherite set /a upPickPrice=%tier10%
+if %pickaxe% == Emerald set /a upPickPrice=%tier9%
+if %pickaxe% == Diamond set /a upPickPrice=%tier8%
+if %pickaxe% == Redstone set /a upPickPrice=%tier7%
+if %pickaxe% == Golden set /a upPickPrice=%tier6%
+if %pickaxe% == Quartz set /a upPickPrice=%tier5%
+if %pickaxe% == Iron set /a upPickPrice=%tier4%
+if %pickaxe% == Copper set /a upPickPrice=%tier3%
 if %pickaxe% == Stone set /a upPickPrice=%tier2%
 if %pickaxe% == Wooden set /a upPickPrice=%tier1%
+
 if %pickaxe%== %maxPickaxe% goto maxLevelPick
 if %money% LSS %upPickPrice% goto lowMoneyPick
 set /a money=%money%-%upPickPrice% & set pickaxe=%nextPickaxe%
@@ -673,13 +718,14 @@ goto cmdselect
 
 
 :upgradeBP
-if %backpack% == Netherite set /a upBPPrice=%tier9%
-if %backpack% == Emerald set /a upBPPrice=%tier8%
-if %backpack% == Diamond set /a upBPPrice=%tier7%
-if %backpack% == Redstone set /a upBPPrice=%tier6%
-if %backpack% == Golden set /a upBPPrice=%tier5%
-if %backpack% == Quartz set /a upBPPrice=%tier4%
-if %backpack% == Iron set /a upBPPrice=%tier3%
+if %backpack% == Netherite set /a upBPPrice=%tier10%
+if %backpack% == Emerald set /a upBPPrice=%tier9%
+if %backpack% == Diamond set /a upBPPrice=%tier8%
+if %backpack% == Redstone set /a upBPPrice=%tier7%
+if %backpack% == Golden set /a upBPPrice=%tier6%
+if %backpack% == Quartz set /a upBPPrice=%tier5%
+if %backpack% == Iron set /a upBPPrice=%tier4%
+if %backpack% == Copper set /a upBPPrice=%tier3%
 if %backpack% == Stone set /a upBPPrice=%tier2%
 if %backpack% == Wooden set /a upBPPrice=%tier1%
 if %backpack%== %maxBackpack% goto maxLevelBP
@@ -694,41 +740,43 @@ goto cmdselect
 echo.
 echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m 
 echo Stone tier = %tier1%^$
-echo Iron tier = %tier2%^$
-echo Qurtz tier = %tier3%^$
-echo Golden tier = %tier4%^$
-echo Redstone tier = %tier5%^$
-echo Diamond tier = %tier6%^$
-echo Emerald tier = %tier7%^$
-echo Netherite tier = %tier8%^$
-echo Obsidian tier = %tier9%^$
+echo Copper tier = %tier2%^$
+echo Iron tier = %tier3%^$
+echo Quartz tier = %tier4%^$
+echo Golden tier = %tier5%^$
+echo Redstone tier = %tier6%^$
+echo Diamond tier = %tier7%^$
+echo Emerald tier = %tier8%^$
+echo Netherite tier = %tier9%^$
+echo Obsidian tier = %tier10%^$
 echo.
 echo Iron ore = 1 token
-echo Lapis ore = 2 tokens
-echo Quartz ore = 3 tokens
-echo Gold ore = 4 tokens
-echo Redstone ore = 5 tokens
-echo Diamond ore = 6 tokens
-echo Emerald ore = 7 tokens
-echo Netherite ore = 8 tokens
+echo Copper ore = 2 token
+echo Lapis ore = 3 tokens
+echo Quartz ore = 4 tokens
+echo Gold ore = 5 tokens
+echo Redstone ore = 6 tokens
+echo Diamond ore = 7 tokens
+echo Emerald ore = 8 tokens
+echo Netherite ore = 9 tokens
 echo [0;33m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0;0m 
 goto cmdselect
 
 
 :stats
+echo [0;94mPickaxe[0;0m: %pickaxe%
+echo [0;94mBackpack[0;0m: %backpack%
+echo [0;92mMoney[0;0m: %money%^$
+echo [0;93mTokens[0;0m: %token%
+echo Ore name: %oreName%
+echo %orename% amount: %ore%
 echo.
-echo Pickaxe: %pickaxe%
-echo Backpack: %backpack%
-echo Ore: %oreName%
-echo Money: %money%^$
-echo Tokens: %token%
-echo %orename%: %ore%
 set /a totalCrates=%commonCrate%+%uncommonCrate%+%rareCrate%+%epicCrate%+%legendaryCrate%
 echo Common crates: %commonCrate%
-echo Uncommon crates: %uncommonCrate%
-echo Rare crates: %rareCrate%
-echo Epic crates: %epicCrate%
-echo Legendary crates: %legendaryCrate%
+echo [0;92mUncommon crates[0;0m: %uncommonCrate%
+echo [0;94mRare crates[0;0m: %rareCrate%
+echo [0;35mEpic crates[0;0m: %epicCrate%
+echo [0;33mLegendary crates[0;0m: %legendaryCrate%
 echo Crates in total: %totalCrates%
 goto cmdselect
 
@@ -781,43 +829,43 @@ goto cmdselect
 
 
 :maxLevelPick
-echo [0;94m[Pickaxe][0;0m You have the max level of your pickaxe.
+echo [0;94m[Pickaxe][0;0m You have reached the maximum level.
 goto cmdselect
 
 
 :maxLevelAutosell
-echo [0;94m[Autosell][0;0m You have the max level of your "autosell" skill.
+echo [0;94m[Autosell skill][0;0m You have reached the maximum level.
 goto cmdselect
 
 
 :maxLevelMinMined
-echo [0;94m[MinMined][0;0m You have the max level of your "minimum mined" skill.
+echo [0;94m[MinMined skill][0;0m You have reached the maximum level.
 goto cmdselect
 
 
 :maxLevelRebirthReward
-echo [0;94m[RebirthReward][0;0m You have the max level of your "Rebirth token reward" skill.
+echo [0;94m[RebirthReward skill][0;0m You have reached the maximum level.
 goto cmdselect
 
 
 :maxLevelBP
-echo [0;94m[Backpack][0;0m You have the max level of your backpack.
+echo [0;94m[Backpack][0;0m You have reached the maximum level.
 goto cmdselect
 
 
 :maxLevelSP
-echo [0;94m[StarterPack][0;0m You have the max level of your "Starter pack" skill.
+echo [0;94m[StarterPack skill][0;0m You have reached the maximum level.
 goto cmdselect
 
 
 :maxLevelOre
-echo [0;94m[Ore][0;0m You have the max level of your ore.
+echo [0;94m[Ore][0;0m You have reached the maximum level.
 goto cmdselect
 
 
 :maxBackpack
-echo You have full backpack.
-echo Use "sell" or "s" to make free space in your backpack.
+echo [0;91mYour backpack is full[0;0m
+echo Use "sell" or "s" to free up space in your backpack.
 goto cmdselect
 
 
@@ -845,13 +893,14 @@ goto cmdselect
 echo [0;33m╔═══════════════════════════════════════════════════════════════╗
 echo ║mine = Mine ores                                               ║
 echo ║sell = Sell ores that you mined                                ║
+echo ║stats = See your statistics                                    ║
 echo ║upgrade pick = Upgrade your pickaxe                            ║
 echo ║upgrade bp = Upgrade your backpack                             ║
 echo ║upgrade ore = Upgrade your ore                                 ║
 echo ║clear = Clear your screen                                      ║
 echo ║reload = Reload Command Miner                                  ║
 echo ║shop = Upgrade prices                                          ║
-echo ║tokenshop = Place where you can spend your Tokens              ║
+echo ║tokenshop = Place where you can spend your tokens              ║
 echo ║save = Save your progress                                      ║
 echo ║ore info = Info about ores                                     ║
 echo ║crates = Shows how many crates you have                        ║
@@ -859,8 +908,9 @@ echo ║open ^<crate_tier^> = Open crate                                 ║
 echo ║update = Update CM to latest version                           ║
 echo ║set help = Settings                                            ║
 echo ║accounts = Account manager                                     ║
-echo ║mods = List of some mods                                       ║
+echo ║mods = List of official mods                                   ║
 echo ║dreward = Claim daily reward                                   ║
+echo ║accs = Account manager                                         ║
 echo ╚═══════════════════════════════════════════════════════════════╝[0;0m
 echo [0;94m[NOTE][0;0m There is a lot of aliases like [0;93mo l[0;0m for [0;93mopen legendary[0;0m and many more!
 echo [0;94m[NOTE][0;0m Use help ^<mod_name^> for mods help
@@ -868,7 +918,8 @@ goto cmdselect
 
 
 :saveProgress
-if %cheats%==true echo [0;91m[Error][0;0m You can't save your game if you used cheats & echo [0;91m[Error][0;0m Use "reload" or "rl" to load your last saved position & goto cmdselect
+if %cheats%==true echo [0;91m[Error][0;0m You can't save your progress if you have used cheats & echo [0;91m[Error][0;0m Use "reload" or "rl" to load your last saved position & goto cmdselect
+echo|set /p= Saving...
 cd save
 (
 echo %backpack%
@@ -890,13 +941,13 @@ echo %rebirthCount%
 echo %starterPack%
 )>%account%.save
 cd..
-echo Saved!
+echo [0;32mDONE[0;0m
 goto cmdselect
 
 
 :balance
-echo Money: %money%^$
-echo Tokens: %token%
+echo [0;92mMoney[0;0m: %money%^$
+echo [0;93mTokens[0;0m: %token%
 goto cmdselect
 
 
@@ -1070,7 +1121,7 @@ goto cmdselect
 
 :update
 if %internet%==none echo [0;91m[Error][0;0m No internet connection & goto cmdselect
-echo Are you sure you want to download latest version of Command Miner from 
+echo Are you sure you want to download the latest version of Command Miner from 
 echo https://fireroth.github.io/download/data/CommandMiner/latest?
 echo [Y/N]
 set /p UpdateConfirm=
@@ -1085,6 +1136,7 @@ echo ExampleMod = Simple mod to understand how mods work
 echo Blank = Mod template
 echo ALLinONE = every version of CM in one
 echo DebugUtilities = Well... debug utilities
+echo RemoveUpdate = Removes the update feature
 echo.
 echo More mods coming soon!
 echo [0;94m[NOTE][0;0m Use [0;93mmod install ^<mod_name^>[0;0m
@@ -1099,6 +1151,7 @@ if /i %command3%==ExampleMod set modName=ExampleMod&goto ModDownload
 if /i %command3%==Blank set modName=Blank&goto ModDownload
 if /i %command3%==ALLinONE set modName=ALLinONE&goto ModDownload
 if /i %command3%==DebugUtilities set modName=DebugUtilities&goto ModDownload
+if /i %command3%==RemoveUpdate set modName=RemoveUpdate&goto ModDownload
 cd %dataPath%
 echo [0;31mPlease enter valid mod name![0;0m
 goto cmdselect
@@ -1106,7 +1159,7 @@ goto cmdselect
 
 :ModDownload
 echo|set /p= [0;93m[Mods][0;0m Downloading...
-curl --no-progress-meter https://fireroth.github.io/download/file/CommandMiner/mods7/%modName%.zip>%modName%.zip
+curl --no-progress-meter https://fireroth.github.io/download/file/CommandMiner/mods8/%modName%.zip>%modName%.zip
 echo DONE
 echo|set /p= [0;93m[Mods][0;0m Extracting...
 chcp 852>nul
@@ -1173,8 +1226,7 @@ echo.
 echo               				     Command Miner ACCS
 echo.
 echo 				[1;36m--------------------------------------------[0;0m 
-echo add ^<account_name^> = Adds an account to public list
-echo reset = Reset public list
+echo delete ^<account_name^> = Remove account
 echo enable = Enable accounts
 echo disable = Disable accounts
 echo exit
@@ -1186,11 +1238,20 @@ for %%a in (%ACCSOption%) do (
   set ACCSOption!count2!=%%a
 )
 if "%ACCSOption1%" == "exit" cls & cd.. & goto reload
-if "%ACCSOption1%" == "add" cd Accounts & echo ^> %ACCSOption2%>>all.data & echo Added %ACCSOption2% to public account list & timeout 1 >nul & cd..
-if "%ACCSOption1%" == "reset" cd Accounts & del all.data & echo Successfully removed all.data & timeout 1 >nul & cd..
+if "%ACCSOption1%" == "delete" goto ACCSRemoveAcc
 if "%ACCSOption1%" == "enable" set command3=true& set key=ACCService& goto setACC
 if "%ACCSOption1%" == "disable" set command3=false& set key=ACCService& goto setACC
 goto ACCS
+
+
+:ACCSRemoveAcc
+cd %dataPath%/Accounts
+echo Are you sure you want to remove all account data and save file from the account %ACCSOption2%?
+set /p ACCSDelPrompt=[Y/N]
+if /i %ACCSDelPrompt%==y rmdir /S /Q %ACCSOption2% 2>nul & echo Removed %ACCSOption2% folder& cd %dataPath%/save & del %ACCSOption2%.save 2>nul & echo Removed %ACCSOption2%.save file & timeout 2 >nul & cd %dataPath% & cd %dataPath% & goto ACCS
+if /i %ACCSDelPrompt%==n cd %dataPath% & goto ACCS
+
+goto ACCSRemoveAcc
 
 
 :claimDailyReward
@@ -1222,7 +1283,6 @@ echo %nextReward%>nextDailyReward
 goto cmdselect
 
 
-
 :Error0
 cls
 echo [0;91m[Error][0;31m An unexpected error has occurred!
@@ -1242,7 +1302,8 @@ exit
 cls
 echo [0;91m[Error][0;31m An unexpected error has occurred!
 echo [0;91m[Error][0;31m Something is wrong with your save file
-echo [0;91m[Error][0;31m Try removing it in Command_Miner_Data ^> Save ^> %account%.save[0;0m
+echo [0;91m[Error][0;31m Try removing it in Command_Miner_Data ^> Save ^> %account%.save
+echo [0;94m[NOTE][0;31m Downloading previously installed mods can help to resolve this issue[0;0m
 pause>nul
 cls & goto ErrorVariables
 
@@ -1254,10 +1315,10 @@ echo [0;91m[Error][0;31m Loaded mods are missing some important files[0;0m
 pause>nul
 cls & cd.. & cd.. & cd.. & goto reload
 
-:ErrorVersion
+:ErrorFile
 echo off
 cls
-echo [0;91m[Error][0;31m This version of Windows is not supported.
-echo [0;91m[Error][0;31m [0;0m
+echo [0;91m[Error][0;31m An unexpected error has occurred!
+echo [0;91m[Error][0;31m Restarting Command Miner can help[0;0m
 pause>nul
 exit
