@@ -158,6 +158,13 @@
   margin-right: 30px;
 }
 
+.info-box a{
+  color: #000000;
+}
+
+.info-box a:hover{
+  color: var(--selectedColor);
+}
 
 .download-table {
   width: 100%;
