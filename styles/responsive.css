@@ -70,3 +70,15 @@
     font-size: 12px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  header h1{
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  header h1{
+    font-size: 30px;
+  }
+}

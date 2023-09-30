@@ -166,6 +166,11 @@
   color: var(--selectedColor);
 }
 
+.info-box img{
+  max-width: 550px;
+  width: 70vw;
+}
+
 .download-table {
   width: 100%;
 }
@@ -194,8 +199,6 @@
   margin-top: 20px;
   transition: 0.5s;
 }
-
-
 
 .projects a:hover {
   color: var(--selectedColor);
