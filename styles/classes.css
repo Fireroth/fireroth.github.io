@@ -8,11 +8,8 @@
 }
 
 .logo {
-  text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
-  background-image: url("/images/logo.png");
-  background-size: 40px;
   background-repeat: no-repeat;
   display: block;
   height: 30px;
@@ -23,6 +20,8 @@
 }
 
 .logo-click {
+  background-image: url("/images/logo.png");
+  background-size: 40px;
   padding: 0;
   margin: 0px;
   display: block;
@@ -31,6 +30,7 @@
   width: 40px;
   left: -5px;
   top: -5px;
+  font-size: 0;
 }
 
 .logo-nav {
