@@ -147,9 +147,9 @@
 
 .info-box {
   font-size: 20px;
-  background-color: #86c5ff;
+  background-color: #674e77;
   border-color: #4b4b4b;
-  color: #000000;
+  color: var(--whiteColor);
   border-radius: 10px;
   border-width: 5px;
   border-style: solid;
@@ -159,7 +159,7 @@
 }
 
 .info-box a{
-  color: #000000;
+  color: var(--whiteColor)
 }
 
 .info-box a:hover{
@@ -245,3 +245,6 @@
   color: #2544f0;
 }
 
+.contact-text {
+  font-size: 25px;
+}
