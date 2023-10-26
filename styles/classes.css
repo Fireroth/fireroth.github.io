@@ -142,7 +142,6 @@
 
 .warn {
   color: #ffc917;
-  text-decoration: underline;
 }
 
 .info-box {
@@ -236,9 +235,14 @@
   border-style: ridge;
   border-width: 3px;
   margin: auto;
-  width: 60vw;
+  width: 70vw;
   text-align: center;
+  font-size: 25px;
 
+}
+
+.info a{
+  font-size: 25px;
 }
 
 .info legend {

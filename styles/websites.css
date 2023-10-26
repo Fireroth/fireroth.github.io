@@ -1,5 +1,7 @@
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👋</text></svg>") 16 0,pointer; /*!emojicursor.app*/
 }
 
 ::-webkit-scrollbar {
@@ -33,6 +35,7 @@ h1 {
 }
 
 a {
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👆</text></svg>") 16 0,pointer; /*!emojicursor.app*/
   float: left;
   width: 90px;
   height: 105px;
@@ -56,3 +59,5 @@ a {
 a:hover {
   background-color: rgba(0, 0, 0, 0.247);
 }
+
+

@@ -2,7 +2,6 @@
   display: none;
 }
 
-
 html {
   scroll-behavior: smooth;
   filter: none;
@@ -16,7 +15,6 @@ body {
   font-family: Minecraft;
   color: var(--whiteColor);
   background-color: var(--backgroundColor);
-
   /*overflow: hidden;*/
   /*background: linear-gradient(to right, #3f3e3b, #353532);*/
 }
@@ -33,7 +31,6 @@ header h1 {
   font-size: 45px;
   margin-top: 50px;
 }
-
 
 nav {
   position: fixed;
@@ -136,10 +133,23 @@ figure a img:hover {
   filter: brightness(0.6);
 }
 
+tr td:nth-child(2) {
+  width: 70%;
+}
+
+tr td:nth-child(3) {
+  width: 12%;
+}
+
+
 figure {
   display: inline-block;
   margin: 0px;
   padding: 25px;
+}
+
+tr th{
+  padding-left: 5px;
 }
 
 table,
