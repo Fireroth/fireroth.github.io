@@ -138,6 +138,7 @@
   color: var(--selectedColor);
   font-size: 80px;
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .warn {
@@ -196,7 +197,7 @@
   padding: 10px;
   text-decoration: none;
   margin-top: 20px;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .projects a:hover {
