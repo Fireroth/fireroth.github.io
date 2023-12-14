@@ -53,7 +53,7 @@ cd..
 if not exist UpdateFiles md UpdateFiles & echo [0;94m[Startup][0;0m Creating UpdateFiles folder
 cd UpdateFiles & echo [0;94m[Startup][0;0m Entering UpdateFiles folder
 if errorlevel=1 echo [0;94m[Startup][0;0m Failed to create folder! & pause >nul & exit
-if not exist Update.bat echo cd.. ^& cd.. ^& curl -B https://fireroth.github.io/download/data/CommandMiner/latest^>CommandMiner.bat ^& cd Command_Miner_Data ^& cd UpdateFiles ^& mshta.exe vbscript:Execute^("msgbox ""Successfully installed latest version""& VbCrLf & VbCrLf &""Click 'Ok' to exit"",0+64,""Updated Command Miner"":close"^) ^& exit>Update.bat & echo [0;94m[Startup][0;0m Creating Update.bat file
+if not exist UpdateCM.bat echo cd.. ^& cd.. ^& curl -B https://fireroth.github.io/download/data/CommandMiner/latest^>CommandMiner.bat ^& cd Command_Miner_Data ^& cd UpdateFiles ^& mshta.exe vbscript:Execute^("msgbox ""Successfully installed latest version""& VbCrLf & VbCrLf &""Click 'Ok' to exit"",0+64,""Updated Command Miner"":close"^) ^& exit>UpdateCM.bat & echo [0;94m[Startup][0;0m Creating UpdateCM.bat file
 cd..
 
 cd Config & echo [0;94m[Startup][0;0m Entering Config folder
@@ -123,7 +123,7 @@ echo [0;94m[Startup][0;0m Setting up important stuff...
 set cheats=false
 set command=invalid
 set cheatPermission=false
-set ver=1.0.8
+set ver=1.0.8 Patch 1
 set command2=1
 set command3=1
 set /a minimumMined=0
@@ -1125,7 +1125,7 @@ echo Are you sure you want to download the latest version of Command Miner from
 echo https://fireroth.github.io/download/data/CommandMiner/latest?
 echo [Y/N]
 set /p UpdateConfirm=
-if /i %UpdateConfirm%==y cd UpdateFiles & start /min Update.bat & exit
+if /i %UpdateConfirm%==y cd UpdateFiles & start /min UpdateCM.bat & exit
 if /i %UpdateConfirm%==n goto cmdselect
 goto update
 
