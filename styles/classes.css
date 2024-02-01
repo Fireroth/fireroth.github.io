@@ -187,17 +187,24 @@
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  position: relative;
+}
+
+.projects p {
+  margin-bottom: 40px;
 }
 
 .projects a {
-  display: block;
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 10px;
   text-decoration: none;
-  margin-top: 20px;
   transition: 0.2s;
+  position: absolute;
+  bottom: 7px;
+  left: 7px;
+  right: 7px;
 }
 
 .projects a:hover {
