@@ -1,0 +1,262 @@
+.down-text {
+  padding: 50px;
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+}
+
+.logo {
+  white-space: nowrap;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  display: block;
+  height: 30px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+}
+
+.logo-click {
+  background-image: url("/images/logo.png");
+  background-size: 40px;
+  padding: 0;
+  margin: 0px;
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  left: -5px;
+  top: -5px;
+  font-size: 0;
+}
+
+.logo-nav {
+  background-image: url("/images/nav-mobile.png");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 35px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  width: 35px;
+}
+
+.buttonmain span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonmain span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  color: var(--selectedColor);
+}
+
+.buttonmain:hover span {
+  padding-right: 25px;
+  color: var(--selectedColor);
+}
+
+.buttonmain:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.bottom-home {
+  margin-top: 2000px;
+  margin-bottom: 250px;
+}
+
+.center--websites-- {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+
+.mobile-no-show--websites-- {
+  text-align: center;
+}
+
+.drop-content {
+  display: none;
+  position: relative;
+  float: left;
+  padding-right: 20px;
+  width: 200px;
+}
+
+.drop-menu {
+  border-radius: 0px 15px 15px 15px;
+  background-color: var(--backgroundColorDark);
+  align-items: center;
+}
+
+.drop-content-button {
+  cursor: pointer;
+  float: left;
+  align-items: center;
+}
+
+.drop-content-button:hover .drop-content {
+  display: block;
+}
+
+.desktop-view {
+  display: inline-block;
+}
+
+.mobile-view {
+  display: none;
+}
+
+.hover-animation {
+  background: linear-gradient(currentColor 0 0) var(--p, 0) 100% / var(--d, 0) 3px no-repeat;
+  transition: 0.3s, background-position 0s 0.3s;
+}
+
+.hover-animation:hover {
+  --d: 100%;
+  --p: 100%;
+}
+
+.hi-text {
+  text-shadow: 3px 3px #3f3e3b, 6px 6px #302f2f, 9px 9px #181818;
+  color: var(--selectedColor);
+  font-size: 80px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.warn {
+  color: #ffc917;
+}
+
+.info-box {
+  font-size: 20px;
+  background-color: #674e77;
+  border-color: #4b4b4b;
+  color: var(--whiteColor);
+  border-radius: 10px;
+  border-width: 5px;
+  border-style: solid;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.info-box a{
+  color: var(--whiteColor)
+}
+
+.info-box a:hover{
+  color: var(--selectedColor);
+}
+
+.info-box img{
+  max-width: 550px;
+  width: 70vw;
+}
+
+.download-table {
+  width: 100%;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+
+}
+
+.projects div {
+  background-color: rgb(110, 108, 108);
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.projects p {
+  margin-bottom: 40px;
+}
+
+.projects a {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  transition: 0.2s;
+  position: absolute;
+  bottom: 7px;
+  left: 7px;
+  right: 7px;
+}
+
+.projects a:hover {
+  color: var(--selectedColor);
+}
+
+.update-log {
+  border-color: #f15151;
+  border-style: ridge;
+  border-width: 3px;
+  margin: auto;
+  width: 60vw;
+  text-align: center;
+
+}
+
+.update-log legend {
+  color: #eb3636;
+}
+
+.update-log p {
+  margin: 3px;
+}
+
+.viewProjects{
+  display: inline-block;
+  background: #333;
+  padding: 20px 35px;
+  border-radius: 5px;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.info {
+  border-color: #5169f1;
+  border-style: ridge;
+  border-width: 3px;
+  margin: auto;
+  width: 70vw;
+  text-align: center;
+  font-size: 25px;
+
+}
+
+.info a{
+  font-size: 25px;
+}
+
+.info legend {
+  color: #2544f0;
+}
+
+.contact-text {
+  font-size: 25px;
+}
