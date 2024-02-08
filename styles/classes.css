@@ -147,11 +147,10 @@
 
 .info-box {
   font-size: 20px;
-  background-color: #674e77;
-  border-color: #4b4b4b;
+  background-color: #5869cc;
+  border-color: #20318d;
   color: var(--whiteColor);
   border-radius: 10px;
-  border-width: 5px;
   border-style: solid;
   margin-bottom: 20px;
   margin-left: 30px;
@@ -197,18 +196,41 @@
 .projects a {
   background-color: #333;
   color: #fff;
-  text-align: center;
   padding: 10px;
   text-decoration: none;
   transition: 0.2s;
   position: absolute;
-  bottom: 7px;
-  left: 7px;
-  right: 7px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
 }
 
-.projects a:hover {
+
+.projects a span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.projects a span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
   color: var(--selectedColor);
+}
+
+.projects a:hover span {
+  padding-right: 20px;
+  color: var(--selectedColor);
+}
+
+.projects a:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .update-log {
@@ -218,7 +240,10 @@
   margin: auto;
   width: 60vw;
   text-align: center;
+}
 
+.update-log a:hover{
+  color: #f15151;
 }
 
 .update-log legend {
@@ -231,11 +256,13 @@
 
 .viewProjects{
   display: inline-block;
-  background: #333;
+  background: #333333;
   padding: 20px 35px;
   border-radius: 5px;
   font-size: 25px;
   margin-bottom: 5px;
+  transition: 0.3s;
+  text-decoration: none;
 }
 
 .info {
@@ -246,11 +273,14 @@
   width: 70vw;
   text-align: center;
   font-size: 25px;
-
 }
 
 .info a{
   font-size: 25px;
+}
+
+.info a:hover{
+  color: #5169f1;
 }
 
 .info legend {
