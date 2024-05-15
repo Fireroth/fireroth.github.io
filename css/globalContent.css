@@ -1,0 +1,23 @@
+ /*:root{
+  --selectedColor: #eb5e28;
+  --backgroundColor: #3f3e3b;
+  --backgroundColorDark: #302f2f;
+  --backgroundColorLight: #686868;
+  --whiteColor: #fffcf2;
+  --projectHeaderColor: #ff7944;
+}*/
+
+.globalFooter:before {
+  content: "©2024 Máta ";
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  font-size: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

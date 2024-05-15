@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" id="all">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Máta's web" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fireroth.github.io" />
+  <meta property="og:image" content="https://fireroth.github.io/images/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="300" />
+  <meta property="og:image:height" content="300" />
+  <meta property="og:image:alt" content="Máta's web Logo" />
+  <meta property="og:description" content="Personal website for projects and more" />
+  <meta name="description" content="Personal website for projects and more" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/classes.css" />
+  <link rel="stylesheet" href="/css/globalContent.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <script src="/js/foot.js"></script>
+  <script src="/js/responsiveNavbar.js"></script>
+  <script defer src="/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Máta's web - Home</title>
+</head>
+
+<body>
+  <header>
+    <div class="navbar" id="navigationBar">
+      <div class="logo">
+        <a href="/"><img class="logo-img" src="/images/logo.png" alt="Logo" /></a>
+      </div>
+      <div class="links">
+        <a class="nav-desktop active" href="/">Home</a>
+        <a class="nav-desktop" href="/projects/index.html">Projects</a>
+        <a class="nav-desktop" href="/sottau/index.html">SOTTAU</a>
+        <a class="nav-desktop" href="/contact/index.html">Contact</a>
+        <a class="nav-mobile" href="javascript:void(0);" onclick="openHamburgerNav()"><img class="nav-mobile" src="/images/nav-mobile.svg" alt="Logo" /></a>
+      </div>
+    </div>
+
+    <h1 class="land-page-h1">Hello</h1>
+  </header>
+  <section>
+    <fieldset class="info">
+      <legend align="left">INFO</legend>
+      <p>This is my personal website where I post my projects and more.</p>
+      <p>
+        You should check out
+        <a href="/projects/cmdminer/">Command Miner</a> since its my biggest
+        project so far ;)
+      </p>
+      <p>
+        If you encounter any bugs or other issues
+        <a href="https://github.com/Fireroth/fireroth.github.io/issues">create an issue on GitHub</a>. Thanks!
+      </p>
+      <a href="/projects/" class="viewProjects">View projects</a>
+      <a href="https://github.com/Fireroth/fireroth.github.io" class="viewProjects">View on GitHub</a>
+      <a href="https://mata-dev.netlify.app/" class="viewProjects">2nd Web</a>
+    </fieldset>
+    <br />
+    <fieldset class="update-log">
+      <legend align="left">UPDATE LOG</legend>
+      <p>Reworked the whole website</p>
+      <p>
+        Added new webistes to <a href="/projects/">Wesites for boredom</a>
+      </p>
+      <p>Added new version of <a href="/projects/">Command Miner</a></p>
+    </fieldset>
+  </section>
+
+  <footer id="footer" class="globalFooter" onclick="footerRandomColor()"></footer>
+</body>
+
+</html>

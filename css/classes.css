@@ -1,0 +1,272 @@
+.active {
+  background-color: #725AC1;
+}
+
+.land-page-h1 {
+  font-size: 90px;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #725AC1;
+  text-shadow: 3px 3px #3f3e3b, 6px 6px #302f2f, 9px 9px #181818;
+}
+.projects-title{
+  margin-top: 80px;
+}
+
+.navbar {
+  background-color: #2C3333;
+  overflow: hidden;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10000;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+.logo {
+  padding-left: 5px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.links {
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 18px;
+  font-size: 20px;
+}
+
+.links a:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+.download-table {
+  width: 100%;
+  font-size: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.images {
+  grid-area: photos;
+}
+
+.download-div {
+  grid-area: download;
+}
+
+.images,
+.download-div,
+.about {
+  border-radius: 5px;
+  border: 10px;
+  border-color: #8D86C9;
+  border-style: solid;
+  background-color: #e1d8d8b1;
+}
+
+.about {grid-area: info;}
+.about a{color: black;}
+.about a:hover{color: #725AC1;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "photos photos photos info"
+    "download download download info";
+  gap: 15px;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.grid-container>div {
+  /*background-color: rgba(176, 163, 163, 0.8);*/
+  text-align: center;
+  padding: 20px 20px;
+  font-size: 20px;
+}
+
+.images img {
+  max-width: 550px;
+  width: 30vw;
+}
+
+.info {
+  border-color: #5169f1;
+  border-style: ridge;
+  border-width: 3px;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  font-size: 25px;
+}
+
+.info a {
+  font-size: 25px;
+}
+
+.info a:not(.viewProjects) {
+  color: black;
+}
+
+.info a:hover {
+  color: #5169f1;
+}
+
+.info legend {
+  color: #2544f0;
+  margin-left: 10px;
+}
+
+.update-log {
+  border-color: #f15151;
+  border-style: ridge;
+  border-width: 3px;
+  margin: auto;
+  width: 60vw;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.update-log a,
+.update-log p {
+  font-size: 18px;
+  color: black;
+}
+
+.update-log a:hover {
+  color: #f15151;
+}
+
+.update-log legend {
+  color: #eb3636;
+  margin-left: 10px;
+}
+
+.viewProjects {
+  display: inline-block;
+  background: #5F4C9F;
+  padding: 20px 35px;
+  border-radius: 5px;
+  font-size: 25px;
+  margin-bottom: 5px;
+  transition: 0.3s;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.contact-text {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+.contact-link-field {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-color: #2C3333;
+  color: #5F4C9F;
+  border-style: ridge;
+  border-width: 3px;
+  font-weight: bold;
+}
+
+.contact-link-field img {
+  width: 75px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+
+}
+
+.projects div {
+  background-color: #e1d8d8b1;
+  padding: 30px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  border: 5px;
+  border-color: #8D86C9;
+  border-style: solid;
+}
+
+.projects div h3 {
+  color: #5F4C9F;
+  font-size: 25px;
+}
+
+.projects p {
+  margin-bottom: 40px;
+}
+
+.projects a {
+  background-color: #2C3333;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  transition: 0.2s;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+
+.projects a span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.projects a span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  color: #8D86C9;
+}
+
+.projects a:hover span {
+  padding-right: 20px;
+  color: #8D86C9;
+}
+
+.projects a:hover span:after {
+  opacity: 1;
+  right: 0;
+}
