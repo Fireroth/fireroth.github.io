@@ -127,6 +127,10 @@
   font-size: 25px;
 }
 
+.warn{
+  color: #f75632;
+}
+
 .info a:not(.viewProjects) {
   color: black;
 }
