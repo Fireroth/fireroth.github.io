@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /websites/target_blank/index.html
+
+Sitemap: https://fireroth.github.io/sitemap.xml
