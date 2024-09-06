@@ -1,10 +1,11 @@
 # Main URLS
-NEW: https://fireroth.github.io/
-
-OLD: https://fireroth.netlify.app/
+1) https://fireroth.github.io/ (primary)
+2) https://fireroth.vercel.app/
 
 
 ## Other URLS
-https://mata-dev.netlify.app/
+old: https://fireroth.netlify.app/
 
-https://mata-test.netlify.app/
+2nd web: https://mata-dev.netlify.app/
+
+test web: https://mata-test.netlify.app/
