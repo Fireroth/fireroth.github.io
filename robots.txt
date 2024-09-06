@@ -3,5 +3,6 @@ Disallow: /websites/target_blank/index.html
 Disallow: /sottau/color/
 Disallow: /sottau/live.edit/
 Disallow: /sottau/text.spammer/
+Disallow: /WebDownload/
 
 Sitemap: https://fireroth.github.io/sitemap.xml
