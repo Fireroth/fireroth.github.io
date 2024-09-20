@@ -1,14 +1,20 @@
- /*:root{
-  --selectedColor: #eb5e28;
-  --backgroundColor: #3f3e3b;
-  --backgroundColorDark: #302f2f;
-  --backgroundColorLight: #686868;
-  --whiteColor: #fffcf2;
-  --projectHeaderColor: #ff7944;
-}*/
+ :root{
+  --lightBack: url("/images/bg.png");
+  --darkBack: url("/images/bgDark.png");
+  --lightText: #101010;
+  --darkText: #eaeaea;
+  --lightProjectsSection: #e1d8d8b1;
+  --darkProjectsSection: #5e5e5e91;
+  --lightProjectsCard: #e1d8d8b1;
+  --darkProjectsCard: #68686840;
+  --purple1: #5F4C9F;
+  --purple2: #725AC1;
+  --purple3: #5169f1;
 
-.globalFooter:before {
-  content: "©2024 Máta ";
+}
+
+.globalFooter:after {
+  content: " ©2024 Máta ";
 }
 
 footer {

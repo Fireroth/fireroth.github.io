@@ -1,3 +1,26 @@
+.light {
+  --backgroundImg: var(--lightBack);
+  --textColor: var(--lightText);
+  --projectsSectionBack: var(--lightProjectsSection);
+  --projectsCardBack: var(--lightProjectsCard);
+  --projectsTitle: var(--purple2);
+  --downloadTableTheme: none();
+  --contactPlatformText: var(--purple1);
+}
+
+.dark {
+  --backgroundImg:var(--darkBack);
+  --textColor: var(--darkText);
+  --projectsSectionBack: var(--darkProjectsSection);
+  --projectsCardBack: var(--darkProjectsCard);
+  --projectsTitle: var(--purple3);
+  --downloadTableTheme: invert();
+  --contactPlatformText: var(--purple3);
+}
+
+
+/*-----------------------------------------------------------------------------*/
+
 .active {
   background-color: #725AC1;
 }
@@ -11,6 +34,7 @@
   text-shadow: 3px 3px #3f3e3b, 6px 6px #302f2f, 9px 9px #181818;
 }
 .projects-title{
+  color: var(--textColor);
   margin-top: 80px;
 }
 
@@ -63,6 +87,8 @@
   width: 100%;
   font-size: 20px;
   border-width: 4px;
+  color: black;
+  filter: var(--downloadTableTheme);
 }
 
 .download-table-second{
@@ -88,11 +114,12 @@
   border: 10px;
   border-color: #8D86C9;
   border-style: solid;
-  background-color: #e1d8d8b1;
+  background-color: var(--projectsSectionBack);
+  color: var(--textColor);
 }
 
 .about {grid-area: info;}
-.about a{color: black;}
+.about a{color: var(--textColor);}
 .about a:hover{color: #725AC1;}
 
 .grid-container {
@@ -107,7 +134,6 @@
 }
 
 .grid-container>div {
-  /*background-color: rgba(176, 163, 163, 0.8);*/
   text-align: center;
   padding: 20px 20px;
   font-size: 20px;
@@ -126,6 +152,7 @@
   width: 80%;
   text-align: center;
   font-size: 25px;
+  color: var(--textColor);
 }
 
 .info a {
@@ -137,7 +164,7 @@
 }
 
 .info a:not(.viewProjects) {
-  color: black;
+  color: var(--textColor);
 }
 
 .info a:hover {
@@ -162,7 +189,7 @@
 .update-log a,
 .update-log p {
   font-size: 18px;
-  color: black;
+  color: var(--textColor);
 }
 
 .update-log a:hover {
@@ -190,6 +217,7 @@
 .contact-text {
   margin-top: 20px;
   font-size: 25px;
+  color: var(--textColor);
 }
 
 .contact-link-field {
@@ -199,7 +227,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
   border-color: #2C3333;
-  color: #5F4C9F;
+  color: var(--contactPlatformText);
   border-style: ridge;
   border-width: 3px;
   font-weight: bold;
@@ -222,17 +250,18 @@
 }
 
 .projects div {
-  background-color: #e1d8d8b1;
+  background-color: var(--projectsCardBack);;
   padding: 30px;
   padding-top: 10px;
   position: relative;
   border: 5px;
   border-color: #8D86C9;
   border-style: solid;
+  color: var(--textColor);
 }
 
 .projects div h3 {
-  color: #5F4C9F;
+  color: var(--projectsTitle);
   font-size: 25px;
 }
 
@@ -278,4 +307,24 @@
 .projects a:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.themeSwitcher img{
+  width: 45px;
+  font-size: 20px;
+}
+
+.themeSwitcherDiv{
+  position: fixed;
+  bottom: 17px;
+  font-size: 20px;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.sottau{
+  color: var(--textColor);
 }
