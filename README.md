@@ -1,6 +1,6 @@
 # Main URLS
 1) https://fireroth.github.io/ (primary)
-2) https://fireroth.vercel.app/
+2) https://fireroth.vercel.app/ (broken for now)
 
 
 ## Other URLS
