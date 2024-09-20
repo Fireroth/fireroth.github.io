@@ -6,6 +6,6 @@
 ## Other URLS
 old: https://fireroth.netlify.app/
 
-2nd web: https://mata-test.vercel.app/
+2nd web: https://mata-dev.vercel.app/
 
 test web: https://mata-test.vercel.app/
