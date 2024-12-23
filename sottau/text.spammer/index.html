@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/globalContent.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Rainbow Text Spammer</title>
+    
+
+    <style>
+        html{
+            background-color: #3f3e3b;
+            color: #fffcf2;
+        }
+        form {
+            font-family: Minecraft;
+            font-size: 25px;
+            margin: 10px;
+        }
+
+        input {
+            margin-bottom: 15px;
+            color: #eb5e28;
+            font-family: Minecraft;
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        function mainWorker() {
+            var DispText = document.getElementsByName("DisplayText")[0].value;
+            var ClassAmount = document.getElementsByName("AmountOfClasses")[0].value;
+            var Timeout = document.getElementsByName("BreakTime")[0].value;
+            document.write(" ");
+            $("body").css("background-color", "black");
+            $("body").css("margin", "0px");
+            setInterval(() => {
+                window.scrollBy(0, 9);
+                var classID = Math.floor(Math.random() * ClassAmount);
+                const text = "<p class=" + classID + ">" + DispText + " </p>"
+                document.writeln(text);
+                $("." + classID).css("color", getRandomColor());
+                $("." + classID).css("background-color", getRandomColor());
+                $("." + classID).css("display", "inline");
+                $("." + classID).css("font-size", "30px");
+                
+            }, Timeout)
+        }
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            } return color;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <form NAME="settings" ACTION="" METHOD="GET">
+        <label for="fname">Text to display:</label><br>
+        <input TYPE="text" NAME="DisplayText" VALUE=""><br>
+        <label for="fname">Amount of classes to use:</label><br>
+        <input TYPE="text" NAME="AmountOfClasses" VALUE="1000000"><br>
+        <label for="fname">Break time in ms:</label><br>
+        <input TYPE="text" NAME="BreakTime" VALUE="10"><br>
+        <input TYPE="button" NAME="button" Value="Submit" onClick="mainWorker(this.form)">
+    </form>
+
+</body>
+
+</html>

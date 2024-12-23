@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /websites/target_blank/
+Disallow: /sottau/color/
+Disallow: /sottau/live.edit/
+Disallow: /sottau/text.spammer/
+Disallow: /WebDownload/
+
+Sitemap: https://fireroth.github.io/sitemap.xml

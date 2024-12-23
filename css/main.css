@@ -1,0 +1,33 @@
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+  h1{
+    font-size: 45px;
+    font-weight: bold;
+  }
+  
+  p{
+    margin: 10px;
+  }
+
+  header{
+    margin-bottom: 25px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color: #eaeaea;
+    filter: none;
+    scrollbar-width: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #303030;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a3b);
+    min-height: 100vh;
+  }
+
