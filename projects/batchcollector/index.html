@@ -20,8 +20,6 @@
     <link rel="stylesheet" href="/css/classes.css" />
     <link rel="stylesheet" href="/css/globalContent.css" />
     <link rel="stylesheet" href="/css/responsive.css" />
-    <script src="/js/foot.js"></script>
-    <script src="/js/responsiveNavbar.js"></script>
     <script defer src="/js/main.js"></script>
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Máta's web - Projects (Batch Collector)</title>
@@ -41,48 +39,63 @@
               <a class="nav-mobile" href="#" onclick="openHamburgerNav()"><img class="nav-mobile" src="/images/nav-mobile.svg" alt="Logo" /></a>
             </div>
           </div>
-          <h1 class="center projects-title">Projects - Batch Collector</h1>
     </header>
-    <div class="grid-container">
-        <div class="images">
-            <img src="/images/BCollector.PNG" alt="Batch collector launcher photo">
-            <img src="/images/BCollectorSettings.PNG" alt="Batch collector settings photo">
+
+    <div class="project-container">
+        <div class="project-header">
+            <h1>Batch Collector</h1>
+            <p>Basic Top-View game.</p>
         </div>
-        <div class="download-div">
-            <table cellspacing="0" cellpadding="0" class="download-table">
-                <tr>
-                    <th width="36"><img src="/images/windows.svg" alt=""></th>
-                    <th colspan="3" align="left">Windows 10 and higher</th>
-                </tr>
-                <tr>
-                    <td><a href="/WebDownload/BatchCollector/BatchCollector - BETA3.zip"><img src="/images/download.svg" alt=""></a></td>
-                    <td><a href="/WebDownload/BatchCollector/BatchCollector - BETA3.zip">Batch Collector - BETA3</a></td>
-                    <td>.zip</td>
-                    <td>13kB</td>
-                </tr>
-                <tr>
-                    <td><a href="/WebDownload/BatchCollector/BatchCollector - BETA2.zip"><img src="/images/download.svg" alt=""></a></td>
-                    <td><a href="/WebDownload/BatchCollector/BatchCollector - BETA2.zip">Batch Collector - BETA2</a></td>
-                    <td>.zip</td>
-                    <td>10kB</td>
-                </tr>
-                <tr>
-                    <td><a href="/WebDownload/BatchCollector/BatchCollector - BETA.zip"><img src="/images/download.svg" alt=""></a></td>
-                    <td><a href="/WebDownload/BatchCollector/BatchCollector - BETA.zip">Batch Collector - BETA</a></td>
-                    <td>.zip</td>
-                    <td>6kB</td>
-                </tr>
+
+        <div class="project-details">
+            <div class="project-image">
+                <img src="/images/BCollector.PNG" alt="Command Miner 2 Screenshot">
+            </div>
+
+            <div class="project-info">
+                <h2>Project Information</h2>
+                <p>Small top view game written in batch <br> The objective is to collect all the coins </p>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h3>Downloads</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>File Type</th>
+                        <th>Size</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Batch Collector - BETA3</td>
+                        <td>.zip</td>
+                        <td>13kB</td>
+                        <td><a href="/WebDownload/BatchCollector/BatchCollector - BETA3.zip">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>Batch Collector - BETA2</td>
+                        <td>.zip</td>
+                        <td>10kB</td>
+                        <td><a href="/WebDownload/BatchCollector/BatchCollector - BETA2.zip">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>Batch Collector - BETA</td>
+                        <td>.zip</td>
+                        <td>6kB</td>
+                        <td><a href="/WebDownload/BatchCollector/BatchCollector - BETA.zip">Download</a></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
-        <div class="about">
-            <p><b>Info:</b></p>
-            <p>OS: Windows 10/11<br>Developed on: Windows 10<br>Small top view game written in batch <br> The objective is to collect all the coins </p>
-        </div>
     </div>
-    <div class="themeSwitcherDiv">
-        <a id="dark" class="themeSwitcher" href="#"><img src="/images/themes.svg" alt="Light"></img></a>
-    </div>
-    <footer id="footer" class="globalFooter" onclick="footerRandomColor()"></footer>
+    <footer>
+        &copy; 2024 Máta | Check out my
+        <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!
+      </footer>
 </body>
 
 </html>

@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en" id="all">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Máta's web" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fireroth.github.io" />
+    <meta
+      property="og:image"
+      content="https://fireroth.github.io/images/logo.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="Máta's web Logo" />
+    <meta
+      property="og:description"
+      content="Personal website for projects and more"
+    />
+    <meta name="description" content="Personal website for projects and more" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/classes.css" />
+    <link rel="stylesheet" href="/css/globalContent.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <script defer src="/js/main.js"></script>
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    ></script>
+    <title>Máta's web - 404</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:title" content="Máta's web" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fireroth.github.io" />
-  <meta property="og:image" content="https://fireroth.github.io/images/logo.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="300" />
-  <meta property="og:image:height" content="300" />
-  <meta property="og:image:alt" content="Máta's web Logo" />
-  <meta property="og:description" content="Personal website for projects and more" />
-  <meta name="description" content="Personal website for projects and more" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/css/reset.css" />
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css/classes.css" />
-  <link rel="stylesheet" href="/css/globalContent.css" />
-  <link rel="stylesheet" href="/css/responsive.css" />
-  <script src="/js/foot.js"></script>
-  <script src="/js/responsiveNavbar.js"></script>
-  <script defer src="/js/main.js"></script>
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <title>Máta's web - Error 404</title>
-</head>
 
-<body>
-  <header>
-    <div class="navbar" id="navigationBar">
-      <div class="logo">
-        <a href="/"><img class="logo-img" src="/images/logo.png" alt="Logo" /></a>
+
+  <body>
+    <header>
+      <div class="navbar" id="navigationBar">
+        <div class="logo">
+          <a href="/"
+            ><img class="logo-img" src="/images/logo.png" alt="Logo"
+          /></a>
+        </div>
+        <div class="links">
+          <a class="nav-desktop" href="/">Home</a>
+          <a class="nav-desktop" href="/projects/">Projects</a>
+          <a class="nav-desktop" href="/contact/">Contact</a>
+          <a class="nav-mobile" href="#" onclick="openHamburgerNav()"
+            ><img class="nav-mobile" src="/images/nav-mobile.svg" alt="Logo"
+          /></a>
+        </div>
       </div>
-      <div class="links">
-        <a class="nav-desktop" href="/">Home</a>
-        <a class="nav-desktop" href="/projects/">Projects</a>
-        <a class="nav-desktop" href="/sottau/">SOTTAU</a>
-        <a class="nav-desktop" href="/contact/">Contact</a>
-        <a class="nav-mobile" href="#" onclick="openHamburgerNav()"><img class="nav-mobile" src="/images/nav-mobile.svg" alt="Logo" /></a>
+
+      <h1 class="land-page-h1">Error 404</h1>
+    </header>
+    <div class="about-home" id="home">
+      <p>
+        The page you are looking for doesn't exist.<br />
+        If you think this is a mistake <a href="https://github.com/Fireroth/fireroth.github.io/issues" style="color: #8a8aff">create an issue on GitHub</a>
+      </p>
+      <div class="buttons">
+        <a href="/" target="_blank">Go back home</a>
       </div>
     </div>
-
-    <h1 class="land-page-h1">Error 404</h1>
-  </header>
-  <section>
-    <fieldset class="info">
-        <legend align="left">OOPS</legend>
-        <p class="warn">The page you are looking for doesn't exist.</p>
-        <p>If you think this is a mistake <a href="https://github.com/Fireroth/fireroth.github.io/issues">create an issue on GitHub</a></p>
-        <a href="/" class="viewProjects">Go back home</a>
-    </fieldset>
-  </section>
-  <div class="themeSwitcherDiv">
+    <!--<div class="themeSwitcherDiv">
     <a id="dark" class="themeSwitcher" href="#"><img src="/images/themes.svg" alt="Light"></img></a>
-  </div>
-  <footer id="footer" class="globalFooter" onclick="footerRandomColor()"></footer>
-</body>
-
+  </div>-->
+    <footer>&copy; 2024 Máta | Check out my <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!</footer>
+    <!--<footer id="footer" class="globalFooter" onclick="footerRandomColor()"></footer>-->
+  </body>
 </html>

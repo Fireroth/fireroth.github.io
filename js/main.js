@@ -4,6 +4,8 @@ console.log(
 );
 console.log("JQuery version: 3.6.0");
 
+/*----------------------------------------------------------------*/
+
 function alertDS() {
   alert("Discord server is under construction!");
 }
@@ -11,7 +13,9 @@ function alertUnavailable() {
   alert("Target is currently unavailable");
 }
 
-var defaultTheme = localStorage.getItem("theme");
+/*----------------------------------------------------------------*/
+
+/*var defaultTheme = localStorage.getItem("theme");
 if (null === defaultTheme) {
   localStorage.setItem("theme", "dark");
 }
@@ -33,12 +37,14 @@ darkButton.onclick = () => {
     body.classList.replace("light", "dark");
     localStorage.setItem("theme", "dark");
   }
-};
+};*/
+
+/*----------------------------------------------------------------*/
 
 function searchProjects() {
   const input = document.getElementById("searchInput");
   const filter = input.value.toLowerCase();
-  const projects = document.querySelectorAll(".projects > div");
+  const projects = document.querySelectorAll(".project");
 
   projects.forEach((project) => {
     const title = project.querySelector("h3").textContent.toLowerCase();
@@ -51,9 +57,37 @@ function searchProjects() {
       description.includes(filter) ||
       tags.includes(filter)
     ) {
-      project.style.display = "block";
+      project.style.display = "flex";
     } else {
       project.style.display = "none";
     }
   });
 }
+
+/*----------------------------------------------------------------*/
+
+function openHamburgerNav() {
+  var x = document.getElementById("navigationBar");
+  if (x.className === "navbar") {
+    x.className += " responsive-nav";
+  } else {
+    x.className = "navbar";
+  }
+}
+
+/*----------------------------------------------------------------*/
+
+/*function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function footerRandomColor() {
+  var ranColor = getRandomColor();
+  $("#footer").css("color", ranColor);
+  console.log("Color of footer was set to " + ranColor);
+}*/

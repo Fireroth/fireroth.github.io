@@ -1,23 +1,13 @@
  :root{
-  --lightBack: url("/images/bg.png");
-  --darkBack: url("/images/bgDark.png");
-  --lightText: #101010;
-  --darkText: #eaeaea;
-  --lightProjectsSection: #e1d8d8b1;
-  --darkProjectsSection: #5e5e5e91;
-  --lightProjectsCard: #e1d8d8b1;
-  --darkProjectsCard: #68686840;
-  --purple1: #5F4C9F;
-  --purple2: #725AC1;
-  --purple3: #5169f1;
-
+  --black: #101010;
+  --white: #eaeaea;
 }
 
 .globalFooter:after {
   content: " ©2024 Máta ";
 }
 
-footer {
+.footer {
   position: fixed;
   bottom: 0px;
   font-size: 20px;
@@ -26,4 +16,17 @@ footer {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #8a8a8a;
+}
+
+footer a {
+  color: #8a8aff;
+  text-decoration: none;
 }
