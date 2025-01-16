@@ -20,22 +20,8 @@
     <link rel="stylesheet" href="/css/classes.css" />
     <link rel="stylesheet" href="/css/globalContent.css" />
     <link rel="stylesheet" href="/css/responsive.css" />
-    <script src="/js/foot.js"></script>
-    <script src="/js/responsiveNavbar.js"></script>
     <script defer src="/js/main.js"></script>
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-areas:
-                "info"
-                "download";
-            gap: 15px;
-            padding: 10px;
-            height: auto;
-            margin-bottom: 30px;
-        }
-    </style>
     <title>Máta's web - Side Projects</title>
   </head>
   
@@ -53,46 +39,49 @@
               <a class="nav-mobile" href="javascript:void(0);" onclick="openHamburgerNav()"><img class="nav-mobile" src="/images/nav-mobile.svg" alt="Logo" /></a>
             </div>
           </div>
-          <h1 class="center projects-title">Side Projects</h1>
     </header>
-    <div class="grid-container">
-        <div class="download-div">
-            <table cellspacing="0" cellpadding="0" class="download-table">
-                <tr>
-                    <th width="36"><img src="/images/windows.svg" alt=""></th>
-                    <th colspan="3" align="left">Windows OS only</th>
-                </tr>
-                <tr>
-                    <td><a href="https://gist.github.com/Fireroth/69f44d32b6f95a791f7637a96f87b34f"><img src="/images/download.svg" alt=""></a></td>
-                    <td><a href="https://gist.github.com/Fireroth/69f44d32b6f95a791f7637a96f87b34f">asciiEchoFixer</a></td>
-                    <td>Ext. url</td>
-                    <td>?</td>
-                </tr>
-                <tr>
-                    <td><a href="/WebDownload/FolderLocker/FolderLocker.bat"><img src="/images/download.svg" alt=""></a></td>
-                    <td><a href="/WebDownload/FolderLocker/FolderLocker.bat">Folder Locker</a></td>
-                    <td>.bat</td>
-                    <td>1.5kB</td>
-                </tr>
-                <tr>
-                    <td><a href="/WebDownload/CFSG/CFSG.bat"><img src="/images/download.svg" alt=""></a></td>
-                    <td><a href="/WebDownload/CFSG/CFSG2.bat">Custom file size gen. v2</a></td>
-                    <td>.bat</td>
-                    <td>494B</td>
-                </tr>
-                <tr>
-                    <td><a href="/WebDownload/errors/Errors v1.1.rar"><img src="/images/download.svg" alt=""></a></td>
-                    <td><a href="/WebDownload/errors/Errors v1.1.rar">Errors v1.1</a></td>
-                    <td>.rar</td>
-                    <td>1.8kB</td>
-                </tr>
-    
-            </table>
+
+    <div class="project-container">
+        <div class="project-header">
+            <h1>Side Projects</h1>
+            <p>Just some small projects.</p>
         </div>
-        <div class="about">
-            <p><b>Info:</b></p>
-            <p class="warn">This page is going to be removed and will be replaced with individual project pages</p>
-            <p>OS: Windows 10/11<br>Developed on: Windows 10<br>All of my side projects, don't expect updates for them</p>
+
+        <div class="project-details">
+
+            <div class="project-info">
+                <h2>Project Information</h2>
+                <p>Funny errors made in VBS</p>
+                <p>Developed on: Windows 10<br>This is a side projects, don't expect updates</p>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h3>Downloads</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>File Type</th>
+                        <th>Size</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Errors v1.1</td>
+                        <td>.rar</td>
+                        <td>1.8kB</td>
+                        <td><a href="/WebDownload/errors/Errors v1.1.rar">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>Errors v1.0</td>
+                        <td>.rar</td>
+                        <td>1.7kB</td>
+                        <td><a href="/WebDownload/errors/Errors v1.0.rar">Download</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <footer>

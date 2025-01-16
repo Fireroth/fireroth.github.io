@@ -19,15 +19,3 @@
     .group-name{font-size: 33px;}
     .about-home p{font-size: 1.3rem;}
   }
-
-  @media screen and (max-width: 630px) {
-    .grid-container {
-      grid-template-areas:
-          "info"
-          "photos"
-          "download";}
-    .images img {width: 50vw;}
-    .info a,.info p{font-size: 18px;}
-    .info{width: 93%;}
-    .projects-title{margin-top: 80px; font-size: 40px;}
-  }

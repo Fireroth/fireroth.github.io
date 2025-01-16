@@ -1,26 +1,3 @@
-/*.light {
-  --backgroundImg: var(--lightBack);
-  --textColor: var(--lightText);
-  --projectsSectionBack: var(--lightProjectsSection);
-  --projectsCardBack: var(--lightProjectsCard);
-  --projectsTitle: var(--purple2);
-  --downloadTableTheme: none();
-  --contactPlatformText: var(--purple1);
-}
-
-.dark {
-  --backgroundImg:var(--darkBack);
-  --textColor: var(--darkText);
-  --projectsSectionBack: var(--darkProjectsSection);
-  --projectsCardBack: var(--darkProjectsCard);
-  --projectsTitle: var(--purple3);
-  --downloadTableTheme: invert();
-  --contactPlatformText: var(--purple3);
-}*/
-
-
-/*-----------------------------------------------------------------------------*/
-
 .active {
   background-color: #725AC1;
 }
@@ -32,10 +9,6 @@
   text-align: center;
   color: #8a8aff;
   text-shadow: 3px 3px #3f3e3b, 6px 6px #302f2f, 9px 9px #181818;
-}
-.projects-title{
-  color: var(--textColor);
-  margin-top: 80px;
 }
 
 .navbar {
@@ -66,6 +39,7 @@
   vertical-align: middle;
 }
 
+/*.links --> navbar*/
 .links {
   margin-right: 10px;
   text-transform: uppercase;
@@ -87,19 +61,6 @@
   color: #f75632;
 }
 
-.info a:not(.viewProjects) {
-  color: var(--textColor);
-}
-
-.info a:hover:not(.viewProjects) {
-  color: #5169f1;
-}
-
-.info legend {
-  color: #2544f0;
-  margin-left: 10px;
-}
-
 .update-log {
   align-items: center;
   background: #1c1c2d;
@@ -108,7 +69,6 @@
   margin-top: 30px;
   width: 75%;
   margin-bottom: -10px;
-  color: white;
   border-radius: 10px;
 }
 
@@ -130,47 +90,6 @@
   border-left: 3px solid #8a8aff;
   background: #1515206f;
   border-radius: 5px;
-}
-
-.viewProjects {
-  display: inline-block;
-  background: #5a5acf;
-  padding: 15px 15px;
-  margin: 10px;
-  border-radius: 5px;
-  font-size: 25px;
-  transition: 0.3s;
-  text-decoration: none;
-  color: white;
-  margin-bottom: 15px;
-}
-
-.viewProjects:hover{
-  background: #4747af;
-  transform: scale(1.1);
-}
-
-.contact-text {
-  margin-top: 20px;
-  font-size: 25px;
-  color: var(--textColor);
-}
-
-.contact-link-field {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-color: #2C3333;
-  color: var(--contactPlatformText);
-  border-style: ridge;
-  border-width: 3px;
-  font-weight: bold;
-}
-
-.contact-link-field img {
-  width: 75px;
 }
 
 .projects {
@@ -235,27 +154,6 @@
   background: #4747af;
 }
 
-.themeSwitcher img{
-  width: 45px;
-  font-size: 20px;
-}
-
-.themeSwitcherDiv{
-  position: fixed;
-  bottom: 17px;
-  font-size: 20px;
-  user-select: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-.sottau{
-  color: var(--textColor);
-}
-
-
 .search-container {
   text-align: center;
   margin: 20px 0;
@@ -266,25 +164,15 @@
   max-width: 500px;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid var(--textColor);;
+  border: 1px solid #eaeaea;
   border-radius: 5px;
 }
-
-.starred{
-  background-image: url("/images/star.svg");
-  background-repeat: no-repeat;
-  background-position-x: 10px;
-  background-position-y: 10px;
-}
-
-
 
 .description{
   margin-bottom: 50px;
 }
 
 .group-name{
-  color:var(--darkBack);
   text-shadow: 4px 4px #3f3e3b;
   font-size: 40px;
   font-weight: bold;
@@ -314,7 +202,6 @@
   background: #4747af;
   transform: scale(1.1);
 }
-
 
 .project-container {
   max-width: 1200px;
@@ -408,7 +295,6 @@
 
 .download-section th {
   background: #3c3c5a;
-  color: #fff;
 }
 
 .download-section a{
@@ -419,14 +305,12 @@
   color: #8a8aff;
 }
 
-
 .contact {
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
   text-align: center;
 }
-
 
 .contact p {
   margin-bottom: 30px;
