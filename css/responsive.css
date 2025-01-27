@@ -12,6 +12,7 @@
     .responsive-nav a {width: 100%; padding: 10px;}
     .responsive-nav .logo{padding: 0; margin-left: 10px;}
     .navbar.responsive-nav .links .nav-mobile img{margin-right: 10px;}
+    .links a:hover {background-color: unset; color: unset;}
   }
 
   @media screen and (max-width: 365px) {
