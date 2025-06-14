@@ -13,11 +13,6 @@
 <priority>0.80</priority>
 </url>
 <url>
-<loc>https://fireroth.github.io/sottau/</loc>
-<lastmod>2024-11-07T12:11:24+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
 <loc>https://fireroth.github.io/contact/</loc>
 <lastmod>2024-11-07T12:11:24+00:00</lastmod>
 <priority>0.80</priority>
@@ -55,11 +50,6 @@ https://fireroth.github.io/projects/classicubeplus/
 <loc>https://fireroth.github.io/websites/</loc>
 <lastmod>2024-11-07T12:11:24+00:00</lastmod>
 <priority>0.64</priority>
-</url>
-<url>
-<loc>https://fireroth.github.io/projects/side-projects/</loc>
-<lastmod>2024-11-07T12:11:24+00:00</lastmod>
-<priority>0.51</priority>
 </url>
 <url>
 <loc>https://fireroth.github.io/projects/old/</loc>
