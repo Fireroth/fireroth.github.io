@@ -1,89 +1,80 @@
 <!DOCTYPE html>
 <html lang="en" id="all">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Máta's web" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fireroth.github.io" />
-    <meta
-      property="og:image"
-      content="https://fireroth.github.io/images/logo.png"
-    />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="300" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:image:alt" content="Máta's web Logo" />
-    <meta
-      property="og:description"
-      content="Personal website for projects and more"
-    />
-    <meta name="description" content="Personal website for projects and more" />
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/classes.css" />
-    <link rel="stylesheet" href="/css/globalContent.css" />
-    <link rel="stylesheet" href="/css/responsive.css" />
-    <script defer src="/js/main.js"></script>
-    <script
-      defer
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    ></script>
-    <title>Máta's web - Home</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="navbar" id="navigationBar">
-        <div class="logo">
-          <a href="/"
-            ><img class="logo-img" src="/images/logo.png" alt="Logo"
-          /></a>
-        </div>
-        <div class="links">
-          <a class="nav-desktop active" href="/">Home</a>
-          <a class="nav-desktop" href="/projects/">Projects</a>
-          <a class="nav-desktop" href="/contact/">Contact</a>
-          <a class="nav-mobile" href="#" onclick="openHamburgerNav()"
-            ><img class="nav-mobile" src="/images/nav-mobile.svg" alt="Logo"
-          /></a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Máta's web" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fireroth.github.io" />
+  <meta property="og:image" content="https://fireroth.github.io/images/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="300" />
+  <meta property="og:image:height" content="300" />
+  <meta property="og:image:alt" content="Máta's web Logo" />
+  <meta property="og:description" content="Personal website for projects and more" />
+  <meta name="description" content="Personal website for projects and more" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/classes.css" />
+  <link rel="stylesheet" href="/css/globalContent.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <script defer src="/js/main.js"></script>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Máta's web - Home</title>
+</head>
+
+<body>
+  <header>
+    <div class="navbar" id="navigationBar">
+      <div class="logo">
+        <a href="/"><img class="logo-img" src="/images/logo.png" alt="Logo" /></a>
       </div>
-
-      <h1 class="land-page-h1">Hello</h1>
-    </header>
-    <div class="about-home" id="home">
-      <p>
-        This is my personal website where I post my projects and more.<br />
-        You should check out
-        <a href="./projects/cmdminer2/" style="color: #8a8aff">Command Miner 2</a> since it's my
-        biggest project so far ;)<br />
-        If you encounter any bugs or issues
-        <a href="https://github.com/Fireroth/fireroth.github.io/issues" style="color: #8a8aff">create an issue on GitHub</a>.
-        Thanks!
-      </p>
-      <div class="buttons">
-        <a href="./projects/">View Projects</a>
-        <a href="https://github.com/Fireroth/fireroth.github.io" target="_blank">View on GitHub</a>
-        <a href="https://mata-dev.vercel.app/">2nd Web</a>
+      <div class="links">
+        <a class="nav-desktop active" href="/">Home</a>
+        <a class="nav-desktop" href="/projects/">Projects</a>
+        <a class="nav-desktop" href="/contact/">Contact</a>
+        <a class="nav-mobile" href="#" onclick="openHamburgerNav()"><img class="nav-mobile" src="/images/nav-mobile.svg" alt="Logo" /></a>
       </div>
     </div>
-    <section class="update-log">
-      <h2>Update Log</h2>
-      <ul>
-        <li>[15. 6. 2025] Added project page for MineCrap</li>
-        <li>[13. 6. 2025] Updated Command Miner to version 2.7.1</li>
-        <li>[20. 5. 2025] Added MineCrap to project list</li>
-        <li>[8. 5. 2025] Updated Batch Collector to BETA4</li>
-        <li>[16. 1. 2025] Added side project pages</li>
-      </ul>
-    </section>
 
-    <!--<div class="themeSwitcherDiv">
+    <div class="center-text">
+      <h1 class="land-page-h1">Hello</h1>
+    </div>
+  </header>
+  <div class="about-home" id="home">
+    <p>
+      This is my personal website where I post my projects and more.<br />
+      You should check out
+      <a href="./projects/cmdminer2/" style="color: #8a8aff">Command Miner 2</a> since it's my
+      biggest project so far ;)<br />
+      If you encounter any bugs or issues
+      <a href="https://github.com/Fireroth/fireroth.github.io/issues" style="color: #8a8aff">create an issue on GitHub</a>.
+      Thanks!
+    </p>
+    <div class="buttons">
+      <a href="./projects/">View Projects</a>
+      <a href="https://github.com/Fireroth/fireroth.github.io" target="_blank">View on GitHub</a>
+      <a href="https://mata-dev.vercel.app/">2nd Web</a>
+    </div>
+  </div>
+  <section class="update-log">
+    <h2>Update Log</h2>
+    <ul>
+      <li>[15. 6. 2025] Added project page for MineCrap</li>
+      <li>[13. 6. 2025] Updated Command Miner to version 2.7.1</li>
+      <li>[20. 5. 2025] Added MineCrap to project list</li>
+      <li>[8. 5. 2025] Updated Batch Collector to BETA4</li>
+      <li>[16. 1. 2025] Added side project pages</li>
+    </ul>
+  </section>
+
+  <!--<div class="themeSwitcherDiv">
     <a id="dark" class="themeSwitcher" href="#"><img src="/images/themes.svg" alt="Light"></img></a>
   </div>-->
-    <footer>&copy; 2025 Máta | Check out my <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!</footer>
-    <!--<footer id="footer" class="globalFooter" onclick="footerRandomColor()"></footer>-->
-  </body>
+  <footer>&copy; 2025 Máta | Check out my <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!</footer>
+  <!--<footer id="footer" class="globalFooter" onclick="footerRandomColor()"></footer>-->
+</body>
+
 </html>

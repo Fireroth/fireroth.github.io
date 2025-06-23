@@ -7,8 +7,15 @@
   margin-top: 60px;
   margin-bottom: 10px;
   text-align: center;
-  color: #8a8aff;
-  text-shadow: 3px 3px #3f3e3b, 6px 6px #302f2f, 9px 9px #181818;
+  background: linear-gradient(to right, #ec41ff, #6e2bff);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-align: center;
+  filter: drop-shadow(2px 2px 4px rgba(146, 3, 255, 0.5));
+  
 }
 
 .navbar {
@@ -103,17 +110,36 @@
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 20px;
   margin-top: 20px;
+
 }
 
-.project {
+.project{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: #2e2e44;
   border-radius: 10px;
-  padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 420px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#main-projects h3{
+  padding-top: 10px;
+}
+
+#side-projects h3, #sottau-projects h3{
+  padding-top: 20px;
 }
 
 .project:hover {
@@ -345,4 +371,18 @@
 .social-icons img {
   width: 60px;
   height: 60px;
+}
+
+.center-text{
+  text-align: center;
+}
+
+.project-card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin: 0;
+  background: #23233a;
+  display: block;
 }
