@@ -1,3 +1,9 @@
+@media screen and (max-width: 650px) {
+  .project{
+    max-width: 100%;
+  }
+}
+
 @media screen and (max-width: 550px) {
     .nav-desktop{display: none;}
     .navbar{height: 50px;}
