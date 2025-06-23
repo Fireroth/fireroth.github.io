@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" onclick="i()" onkeypress="i()">
+  <head>
+    <meta charset="UTF-8">
+    <script defer>;function a() { var letters = '0123456789ABCDEF'; var color = '#'; for (var i = 0; i < 6; i++) { color += letters[Math.floor(Math.random() * 16)]; } return color; } function i() { co = a(); $("#body").css("background-color", co); $("#current").text(co);$("#current").css("color", co);}</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+      span{user-select: none; filter: invert(); font-size: 25px; font-weight: bold;}
+      body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <script defer>;function a() { var letters = '0123456789ABCDEF'; var color = '#'; for (var i = 0; i < 6; i++) { color += letters[Math.floor(Math.random() * 16)]; } return color; } function i() { $("#body").css("background-color", a()); }</script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-</head>
-
-<body id="body" style="background-color: #3f3e3b;">
-  <noscript>
-    <!-- text when sripts are disabled -->
-    <p class="warn">Warning! JavaScript is disabled!<br>Some features may not work.</p>
-</noscript>
-</body>
-
+  <body id="body" style="background-color: #3f3e3b;">
+    <noscript>
+      <!-- text when javascript is disabled -->
+      <p class="warn">Warning! JavaScript is disabled!<br>Some features may not work.</p>
+    </noscript>
+    <p><span id="current"></span></p>
+  </body>
 </html>
