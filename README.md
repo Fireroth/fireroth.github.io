@@ -3,7 +3,7 @@
 2) https://fireroth.vercel.app/ (broken for now)
 
 
-## Other URLS
+## Other URLS (not from this repo)
 2nd web: https://mata-dev.vercel.app/
 
 test web: https://mata-test.vercel.app/
