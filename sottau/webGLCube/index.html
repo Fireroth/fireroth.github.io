@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="./styleWGL.css">
+    <script src="https://cdn.jsdelivr.net/npm/gl-matrix@3.4.3/gl-matrix-min.js"></script>
+    <script defer src="./mainWGL.js"></script>
+    <title>WebGL Cube</title>
+</head>
+
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <div class="controls" id="uiControls">
+        <div class="controls-part">
+            <p>Rotation speed:</p>
+            <input type="range" id="speedSlider" min="0" max="0.1" step="0.0001" value="0.001">
+            <hr>
+        </div>
+
+        <div class="controls-part">
+            <p>FOV:</p>
+            <input type="range" id="fovSlider" min="1" max="175" step="1" value="45">
+            <hr>
+        </div>
+
+        <div class="controls-part">
+            <p>Canvas resolution:</p>
+            <input type="number" id="resolutionWidth" class="resolutionInput">
+            <span>X</span>
+            <input type="number" id="resolutionHeight" class="resolutionInput">
+            <hr>
+        </div>
+        
+        <div class="controls-part">
+            <p>Rotation:</p>
+            <label for="rotationX">X:</label>
+            <input type="checkbox" id="rotationX" class="rotationCheckbox">
+            <label for="rotationY">Y:</label>
+            <input type="checkbox" id="rotationY" class="rotationCheckbox" checked>
+            <label for="rotationZ">Z:</label>
+            <input type="checkbox" id="rotationZ" class="rotationCheckbox" checked>
+            <hr>
+        </div> 
+
+        <div class="controls-part">
+            <p>Block texture:</p>
+            <label for="textureToggle">Enable</label>
+            <input type="checkbox" id="textureToggle"><br>
+            <label for="textureUpload">Upload texture</label>
+            <input type="file" id="textureUpload" accept="image/*">
+            <hr>
+        </div>
+<!--
+        <div class="controls-part">
+            <p>Background color:</p>
+            <input type="color" id="bgColor">
+            <hr>
+        </div>
+
+        <div class="controls-part">
+            <p>Face culling:</p>
+            <label for="textureToggle">Enable</label>
+            <input type="checkbox" id="textureToggle" checked><br>
+            <input type="radio" id="front" name="faceToCull">
+            <label for="front">Front</label> <br>
+            <input type="radio" id="back" name="faceToCull" checked>
+            <label for="back">Back</label>
+            <hr>
+        </div>
+-->
+
+    </div>
+
+    <footer id="uiFooter">Hide UI elements with F1 key</footer>
+</body>
+</html>

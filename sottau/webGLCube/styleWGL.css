@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+hr {
+    width: 230px;
+    margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #8a8a8a;
+  position: fixed;
+  bottom: 0px;
+  font-size: 20px;
+}
+
+.controls {
+    padding-left: 15px;
+    position: relative;
+    color: white;
+}
+
+.controls p {
+    padding-top: 10px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.resolutionInput {
+    width: 70px;
+}
+
+.rotationCheckbox{
+    width: 15px;
+    margin-right: 20px;
+}
+
+.controls .controls-part {
+    max-width: fit-content;
+}
