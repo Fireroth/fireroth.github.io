@@ -164,6 +164,7 @@ function loadTextureFromInput(gl, image) {
 // ------------------------- controls handling ----------------------------------
 const widthInput = document.getElementById("resolutionWidth");
 const heightInput = document.getElementById("resolutionHeight");
+const bgColorInput = document.getElementById("bgColor");
 
 const speedSlider = document.getElementById("speedSlider");
 const fovSlider = document.getElementById("fovSlider");
@@ -200,6 +201,12 @@ fovSlider.addEventListener("input", () => {
     fov = parseFloat(fovSlider.value);
 });
 
+let clearColor = [0, 0, 0];
+bgColorInput.addEventListener("input", () => {
+    const [r, g, b] = hexToRgb(bgColorInput.value);
+    clearColor = [r, g, b];
+});
+
 document.getElementById("textureUpload").addEventListener("change", function(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -222,6 +229,14 @@ document.addEventListener("keydown", function (e) {
         footer.style.display = isVisible ? "none" : "block";
     }
 });
+
+function hexToRgb(hexColor) {
+    const sliced = parseInt(hexColor.slice(1), 16);
+    const r = ((sliced >> 16) & 255) / 255;
+    const g = ((sliced >> 8) & 255) / 255;
+    const b = (sliced & 255) / 255;
+    return [r, g, b];
+}
 // ------------------------------------------------------------------------------
 
 // Default texture
@@ -270,7 +285,7 @@ function render(gl, programInfo, rotation, fovFromSlider) {
     const textureToggle = document.getElementById("textureToggle");
 
     gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.clearColor(0, 0, 0, 1);
+    gl.clearColor(clearColor[0], clearColor[1], clearColor[2], 1.0);
     gl.enable(gl.DEPTH_TEST);
     gl.enable(gl.CULL_FACE);
     gl.cullFace(gl.BACK);

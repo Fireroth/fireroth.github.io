@@ -30,6 +30,7 @@ footer {
     padding-left: 15px;
     position: relative;
     color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000;
 }
 
 .controls p {
