@@ -15,6 +15,19 @@ body {
   min-height: 100vh;
 }
 
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #8a8a8a;
+}
+
+footer a {
+  color: #8a8aff;
+  text-decoration: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

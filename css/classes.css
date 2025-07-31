@@ -71,7 +71,9 @@
 .update-log {
   align-items: center;
   background: #1c1c2d;
-  padding: 2rem;
+  padding: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin: auto;
   margin-top: 30px;
   width: 75%;
