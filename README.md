@@ -2,6 +2,7 @@
 1) https://fireroth.is-a.dev/
 2) https://fireroth.github.io/ (redirect)
 3) https://fireroth.vercel.app/ (redirect)
+4) https://fireroth.netlify.app/ (redirect)
 
 
 ## Other URLS (not from this repo)
