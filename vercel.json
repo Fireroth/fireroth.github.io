@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "fireroth.vercel.app"
+        }
+      ],
+      "destination": "https://fireroth.is-a.dev/$1",
+      "permanent": true
+    }
+  ]
+}
