@@ -283,12 +283,25 @@ gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoordinates), gl.STATIC_D
 
 function render(gl, programInfo, rotation, fovFromSlider) {
     const textureToggle = document.getElementById("textureToggle");
+    const cullingEnabled = document.getElementById("faceCullToggle").checked;
+    const cullFront = document.getElementById("front").checked;
+    const cullBack = document.getElementById("back").checked;
 
     gl.viewport(0, 0, canvas.width, canvas.height);
     gl.clearColor(clearColor[0], clearColor[1], clearColor[2], 1.0);
     gl.enable(gl.DEPTH_TEST);
-    gl.enable(gl.CULL_FACE);
-    gl.cullFace(gl.BACK);
+
+    if (cullingEnabled) {
+        gl.enable(gl.CULL_FACE);
+        if (cullFront) {
+            gl.cullFace(gl.FRONT);
+        } else if (cullBack) {
+            gl.cullFace(gl.BACK);
+        }
+    } else {
+        gl.disable(gl.CULL_FACE);
+    }
+
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
     gl.useProgram(programInfo.program);
