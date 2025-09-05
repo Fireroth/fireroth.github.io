@@ -102,9 +102,9 @@
 }
 
 .project-skeleton {
-  background: #e0e0e0;
+  background: #2e2e44;
   border-radius: 8px;
-  height: 220px;
+  height: 343.65px;
   width: 100%;
   animation: pulse 1.5s infinite;
 }
@@ -116,9 +116,9 @@
 }
 
 @keyframes pulse {
-  0% { background-color: #e0e0e0; }
-  50% { background-color: #d3d3d3; }
-  100% { background-color: #e0e0e0; }
+  0% { background-color: #2e2e44; }
+  50% { background-color: #2e2e44b7; }
+  100% { background-color: #2e2e44; }
 }
 
 .projects {
@@ -127,6 +127,7 @@
   padding: 0 20px;
   visibility: hidden;
   transition: opacity 0.2s ease;
+  opacity: 0;
 }
 
 .project-grid {
