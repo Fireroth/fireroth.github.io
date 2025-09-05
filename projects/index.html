@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/css/globalContent.css" />
   <link rel="stylesheet" href="/css/responsive.css" />
   <script defer src="/js/main.js"></script>
+  <script defer src="/js/skeleton.js"></script>
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <title>Máta's web - Projects</title>
@@ -59,7 +60,6 @@
       <div class="project-skeleton"></div>
       <div class="project-skeleton"></div>
     </div>
-
 
     <div class="project-grid">
       <div class="project" data-tags="project, game, cpp, c++">
@@ -236,44 +236,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const projectGrids = document.querySelectorAll(".projects .project-grid");
-      const images = document.querySelectorAll(".projects img");
-      const skeletons = document.getElementById("project-skeletons");
-
-      let loadedCount = 0;
-
-      function showProjects() {
-        if (skeletons) skeletons.style.display = "none";
-
-        projectGrids.forEach(grid => {
-          grid.style.display = "grid";
-          requestAnimationFrame(() => {
-            grid.style.opacity = "1";
-          });
-        });
-      }
-
-      images.forEach(img => {
-        if (img.complete) {
-          loadedCount++;
-          if (loadedCount === images.length) showProjects();
-        } else {
-          img.addEventListener("load", () => {
-            loadedCount++;
-            if (loadedCount === images.length) showProjects();
-          });
-          img.addEventListener("error", () => {
-            loadedCount++;
-            if (loadedCount === images.length) showProjects();
-          });
-        }
-      });
-    });
-  </script>
-
 
   <footer class="globalFooter"> | Check out my <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!</footer>
 </body>
