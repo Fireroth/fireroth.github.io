@@ -101,6 +101,26 @@
   border-radius: 5px;
 }
 
+.project-skeleton {
+  background: #e0e0e0;
+  border-radius: 8px;
+  height: 220px;
+  width: 100%;
+  animation: pulse 1.5s infinite;
+}
+
+.project-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+@keyframes pulse {
+  0% { background-color: #e0e0e0; }
+  50% { background-color: #d3d3d3; }
+  100% { background-color: #e0e0e0; }
+}
+
 .projects {
   max-width: 1200px;
   margin: 40px auto;

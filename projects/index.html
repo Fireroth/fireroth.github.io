@@ -50,6 +50,17 @@
 
   <div class="projects" id="main-projects">
     <h2 class="group-name">Main Projects:</h2>
+
+    <div id="project-skeletons" class="project-skeleton-grid">
+      <div class="project-skeleton"></div>
+      <div class="project-skeleton"></div>
+      <div class="project-skeleton"></div>
+      <div class="project-skeleton"></div>
+      <div class="project-skeleton"></div>
+      <div class="project-skeleton"></div>
+    </div>
+
+
     <div class="project-grid">
       <div class="project" data-tags="project, game, cpp, c++">
         <img class="project-card-img" src="/images/cards/minecrap.png" alt="MineCrap" />
@@ -227,37 +238,43 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const projectsContainer = document.querySelectorAll(".projects");
-      const images = document.querySelectorAll(".projects img");
+  document.addEventListener("DOMContentLoaded", function () {
+    const projectsContainer = document.querySelectorAll(".projects");
+    const images = document.querySelectorAll(".projects img");
+    const skeletons = document.getElementById("project-skeletons");
 
-      let loadedCount = 0;
+    let loadedCount = 0;
 
-      function showProjects() {
-        projectsContainer.forEach(container => {
-          container.style.visibility = "visible";
-          container.style.opacity = "1";
-          container.style.transition = "opacity 0.4s ease";
-        });
-      }
+    function showProjects() {
+      // Hide skeletons
+      if (skeletons) skeletons.style.display = "none";
 
-      images.forEach(img => {
-        if (img.complete) {
+      // Reveal real projects
+      projectsContainer.forEach(container => {
+        container.style.visibility = "visible";
+        container.style.opacity = "1";
+        container.style.transition = "opacity 0.4s ease";
+      });
+    }
+
+    images.forEach(img => {
+      if (img.complete) {
+        loadedCount++;
+        if (loadedCount === images.length) showProjects();
+      } else {
+        img.addEventListener("load", () => {
           loadedCount++;
           if (loadedCount === images.length) showProjects();
-        } else {
-          img.addEventListener("load", () => {
-            loadedCount++;
-            if (loadedCount === images.length) showProjects();
-          });
-          img.addEventListener("error", () => {
-            loadedCount++;
-            if (loadedCount === images.length) showProjects();
-          });
-        }
-      });
+        });
+        img.addEventListener("error", () => {
+          loadedCount++;
+          if (loadedCount === images.length) showProjects();
+        });
+      }
     });
-  </script>
+  });
+</script>
+
 
   <footer class="globalFooter"> | Check out my <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!</footer>
 </body>
