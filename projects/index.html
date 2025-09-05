@@ -239,7 +239,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const projectsContainer = document.querySelectorAll(".projects");
+      const projectGrids = document.querySelectorAll(".projects .project-grid");
       const images = document.querySelectorAll(".projects img");
       const skeletons = document.getElementById("project-skeletons");
 
@@ -248,10 +248,11 @@
       function showProjects() {
         if (skeletons) skeletons.style.display = "none";
 
-        projectsContainer.forEach(container => {
-          container.style.visibility = "visible";
-          container.style.opacity = "1";
-          container.style.transition = "opacity 0.2s ease";
+        projectGrids.forEach(grid => {
+          grid.style.display = "grid";
+          requestAnimationFrame(() => {
+            grid.style.opacity = "1";
+          });
         });
       }
 

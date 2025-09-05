@@ -103,16 +103,27 @@
 
 .project-skeleton {
   background: #2e2e44;
-  border-radius: 8px;
+  border-radius: 10px;
   height: 343.65px;
   width: 100%;
   animation: pulse 1.5s infinite;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .project-skeleton-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 20px;
+  margin-top: 20px;
 }
 
 @keyframes pulse {
@@ -125,17 +136,6 @@
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
-  visibility: hidden;
-  transition: opacity 0.2s ease;
-  opacity: 0;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-
 }
 
 .project{
