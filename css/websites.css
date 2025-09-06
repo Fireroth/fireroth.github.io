@@ -1,65 +1,65 @@
 html {
-  scroll-behavior: smooth;
-  height: 100%;
-  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👋</text></svg>") 16 0,pointer; /*!emojicursor.app*/
+    scroll-behavior: smooth;
+    height: 100%;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👋</text></svg>") 16 0, pointer; /*!emojicursor.app*/
 }
 
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 body {
-  background: linear-gradient(to right, #a45fff, #60b5fc);
-  margin: 10px;
-  padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #fffcf2;
-  text-align: center;
+    background: linear-gradient(to right, #a45fff, #60b5fc);
+    margin: 10px;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #fffcf2;
+    text-align: center;
 }
 
 h1 {
-  margin-bottom: 30px;
-  font-size: 45px;
+    margin-bottom: 30px;
+    font-size: 45px;
 }
 
 section a {
-  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👆</text></svg>") 16 0,pointer; /*!emojicursor.app*/
-  width: 95px;
-  height: 110px;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: 40px;
-  background-size: 50px;
-  text-align: center;
-  border-style: solid;
-  border-radius: 0px;
-  border-color: #9748ff;
-  font-size: 14px;
-  text-decoration: none;
-  color: #000000;
-  background-color: #8fffe748;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👆</text></svg>") 16 0, pointer; /*!emojicursor.app*/
+    width: 95px;
+    height: 110px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 40px;
+    background-size: 50px;
+    text-align: center;
+    border-style: solid;
+    border-radius: 0px;
+    border-color: #9748ff;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000000;
+    background-color: #8fffe748;
 }
 
 a:hover {
-  background-color: rgba(0, 0, 0, 0.247);
+    background-color: rgba(0, 0, 0, 0.247);
 }
 
-.websitesList{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
-  gap: 10px;
-  
+.websitesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+    gap: 10px;
+
 }
 
-.navigation--wesites--{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 80px;
-  margin-top: 20px;
-  margin-bottom: 45px;
-  gap: 10px;
+.navigation--wesites-- {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80px;
+    margin-top: 20px;
+    margin-bottom: 45px;
+    gap: 10px;
 }
 
 footer {

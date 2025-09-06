@@ -2,242 +2,244 @@
 <html lang="en" id="all">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:title" content="Máta's web - Projects" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fireroth.github.io" />
-  <meta property="og:image" content="https://fireroth.github.io/images/logo.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="300" />
-  <meta property="og:image:height" content="300" />
-  <meta property="og:image:alt" content="Máta's web Logo" />
-  <meta property="og:description" content="Personal website for projects and more" />
-  <meta name="description" content="Personal website for projects and more" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/css/reset.css" />
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css/classes.css" />
-  <link rel="stylesheet" href="/css/globalContent.css" />
-  <link rel="stylesheet" href="/css/responsive.css" />
-  <script defer src="/js/main.js"></script>
-  <script defer src="/js/skeleton.js"></script>
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Máta's web - Projects" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fireroth.github.io" />
+    <meta property="og:image" content="https://fireroth.github.io/images/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="Máta's web Logo" />
+    <meta property="og:description" content="Personal website for projects and more" />
+    <meta name="description" content="Personal website for projects and more" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/classes.css" />
+    <link rel="stylesheet" href="/css/globalContent.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <script defer src="/js/main.js"></script>
+    <script defer src="/js/skeleton.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <title>Máta's web - Projects</title>
+    <title>Máta's web - Projects</title>
 </head>
 
 <body>
-  <header>
-    <div class="navbar" id="navigationBar">
-      <div class="logo">
-        <a href="/"><img class="logo-img" src="/images/logo.png" alt="Logo" /></a>
-      </div>
-      <div class="links">
-        <a class="nav-desktop" href="/">Home</a>
-        <a class="nav-desktop active" href="/projects/">Projects</a>
-        <a class="nav-desktop" href="/contact/">Contact</a>
-        <a class="nav-mobile" href="#" onclick="openHamburgerNav()"><img class="nav-mobile" src="/images/nav-mobile.svg"
-            alt="Logo" /></a>
-      </div>
-    </div>
-    <div class="center-text">
-      <h1 class="land-page-h1">Projects</h1>
-    </div>
-  </header>
-  <div class="search-container">
-    <input type="text" id="searchInput" onkeyup="searchProjects()" placeholder="Search for projects..." />
-  </div>
-
-  <div class="projects" id="main-projects">
-    <h2 class="group-name">Main Projects:</h2>
-    
-    <div id="project-skeletons" class="project-skeleton-grid">
-      <div class="project-skeleton"></div>
-      <div class="project-skeleton"></div>
-      <div class="project-skeleton"></div>
-      <div class="project-skeleton"></div>
-      <div class="project-skeleton"></div>
-      <div class="project-skeleton"></div>
+    <header>
+        <div class="navbar" id="navigationBar">
+            <div class="logo">
+                <a href="/"><img class="logo-img" src="/images/logo.png" alt="Logo" /></a>
+            </div>
+            <div class="links">
+                <a class="nav-desktop" href="/">Home</a>
+                <a class="nav-desktop active" href="/projects/">Projects</a>
+                <a class="nav-desktop" href="/contact/">Contact</a>
+                <a class="nav-mobile" href="#" onclick="openHamburgerNav()"><img class="nav-mobile"
+                        src="/images/nav-mobile.svg" alt="Logo" /></a>
+            </div>
+        </div>
+        <div class="center-text">
+            <h1 class="land-page-h1">Projects</h1>
+        </div>
+    </header>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchProjects()" placeholder="Search for projects..." />
     </div>
 
-    <div class="project-grid">
-      <div class="project" data-tags="project, game, cpp, c++">
-        <img class="project-card-img" src="/images/cards/minecrap.png" alt="MineCrap" />
-        <div class="card">
-          <h3>MineCrap</h3>
-          <p>A simple voxel game similar to minecraft written in C++.</p>
-          <div class="tags">Tags: project, game, cpp, c++</div>
-          <a href="./minecrap/">View project</a>
-        </div>
-      </div>
+    <div class="projects" id="main-projects">
+        <h2 class="group-name">Main Projects:</h2>
 
-      <div class="project" data-tags="project, os, js">
-        <img class="project-card-img" src="/images/cards/jscriptos.png" alt="JScript OS" />
-        <div class="card">
-          <h3>JScript OS</h3>
-          <p>JavaScript based operating system in your browser </p>
-          <div class="tags">Tags: project, os, js</div>
-          <a href="https://fireroth.is-a.dev/JScript-OS/">View project</a>
+        <div id="project-skeletons" class="project-skeleton-grid">
+            <div class="project-skeleton"></div>
+            <div class="project-skeleton"></div>
+            <div class="project-skeleton"></div>
+            <div class="project-skeleton"></div>
+            <div class="project-skeleton"></div>
+            <div class="project-skeleton"></div>
         </div>
-      </div>
 
-      <div class="project" data-tags="project, game, python">
-        <img class="project-card-img" src="/images/cards/commandMiner2.png" alt="Command Miner 2" />
-        <div class="card">
-          <h3>Command Miner 2</h3>
-          <p>Rewrite of Command Miner in Python.</p>
-          <div class="tags">Tags: project, game, python</div>
-          <a href="./cmdminer2/">View project</a>
-        </div>
-      </div>
+        <div class="project-grid">
+            <div class="project" data-tags="project, game, cpp, c++">
+                <img class="project-card-img" src="/images/cards/minecrap.png" alt="MineCrap" />
+                <div class="card">
+                    <h3>MineCrap</h3>
+                    <p>A simple voxel game similar to minecraft written in C++.</p>
+                    <div class="tags">Tags: project, game, cpp, c++</div>
+                    <a href="./minecrap/">View project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="project, game, batch">
-        <img class="project-card-img" src="/images/cards/commandMiner.png" alt="Command Miner" />
-        <div class="card">
-          <h3>Command Miner</h3>
-          <p>A complex command-based game written in Batch.</p>
-          <div class="tags">Tags: project, game, batch</div>
-          <a href="./cmdminer/">View project</a>
-        </div>
-      </div>
+            <div class="project" data-tags="project, os, js">
+                <img class="project-card-img" src="/images/cards/jscriptos.png" alt="JScript OS" />
+                <div class="card">
+                    <h3>JScript OS</h3>
+                    <p>JavaScript based operating system in your browser </p>
+                    <div class="tags">Tags: project, os, js</div>
+                    <a href="https://fireroth.is-a.dev/JScript-OS/">View project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="project, websites, html">
-        <img class="project-card-img" src="/images/cards/websites.png" alt="Websites for Boredom" />
-        <div class="card">
-          <h3>Websites for Boredom</h3>
-          <p>Collection of websites to explore when you are bored.</p>
-          <div class="tags">Tags: project, websites, html</div>
-          <a href="../websites/">View project</a>
-        </div>
-      </div>
+            <div class="project" data-tags="project, game, python">
+                <img class="project-card-img" src="/images/cards/commandMiner2.png" alt="Command Miner 2" />
+                <div class="card">
+                    <h3>Command Miner 2</h3>
+                    <p>Rewrite of Command Miner in Python.</p>
+                    <div class="tags">Tags: project, game, python</div>
+                    <a href="./cmdminer2/">View project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="project, game, batch">
-        <img class="project-card-img" src="/images/cards/batchCollector.png" alt="Batch Collector" />
-        <div class="card">
-          <h3>Batch Collector</h3>
-          <p>Top-view game written in Batch, currently in beta.</p>
-          <div class="tags">Tags: project, game, batch</div>
-          <a href="./batchcollector/">View project</a>
-        </div>
-      </div>
+            <div class="project" data-tags="project, game, batch">
+                <img class="project-card-img" src="/images/cards/commandMiner.png" alt="Command Miner" />
+                <div class="card">
+                    <h3>Command Miner</h3>
+                    <p>A complex command-based game written in Batch.</p>
+                    <div class="tags">Tags: project, game, batch</div>
+                    <a href="./cmdminer/">View project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="project, addon">
-        <img class="project-card-img" src="/images/cards/classicubePlus.png" alt="ClassiCube PLUS" />
-        <div class="card">
-          <h3>ClassiCube PLUS</h3>
-          <p>Expansion pack for ClassiCube sandbox.</p>
-          <div class="tags">Tags: project, addon</div>
-          <a href="./classicubeplus/">View project</a>
-        </div>
-      </div>
+            <div class="project" data-tags="project, websites, html">
+                <img class="project-card-img" src="/images/cards/websites.png" alt="Websites for Boredom" />
+                <div class="card">
+                    <h3>Websites for Boredom</h3>
+                    <p>Collection of websites to explore when you are bored.</p>
+                    <div class="tags">Tags: project, websites, html</div>
+                    <a href="../websites/">View project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="project, tool, batch">
-        <img class="project-card-img" src="/images/cards/commandMenu.png" alt="Command Menu" />
-        <div class="card">
-          <h3>Command Menu</h3>
-          <p>A simple utility menu written in Batch and VBS.</p>
-          <div class="tags">Tags: project, tool, batch</div>
-          <a href="./cmdmenu/">View project</a>
+            <div class="project" data-tags="project, game, batch">
+                <img class="project-card-img" src="/images/cards/batchCollector.png" alt="Batch Collector" />
+                <div class="card">
+                    <h3>Batch Collector</h3>
+                    <p>Top-view game written in Batch, currently in beta.</p>
+                    <div class="tags">Tags: project, game, batch</div>
+                    <a href="./batchcollector/">View project</a>
+                </div>
+            </div>
+
+            <div class="project" data-tags="project, addon">
+                <img class="project-card-img" src="/images/cards/classicubePlus.png" alt="ClassiCube PLUS" />
+                <div class="card">
+                    <h3>ClassiCube PLUS</h3>
+                    <p>Expansion pack for ClassiCube sandbox.</p>
+                    <div class="tags">Tags: project, addon</div>
+                    <a href="./classicubeplus/">View project</a>
+                </div>
+            </div>
+
+            <div class="project" data-tags="project, tool, batch">
+                <img class="project-card-img" src="/images/cards/commandMenu.png" alt="Command Menu" />
+                <div class="card">
+                    <h3>Command Menu</h3>
+                    <p>A simple utility menu written in Batch and VBS.</p>
+                    <div class="tags">Tags: project, tool, batch</div>
+                    <a href="./cmdmenu/">View project</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <div class="projects" id="side-projects">
-    <h2 class="group-name">Side Projects:</h2>
-    <div class="project-grid">
-      <div class="project" data-tags="side, tool, python">
-        <div class="card">
-          <h3>ASCII echo fixer</h3>
-          <p>Print ASCII art in batch with echo command</p>
-          <div class="tags">Tags: side, tool, python</div>
-          <a href="https://gist.github.com/Fireroth/69f44d32b6f95a791f7637a96f87b34f" target="_blank">View on GitHub</a>
-        </div>
-      </div>
+    <div class="projects" id="side-projects">
+        <h2 class="group-name">Side Projects:</h2>
+        <div class="project-grid">
+            <div class="project" data-tags="side, tool, python">
+                <div class="card">
+                    <h3>ASCII echo fixer</h3>
+                    <p>Print ASCII art in batch with echo command</p>
+                    <div class="tags">Tags: side, tool, python</div>
+                    <a href="https://gist.github.com/Fireroth/69f44d32b6f95a791f7637a96f87b34f" target="_blank">View on
+                        GitHub</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="side, tool, batch">
-        <div class="card">
-          <h3>Folder Locker</h3>
-          <p>Create a locked folder protected with password</p>
-          <div class="tags">Tags: side, tool, batch</div>
-          <a href="./side-projects/folderlocker/">View side project</a>
-        </div>
-      </div>
+            <div class="project" data-tags="side, tool, batch">
+                <div class="card">
+                    <h3>Folder Locker</h3>
+                    <p>Create a locked folder protected with password</p>
+                    <div class="tags">Tags: side, tool, batch</div>
+                    <a href="./side-projects/folderlocker/">View side project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags=" side, tool, batch">
-        <div class="card">
-          <h3>Custom file size gen.</h3>
-          <p>Generate a file of any size</p>
-          <div class="tags">Tags: side, tool, batch</div>
-          <a href="./side-projects/csfg/">View side project</a>
-        </div>
-      </div>
+            <div class="project" data-tags=" side, tool, batch">
+                <div class="card">
+                    <h3>Custom file size gen.</h3>
+                    <p>Generate a file of any size</p>
+                    <div class="tags">Tags: side, tool, batch</div>
+                    <a href="./side-projects/csfg/">View side project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="side, vbs">
-        <div class="card">
-          <h3>Errors</h3>
-          <p>Funny errors made in VBS</p>
-          <div class="tags">Tags: side, vbs</div>
-          <a href="./side-projects/errors/">View side project</a>
+            <div class="project" data-tags="side, vbs">
+                <div class="card">
+                    <h3>Errors</h3>
+                    <p>Funny errors made in VBS</p>
+                    <div class="tags">Tags: side, vbs</div>
+                    <a href="./side-projects/errors/">View side project</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <div class="projects" id="sottau-projects">
-    <h2 class="group-name">SOTTAU:</h2>
-    <p class="sottauDesc">Some Other Things That Are Useless:</p>
-    <div class="project-grid">
-      
-      <div class="project" data-tags="sottau, webgl, js">
-        <div class="card">
-          <h3>WebGL Cube</h3>
-          <p>Just a rotating cube &#58;&#41;</p>
-          <div class="tags">Tags: sottau, webgl, js</div>
-          <a href="../sottau/webGLCube/">View useless project</a>
-        </div>
-      </div>
+    <div class="projects" id="sottau-projects">
+        <h2 class="group-name">SOTTAU:</h2>
+        <p class="sottauDesc">Some Other Things That Are Useless:</p>
+        <div class="project-grid">
 
-      <div class="project" data-tags="sottau, html">
-        <div class="card">
-          <h3>Live CSS Edit</h3>
-          <p>Really easy and stupid way to create live CSS edit</p>
-          <div class="tags">Tags: sottau, html</div>
-          <a href="../sottau/live.edit/">View useless project</a>
-        </div>
-      </div>
+            <div class="project" data-tags="sottau, webgl, js">
+                <div class="card">
+                    <h3>WebGL Cube</h3>
+                    <p>Just a rotating cube &#58;&#41;</p>
+                    <div class="tags">Tags: sottau, webgl, js</div>
+                    <a href="../sottau/webGLCube/">View useless project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="sottau, html">
-        <div class="card">
-          <h3>Text Spammer</h3>
-          <p>What can i say. It spams rainbow text...</p>
-          <div class="tags">Tags: sottau, html</div>
-          <a href="../sottau/text.spammer/">View useless project</a>
-        </div>
-      </div>
+            <div class="project" data-tags="sottau, html">
+                <div class="card">
+                    <h3>Live CSS Edit</h3>
+                    <p>Really easy and stupid way to create live CSS edit</p>
+                    <div class="tags">Tags: sottau, html</div>
+                    <a href="../sottau/live.edit/">View useless project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="sottau, html">
-        <div class="card">
-          <h3>Colors</h3>
-          <p>Idk just spam the keyboard</p>
-          <div class="tags">Tags: sottau, html</div>
-          <a href="../sottau/color/">View useless project</a>
-        </div>
-      </div>
+            <div class="project" data-tags="sottau, html">
+                <div class="card">
+                    <h3>Text Spammer</h3>
+                    <p>What can i say. It spams rainbow text...</p>
+                    <div class="tags">Tags: sottau, html</div>
+                    <a href="../sottau/text.spammer/">View useless project</a>
+                </div>
+            </div>
 
-      <div class="project" data-tags="">
-        <div class="card">
-          <h3>Deprecated/Old Files</h3>
-          <p>All unused or old files.</p>
-          <div class="tags">Tags: none</div>
-          <a href="./old/">View files</a>
+            <div class="project" data-tags="sottau, html">
+                <div class="card">
+                    <h3>Colors</h3>
+                    <p>Idk just spam the keyboard</p>
+                    <div class="tags">Tags: sottau, html</div>
+                    <a href="../sottau/color/">View useless project</a>
+                </div>
+            </div>
+
+            <div class="project" data-tags="">
+                <div class="card">
+                    <h3>Deprecated/Old Files</h3>
+                    <p>All unused or old files.</p>
+                    <div class="tags">Tags: none</div>
+                    <a href="./old/">View files</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <footer class="globalFooter"> | Check out my <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!</footer>
+    <footer class="globalFooter"> | Check out my <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!
+    </footer>
 </body>
 
 </html>
