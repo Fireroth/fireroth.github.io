@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" id="all">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Máta's web - Side Projects" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fireroth.github.io" />
+    <meta property="og:image" content="https://fireroth.github.io/images/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="Máta's web Logo" />
+    <meta property="og:description" content="Personal website for projects and more" />
+    <meta name="description" content="Personal website for projects and more" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/classes.css" />
+    <link rel="stylesheet" href="/css/globalContent.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <script defer src="/js/main.js"></script>
+    <script defer src="/js/linkGen.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Máta's web - Side Projects</title>
+
+    <style>
+        .app {
+            margin-top: 40px;
+        }
+
+        .link-generator input {
+            width: calc(100% - 12px*2);
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            background: #1c1c2d;
+            color: #fff;
+            height: 25px;
+        }
+
+        .link-generator input::placeholder {
+            color: #aaa;
+        }
+
+        .link-generator button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background: #5a5acf;
+            color: #fff;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .link-generator button:hover {
+            background: #4747af;
+            transform: translateY(-2px);
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 12px;
+            width: calc(100% - 12px*2);
+            background: #1c1c2d;
+            border-radius: 6px;
+            word-break: break-all;
+        }
+
+        .result span {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .result a {
+            color: #8a8aff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .result a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: #f75632;
+            font-size: 14px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .input-row select {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 6px;
+            width: 100px;
+            height: 25px;
+            border: none;
+            outline: none;
+            background: #1c1c2d;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .input-row select option {
+            background: #1c1c2d;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar" id="navigationBar">
+            <div class="logo">
+              <a href="/"><img class="logo-img" src="/images/logo.png" alt="Logo" /></a>
+            </div>
+            <div class="links">
+              <a class="nav-desktop" href="/">Home</a>
+              <a class="nav-desktop active" href="/projects/">Projects</a>
+              <a class="nav-desktop" href="/contact/">Contact</a>
+              <a class="nav-mobile" href="javascript:void(0);" onclick="openHamburgerNav()"><img class="nav-mobile" src="/images/nav-mobile.svg" alt="Logo" /></a>
+            </div>
+          </div>
+    </header>
+
+    <div class="project-container">
+        <div class="project-header">
+            <h1>Link Generator</h1>
+            <p>Generate any hypertext link.</p>
+        </div>
+
+        <div class="project-details">
+
+            <div class="project-info">
+                <h2>Project Information</h2>
+                <p>Generate any hypertext link for browsers without URL address bar</p>
+                <p>This is a side projects, don't expect updates</p>
+            </div>
+        </div>
+
+        <div class="app project-info">
+            <div class="link-generator">
+                <div class="input-row">
+                    <select id="protocolSelect">
+                        <option value="https://">https://</option>
+                        <option value="http://">http://</option>
+                        <option value="custom">custom</option>
+                    </select>
+
+                    <input type="text" id="urlInput" placeholder="example.com or 192.168.1.1"/>
+                </div>
+
+                <button onclick="generateLink()">Generate Link</button>
+
+                <div class="result">
+                    <span>Generated link:</span>
+                    <div id="output"><span>Click Generate link button.</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="globalFooter"> | Check out my <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!</footer>
+</body>
+
+</html>
