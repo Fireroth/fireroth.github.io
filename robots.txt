@@ -1,10 +1,4 @@
 User-agent: *
-Disallow: /websites/target_blank/
-Disallow: /sottau/color/
-Disallow: /sottau/
-Disallow: /projects/side-projects/
-Disallow: /sottau/live.edit/
-Disallow: /sottau/text.spammer/
-Disallow: /WebDownload/
+Allow: /
 
 Sitemap: https://fireroth.is-a.dev/sitemap.xml

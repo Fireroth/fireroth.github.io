@@ -31,19 +31,13 @@
 	<meta name="twitter:image" content="https://www.fireroth.com/images/logo.png">
 	<!-- GLOBAL_HEAD_END -->
 
-    <title>Máta - Side Project</title>
-    <link rel="canonical" href="https://www.fireroth.com/projects/side-projects/errors/">
+    <title>Máta - Project Link Generator</title>
+    <link rel="stylesheet" href="/css/linkgenerator.css">
+    <script defer src="/js/linkgenerator.js"></script>
+    <link rel="canonical" href="https://www.fireroth.com/projects/linkgenerator/">
 </head>
 
 <body>
-    <svg style="display: none;">
-        <symbol id="icon-download" viewBox="0 0 24 24">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-        </symbol>
-    </svg>
-
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="/" class="nav-logo">
@@ -65,61 +59,66 @@
     <!-- Mobile menu -->
     <div class="nav-mobile">
         <a href="/" class="nav-link">Home</a>
-        <a href="/projects/" class="nav-link active">Projects</a>
+        <a href="/projects/" class="nav-link">Projects</a>
         <a href="/about/" class="nav-link">About</a>
         <a href="/contact/" class="nav-link">Contact</a>
     </div>
 
     <div class="page-header">
         <div class="container">
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap-reverse;">
-                <div class="page-header-content reveal" style="flex: 1; min-width: 300px;">
-                    <p class="section-label back-label"><a href="/projects/side-projects/" class="btn btn-secondary">&lt;-- Back to Side Projects</a></p>
-                    <h1 class="page-header-title"><span class="text-gradient">Errors</span></h1>
-                    <p class="page-header-desc">TODO</p>
-                    <div class="project-tags" style="margin-top: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <span class="tag">VBScript</span>
-                    </div>
-                </div>
+            <div class="page-header-content reveal">
+                <p class="section-label back-label"><a href="/projects/" class="btn btn-secondary">&lt;-- Back to Projects</a></p>
+                <h1 class="page-header-title"><span class="text-gradient">Link Generator</span></h1>
+                <p class="page-header-desc">Generate any hypertext link for browsers without URL address bar.</p>  
             </div>
         </div>
     </div>
 
-    <section style="padding-top: 0; padding-bottom: 6rem;">
+
+    <section style="padding-top: 0;">
         <div class="container">
-            <div class="download-card reveal" style="padding: clamp(1.5rem, 5vw, 3rem);">
-                <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Releases</h2>
-                <div class="dl-table-container">
-                    <div style="overflow-x: auto;">
-                        <table class="dl-table">
-                            <thead>
-                                <tr>
-                                    <th>Version</th>
-                                    <th>Platform</th>
-                                    <th>Size</th>
-                                    <th style="text-align: right;">Link</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="td-primary">v1.0</td>
-                                    <td>PLACEHOLDER</td>
-                                    <td class="td-mono">size kB</td>
-                                    <td style="text-align: right;"><a href="/WebDownload/" class="btn-ghost" style="font-size: 0.9rem;">Download</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="td-primary">v1.0</td>
-                                    <td>PLACEHOLDER</td>
-                                    <td class="td-mono">size kB</td>
-                                    <td style="text-align: right;"><a href="/WebDownload/" class="btn-ghost" style="font-size: 0.9rem;">Download</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div class="link-generator-app reveal" style="transition: opacity 0.3s ease, transform 0.3s ease;">
+                <div class="generator-input-group">
+                    <select class="protocol-dropdown" id="protocolSelect">
+                        <option value="https://">https://</option>
+                        <option value="http://">http://</option>
+                        <option value="ftp://">ftp://</option>
+                        <option value="ws://">ws://</option>
+                        <option value="wss://">wss://</option>
+                        <option value="custom">custom</option>
+                    </select>
+                    <input 
+                        type="text" 
+                        class="domain-input" 
+                        id="domainInput" 
+                        placeholder="example.com or 192.168.1.1">
+                </div>
+
+                <div class="custom-protocol-group" id="customProtocolGroup" style="display: none;">
+                    <input 
+                        type="text" 
+                        class="custom-protocol-input" 
+                        id="customProtocol" 
+                        placeholder="Enter custom protocol (e.g., ftp:// or custom://)">
+                </div>
+
+                <button class="btn btn-primary generate-btn" id="generateBtn">Generate Link</button>
+
+                <div class="generator-output">
+                    <p class="output-label">Generated link:</p>
+                    <p class="output-message" id="outputMessage">Click Generate link button.</p>
+                    <div class="generated-link-box" id="generatedLinkBox" style="display: none;">
+                        <div class="link-display-container">
+                            <a class="generated-hypertext-link" id="generatedHypertextLink" target="_blank" rel="noopener"></a>
+                        </div>
+                        <button class="btn btn-secondary copy-btn" id="copyBtn">Copy Link</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <footer class="footer">
         <div class="container">

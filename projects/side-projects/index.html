@@ -1,28 +1,296 @@
 <!DOCTYPE html>
-<html lang="en" id="all">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Máta's web - Side Projects" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fireroth.github.io" />
-    <meta property="og:image" content="https://fireroth.github.io/images/logo.png"/>
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="300" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:image:alt" content="Máta's web Logo" />
-    <meta property="og:description" content="Personal website for projects and more"/>
-    <meta name="description" content="Personal website for projects and more" />
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/globalContent.css" />
-    <title>Máta's web - Side Projects</title>
+<html lang="en">
 
-    <meta http-equiv="refresh" content="0; URL=/projects/#side-projects" />
-  </head>
+<head>
+	<!-- GLOBAL_HEAD_START -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="index, follow">
+	<link rel="icon" href="/favicon.ico">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/classes.css">
+	<link rel="stylesheet" href="/css/responsive.css">
+	<script defer src="/js/scroll.js"></script>
+	<script defer src="/js/navbar.js"></script>
+	<meta name="description" content="Personal website for projects and more" />
 
-  <body>
-    <p>Redirecting...</p>
-  </body>
+	<meta property="og:site_name" content="Máta's web" />
+	<meta property="og:title" content="Máta's web" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.fireroth.com" />
+	<meta property="og:image" content="https://www.fireroth.com/images/logo.png" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="300" />
+	<meta property="og:image:height" content="300" />
+	<meta property="og:image:alt" content="Máta's web Logo" />
+	<meta property="og:description" content="Personal website for projects and more" />
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Máta's web">
+	<meta name="twitter:description" content="Personal website for projects and more">
+	<meta name="twitter:image" content="https://www.fireroth.com/images/logo.png">
+	<!-- GLOBAL_HEAD_END -->
+
+    <title>Máta - Projects</title>
+    <link rel="canonical" href="https://www.fireroth.com/projects/side-projects/">
+</head>
+
+<body>
+    <svg style="display: none;">
+        <symbol id="icon-github" viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23A11.51 11.51 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+        </symbol>
+
+        <symbol id="icon-external" viewBox="0 0 24 24">
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </symbol>
+    </svg>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Máta<span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/projects/" class="nav-link active">Projects</a></li>
+                <li><a href="/about/" class="nav-link">About</a></li>
+                <li><a href="/contact/" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/projects/" class="nav-link">Projects</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/contact/" class="nav-link">Contact</a>
+    </div>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="page-header-content reveal">
+                <p class="section-label back-label"><a href="/projects/" class="btn btn-secondary">&lt;-- Back to Projects</a></p>
+                <h1 class="page-header-title">Side <span class="text-gradient">Projects</span></h1>
+                <p class="page-header-desc">A collection of smaller projects I've worked on in my spare time.</p>
+            </div>
+        </div>
+    </div>
+
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="projects-full-grid">
+                <div class="glass-card project-card reveal">
+                    <div class="project-card-header">
+                        <div class="project-card-icon">🔒</div>
+                        <div class="project-card-links">
+                            <a href="/projects/side-projects/folderlocker/" class="project-link-btn" title="Open project page" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">Folder Locker</h3>
+                        <p class="project-desc">Create a locked folder protected with password.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Batch</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card reveal">
+                    <div class="project-card-header">
+                        <div class="project-card-icon">📁</div>
+                        <div class="project-card-links">
+                            <a href="/projects/side-projects/csfg/" class="project-link-btn" title="Open project page" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">Custom file size generator</h3>
+                        <p class="project-desc">Generate a file of any size.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Batch</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card reveal">
+                    <div class="project-card-header">
+                        <div class="project-card-icon">❌</div>
+                        <div class="project-card-links">
+                            <a href="/projects/side-projects/errors/" class="project-link-btn" title="Open project page" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">Errors</h3>
+                        <p class="project-desc">Funny errors made in VBScript.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">VBScript</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card reveal">
+                    <div class="project-card-header">
+                        <div class="project-card-icon">☣️</div>
+                        <div class="project-card-links">
+                            <a href="/projects/side-projects/irer/" class="project-link-btn" title="Open project page" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">IRER</h3>
+                        <p class="project-desc">A prank virus. My first project ever.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Batch</span>
+                        <span class="tag tag-cyan">VBScript</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card reveal">
+                    <div class="project-card-header">
+                        <div class="project-card-icon">⚙️</div>
+                        <div class="project-card-links">
+                            <a href="/projects/side-projects/live.edit/" class="project-link-btn" title="Open project page" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">Live CSS Edit</h3>
+                        <p class="project-desc">Really easy and stupid way to create live CSS edits in the browser.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag tag-cyan">CSS</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card reveal">
+                    <div class="project-card-header">
+                        <div class="project-card-icon">📜</div>
+                        <div class="project-card-links">
+                            <a href="/projects/side-projects/text.spammer/" class="project-link-btn" title="Open project page" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">Text Spammer</h3>
+                        <p class="project-desc">What can i say. It spams rainbow text...</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag tag-cyan">CSS</span>
+                        <span class="tag tag-pink">JavaScript</span>
+
+                    </div>
+                </div>
+
+                <div class="glass-card project-card reveal">
+                    <div class="project-card-header">
+                        <div class="project-card-icon">🟨</div>
+                        <div class="project-card-links">
+                            <a href="/projects/side-projects/color/" class="project-link-btn" title="Open project page" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">Color Generator</h3>
+                        <p class="project-desc">Generates random colors and displays the hex code.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag tag-pink">JavaScript</span>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-brand-logo">fireroth.com</div>
+                        <p class="footer-brand-desc">Building stuff just for fun.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/Fireroth" class="footer-social-link" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23A11.51 11.51 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                </svg>
+                            </a>
+                            <a href="https://discord.com/users/486984278840836106" class="footer-social-link" target="_blank" rel="noopener" title="Discord">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                    <path d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.249a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.249.077.077 0 00-.079-.037 19.736 19.736 0 00-4.885 1.515.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.056 19.9 19.9 0 006.034 3.051.077.077 0 00.084-.027c.465-.63.88-1.295 1.226-1.994a.076.076 0 00-.041-.105 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 01.078.009c.12.099.246.197.373.291a.077.077 0 01-.006.128 12.299 12.299 0 01-1.873.891.076.076 0 00-.04.106c.36.698.775 1.363 1.225 1.993a.076.076 0 00.084.028 19.836 19.836 0 006.034-3.051.077.077 0 00.031-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.028zM8.02 15.331c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.211 0 2.167 1.095 2.157 2.418 0 1.334-.956 2.419-2.157 2.419zm7.974 0c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.211 0 2.167 1.095 2.157 2.418 0 1.334-.946 2.419-2.157 2.419z" />
+                                </svg>
+                            </a>
+                            <a href="https://gravatar.com/fireroth42" class="footer-social-link" target="_blank" rel="noopener" title="Gravatar">
+                                <svg viewBox="0 0 256 256" fill="currentColor" width="16" height="16">
+                                    <path d="M128 0a25.6 25.6 0 0 0-25.6 25.6v89.6a25.6 25.6 0 0 0 51.2 0V55.6a76.8 76.8 0 1 1-79.9 18.1 25.6 25.6 0 1 0-36.2-36.2A128 128 0 1 0 128 0"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="footer-col-title">Navigation</p>
+                        <ul class="footer-links">
+                            <li><a href="/index.html" class="footer-link">Home</a></li>
+                            <li><a href="/projects/" class="footer-link">Projects</a></li>
+                            <li><a href="/about/" class="footer-link">About</a></li>
+                            <li><a href="/contact/" class="footer-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="footer-col-title">Say hi</p>
+                        <ul class="footer-links">
+                            <li><a href="mailto:hi@fireroth.com" class="footer-link">hi@fireroth.com</a></li>
+                            <li><a href="#" class="footer-link">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copy">© 2026 Máta. All rights reserved.</p>
+                    <p class="footer-made">Built with <span>❤️</span> and vanilla CSS.</p>
+                </div>
+            </div>
+        </div>
+	</footer>
+</body>
+
 </html>

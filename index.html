@@ -1,78 +1,320 @@
 <!DOCTYPE html>
-<html lang="en" id="all">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Máta's web" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fireroth.github.io" />
-    <meta property="og:image" content="https://fireroth.github.io/images/logo.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="300" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:image:alt" content="Máta's web Logo" />
-    <meta property="og:description" content="Personal website for projects and more" />
-    <meta name="description" content="Personal website for projects and more" />
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/classes.css" />
-    <link rel="stylesheet" href="/css/globalContent.css" />
-    <link rel="stylesheet" href="/css/responsive.css" />
-    <script defer src="/js/main.js"></script>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Máta's web - Home</title>
+    <!-- GLOBAL_HEAD_START -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="index, follow">
+	<link rel="icon" href="/favicon.ico">
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/classes.css">
+	<link rel="stylesheet" href="/css/responsive.css">
+	<script defer src="/js/scroll.js"></script>
+	<script defer src="/js/navbar.js"></script>
+	<meta name="description" content="Personal website for projects and more" />
+
+	<meta property="og:site_name" content="Máta's web" />
+	<meta property="og:title" content="Máta's web" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.fireroth.com" />
+	<meta property="og:image" content="https://www.fireroth.com/images/logo.png" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="300" />
+	<meta property="og:image:height" content="300" />
+	<meta property="og:image:alt" content="Máta's web Logo" />
+	<meta property="og:description" content="Personal website for projects and more" />
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Máta's web">
+	<meta name="twitter:description" content="Personal website for projects and more">
+	<meta name="twitter:image" content="https://www.fireroth.com/images/logo.png">
+	<!-- GLOBAL_HEAD_END -->
+
+    <title>Máta - Developer & Creator</title>
+    <script defer src="/js/background.js"></script>
+    <script defer src="/js/typing.js"></script>
+    <link rel="canonical" href="https://www.fireroth.com/">
 </head>
 
 <body>
-    <header>
-        <div class="navbar" id="navigationBar">
-            <div class="logo">
-                <a href="/"><img class="logo-img" src="/images/logo.png" alt="Logo" /></a>
-            </div>
-            <div class="links">
-                <a class="nav-desktop active" href="/">Home</a>
-                <a class="nav-desktop" href="/projects/">Projects</a>
-                <a class="nav-desktop" href="/contact/">Contact</a>
-                <a class="nav-mobile" href="#" onclick="openHamburgerNav()"><img class="nav-mobile" src="/images/nav-mobile.svg" alt="Logo" /></a>
-            </div>
-        </div>
+    <svg style="display: none;">
+        <symbol id="icon-github" viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23A11.51 11.51 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+        </symbol>
 
-        <div class="center-text">
-            <h1 class="land-page-h1">Hello</h1>
+        <symbol id="icon-external" viewBox="0 0 24 24">
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+        </symbol>
+    </svg>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Máta<span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="/projects/" class="nav-link">Projects</a></li>
+                <li><a href="/about/" class="nav-link">About</a></li>
+                <li><a href="/contact/" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </header>
-    <div class="about-home" id="home">
-        <p>
-            This is my personal website where I post my projects and more.<br />
-            You should check out
-            <a href="./projects/minecrap/" style="color: #8a8aff">MineCrap</a> since it's my
-            biggest project so far &#59;&#41;<br />
-            If you encounter any bugs or issues
-            <a href="https://github.com/Fireroth/fireroth.github.io/issues" style="color: #8a8aff">create an issue on GitHub</a>.
-            Thanks!
-        </p>
-        <div class="buttons">
-            <a href="./projects/">View Projects</a>
-            <a href="https://github.com/Fireroth/fireroth.github.io" target="_blank">View on GitHub</a>
-        </div>
+    </nav>
+
+    <!-- Mobile nav -->
+    <div class="nav-mobile">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="/projects/" class="nav-link">Projects</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/contact/" class="nav-link">Contact</a>
     </div>
-    <section class="update-log">
-        <h2>Update Log</h2>
-        <ul>
-            <li>[30. 12. 2025] Added new side project: Link Generator</li>
-            <li>[26. 11. 2025] Updated MineCrap to version 1.4</li>
-            <li>[7. 9. 2025] Project card placement fixed</li>
-            <li>[6. 9. 2025] Project card pop-up after fully loaded</li>
-            <li>[29. 8. 2025] Updated MineCrap to version 1.3</li>
-        </ul>
+
+    <section class="main-header" id="home">
+        <canvas id="main-header-canvas"></canvas>
+        <div class="main-header-glow main-header-glow-1"></div>
+        <div class="main-header-glow main-header-glow-2"></div>
+        <div class="main-header-glow main-header-glow-3"></div>
+
+        <div class="container">
+            <div class="main-header-content">
+                <h1 class="main-header-title display-xl">
+                    Hi, I'm <span class="text-gradient">Máta</span><br>I build things<br>
+                    <span class="typing-cursor"><span class="typing-text" data-phrases="[&quot;for fun.&quot;,&quot;to learn.&quot;]"></span></span>
+                </h1>
+
+                <p class="main-header-subtitle">
+                    I'm not a professional, I just really enjoy building stuff. Sometimes it works great, sometimes I
+                    learn a lot. Either way, I'm having fun.
+                </p>
+
+                <div class="main-header-actions">
+                    <a href="/projects/" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        View my work
+                    </a>
+                    <a href="/about/" class="btn btn-secondary">About me</a>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>scroll</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
     </section>
 
-    <!--<div class="themeSwitcherDiv">
-        <a id="dark" class="themeSwitcher" href="#"><img src="/images/themes.svg" alt="Light"></img></a>
-    </div>-->
-    <footer class="globalFooter"> | Check out my <a href="https://github.com/Fireroth" target="_blank">GitHub</a>!</footer>
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <p class="section-label">// featured work</p>
+                    <h2 class="section-title">Things I've built</h2>
+                    <p class="section-desc">A selection of my favourite recent projects.</p>
+                </div>
+                <a href="/projects/" class="btn btn-ghost">
+                    See all projects
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Card 1 -->
+                <div class="glass-card project-card reveal">
+                    <div class="project-card-header">
+                        <div class="project-card-icon"><img src="/images/minecrap_logo.png" alt="Project Icon"></div>
+                        <div class="project-card-links">
+                            <a href="https://github.com/Fireroth/MineCrap" class="project-link-btn" title="GitHub" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <use href="#icon-github"></use>
+                                </svg>
+                            </a>
+                            <a href="/projects/" class="project-link-btn" title="Open project page" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">Minecrap</h3>
+                        <p class="project-desc">A simple voxel game similar to Minecraft written in C++.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag tag-cyan">OpenGL</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card project-card reveal reveal-delay-2">
+                    <div class="project-card-header">
+                        <div class="project-card-icon">🌐</div>
+                        <div class="project-card-links">
+                            <a href="https://github.com/Fireroth/JScript-OS" class="project-link-btn" title="GitHub" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <use href="#icon-github"></use>
+                                </svg>
+                            </a>
+                            <a href="https://fireroth.is-a.dev/JScript-OS/" class="project-link-btn" title="Open project page" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">JScript OS</h3>
+                        <p class="project-desc">JavaScript based operating system in your browser.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag tag-pink">Interact.js</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card project-card reveal reveal-delay-3">
+                    <div class="project-card-header">
+                        <div class="project-card-icon"><img src="/images/cm2_Logo.png" alt="Project Icon"></div>
+                        <div class="project-card-links">
+                            <a href="/projects/" class="project-link-btn" title="Open project page" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <use href="#icon-external"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="project-title">Command Miner 2</h3>
+                        <p class="project-desc">A quite complex command-based game written in python using Tkinter.</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag tag-green">Tkinter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="about-teaser">
+                <div class="about-visual reveal-left">
+                    <div class="about-avatar-wrap">
+                        <div class="about-avatar-ring"></div>
+                        <div class="about-avatar">
+                            <img src="/images/kindaMe.png" alt="Your Name" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text reveal-right">
+                    <p class="section-label">// who am I</p>
+                    <h2 class="section-title">Building ideas into<br /><span class="text-gradient">something real</span>
+                    </h2>
+
+                    <p class="section-desc" style="max-width: 100%">
+                        I'm a developer who enjoys figuring things out by actually building them. Whether it's working
+                        close to the hardware with microcontrollers, experimenting with custom UIs, or coding up my own
+                        projects from scratch, I like understanding how things work all the way through.
+                    </p>
+
+                    <div class="about-info-grid">
+                        <div class="about-info-item">
+                            <div class="about-info-label">Location</div>
+                            <div class="about-info-value">🇨🇿 Czech Republic</div>
+                        </div>
+                        <div class="about-info-item">
+                            <div class="about-info-label">Focus</div>
+                            <div class="about-info-value">Backend & UX</div>
+                        </div>
+                        <!--<div class="about-info-item">
+                            <div class="about-info-label">Languages</div>
+                            <div class="about-info-value">CZ / EN</div>
+                        </div>-->
+                    </div>
+
+                    <div class="main-header-actions">
+                        <!--<a href="/about/" class="btn btn-primary">
+                            More about me
+                        </a>-->
+                        <a href="/contact/" class="btn btn-primary">
+                            Contact me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-brand-logo">fireroth.com</div>
+                        <p class="footer-brand-desc">Building stuff just for fun.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/Fireroth" class="footer-social-link" target="_blank" rel="noopener" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23A11.51 11.51 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                </svg>
+                            </a>
+                            <a href="https://discord.com/users/486984278840836106" class="footer-social-link" target="_blank" rel="noopener" title="Discord">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                    <path d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.249a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.249.077.077 0 00-.079-.037 19.736 19.736 0 00-4.885 1.515.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.056 19.9 19.9 0 006.034 3.051.077.077 0 00.084-.027c.465-.63.88-1.295 1.226-1.994a.076.076 0 00-.041-.105 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.077-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 01.078.009c.12.099.246.197.373.291a.077.077 0 01-.006.128 12.299 12.299 0 01-1.873.891.076.076 0 00-.04.106c.36.698.775 1.363 1.225 1.993a.076.076 0 00.084.028 19.836 19.836 0 006.034-3.051.077.077 0 00.031-.055c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.028zM8.02 15.331c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.211 0 2.167 1.095 2.157 2.418 0 1.334-.956 2.419-2.157 2.419zm7.974 0c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.211 0 2.167 1.095 2.157 2.418 0 1.334-.946 2.419-2.157 2.419z" />
+                                </svg>
+                            </a>
+                            <a href="https://gravatar.com/fireroth42" class="footer-social-link" target="_blank" rel="noopener" title="Gravatar">
+                                <svg viewBox="0 0 256 256" fill="currentColor" width="16" height="16">
+                                    <path d="M128 0a25.6 25.6 0 0 0-25.6 25.6v89.6a25.6 25.6 0 0 0 51.2 0V55.6a76.8 76.8 0 1 1-79.9 18.1 25.6 25.6 0 1 0-36.2-36.2A128 128 0 1 0 128 0"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="footer-col-title">Navigation</p>
+                        <ul class="footer-links">
+                            <li><a href="/index.html" class="footer-link">Home</a></li>
+                            <li><a href="/projects/" class="footer-link">Projects</a></li>
+                            <li><a href="/about/" class="footer-link">About</a></li>
+                            <li><a href="/contact/" class="footer-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="footer-col-title">Say hi</p>
+                        <ul class="footer-links">
+                            <li><a href="mailto:hi@fireroth.com" class="footer-link">hi@fireroth.com</a></li>
+                            <li><a href="#" class="footer-link">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copy">© 2026 Máta. All rights reserved.</p>
+                    <p class="footer-made">Built with <span>❤️</span> and vanilla CSS.</p>
+                </div>
+            </div>
+        </div>
+	</footer>
 </body>
 
 </html>

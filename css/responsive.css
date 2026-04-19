@@ -1,32 +1,39 @@
-@media screen and (max-width: 650px) {
-  .project{
-    max-width: 100%;
-  }
+@media (max-width: 900px) {
+  .about-teaser { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-visual { order: -1; }
+  .about-avatar-wrap { margin: 0; }
+  .footer-main { grid-template-columns: 1fr 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
 }
 
-@media screen and (max-width: 550px) {
-    .nav-desktop{display: none;}
-    .navbar{height: 50px;}
-    .logo img{width: 40px; height: 40px;}
-    .nav-mobile{display: block; object-fit: contain; float: right;}
-    .links{margin: 0; background-color: #242435;}
-    .contact-text{font-size: 22px;}
+@media (max-width: 768px) {
+  :root { --section-pad: clamp(3rem, 6vw, 5rem); }
 
-    .navbar.responsive-nav {position: fixed; overflow: hidden; display: block; height: auto;}
-    .navbar.responsive-nav .icon {position: absolute;}
-    .navbar.responsive-nav a {display: block; text-align: center; padding-left: 0; padding-right: 0;}
-    .responsive-nav a {width: 100%; padding: 10px;}
-    .responsive-nav .logo{padding: 0; margin-left: 10px;}
-    .navbar.responsive-nav .links .nav-mobile img{margin-right: 10px;}
-    .links a:hover {background-color: unset; color: unset;}
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+
+  .projects-grid { grid-template-columns: 1fr; }
+  .projects-full-grid { grid-template-columns: 1fr; }
+
+  .footer-main { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .about-info-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 650px) {
+  .download-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+  .download-item .btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
-  @media screen and (max-width: 510px) {
-    .download-section th, .download-section td{padding: 4px;}
-  }
-
-  @media screen and (max-width: 365px) {
-    .land-page-h1{font-size: 70px;}
-    .group-name{font-size: 33px;}
-    .about-home p{font-size: 1.2rem;}
-  }
+@media (max-width: 480px) {
+  .section-header { flex-direction: column; align-items: flex-start; }
+}
