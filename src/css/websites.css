@@ -1,0 +1,56 @@
+.websitesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.websitesList a {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all var(--dur-base) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  min-height: 160px;
+  background-size: 64px;
+  background-position: center 30px;
+  background-repeat: no-repeat;
+}
+
+.websitesList a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-card);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-smooth);
+  pointer-events: none;
+}
+
+.websitesList a:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.websitesList a:hover::before {
+  opacity: 1;
+}
+
+.websitesList a span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}

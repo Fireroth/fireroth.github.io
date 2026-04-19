@@ -1,0 +1,232 @@
+.link-generator-app {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(135deg, rgba(59, 54, 98, 0.2) 0%, rgba(45, 40, 80, 0.2) 100%);
+    border: 1px solid rgba(107, 97, 205, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.custom-protocol-group {
+    display: flex;
+    gap: 0.75rem;
+    overflow: hidden;
+    border: 1px solid rgba(107, 97, 205, 0.4);
+    border-radius: 8px;
+    background: rgba(20, 15, 50, 0.6);
+}
+
+.custom-protocol-input {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    border: none;
+    background: transparent;
+    color: #e0d5ff;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.custom-protocol-input::placeholder {
+    color: rgba(224, 213, 255, 0.5);
+}
+
+.custom-protocol-input:focus {
+    outline: none;
+}
+
+.generator-input-group {
+    display: flex;
+    gap: 0.75rem;
+    overflow: hidden;
+    border: 1px solid rgba(107, 97, 205, 0.4);
+    border-radius: 8px;
+    background: rgba(20, 15, 50, 0.6);
+}
+
+.protocol-dropdown {
+    padding: 0.875rem 1.25rem;
+    border: none;
+    background: rgba(40, 35, 70, 0.8);
+    color: #e0d5ff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+
+.protocol-dropdown:hover {
+    background: rgba(60, 50, 100, 0.9);
+}
+
+.protocol-dropdown:focus {
+    outline: none;
+    background: rgba(80, 70, 120, 1);
+}
+
+.protocol-dropdown option {
+    background: #1a1530;
+    color: #e0d5ff;
+}
+
+.domain-input {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    border: none;
+    background: transparent;
+    color: #e0d5ff;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.domain-input::placeholder {
+    color: rgba(224, 213, 255, 0.5);
+}
+
+.domain-input:focus {
+    outline: none;
+}
+
+.generate-btn {
+    align-self: flex-start;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+.generator-output {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.output-label {
+    color: rgba(224, 213, 255, 0.8);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.output-message {
+    color: rgba(224, 213, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    text-align: center;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.generated-link-box {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 1.25rem;
+    overflow: hidden;
+    border: 1px solid rgba(107, 97, 205, 0.4);
+    border-radius: 8px;
+    background: rgba(20, 15, 50, 0.6);
+}
+
+.link-display-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.generated-hypertext-link {
+    color: #8d7ff0;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+    word-break: break-all;
+}
+
+.generated-hypertext-link:hover {
+    color: #b0a0ff;
+}
+
+.generated-hypertext-link:active {
+    color: #6b61cd;
+}
+
+.link-url-text {
+    color: rgba(224, 213, 255, 0.5);
+    font-size: 0.8rem;
+    margin: 0;
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    word-break: break-all;
+}
+
+.copy-btn {
+    border: none;
+}
+
+.copy-btn:hover {
+    background: rgba(80, 70, 120, 1);
+}
+
+.copy-btn:active {
+    background: rgba(100, 90, 140, 1);
+}
+
+@media (max-width: 768px) {
+    .link-generator-app {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .generator-input-group {
+        flex-direction: column;
+    }
+
+    .protocol-dropdown {
+        width: 100%;
+    }
+
+    .domain-input {
+        width: 100%;
+    }
+
+    .custom-protocol-group {
+        flex-direction: column;
+    }
+
+    .custom-protocol-input {
+        width: 100%;
+    }
+
+    .generate-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .generated-link-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .link-display-container {
+        order: 1;
+    }
+
+    .copy-btn {
+        width: 100%;
+        text-align: center;
+        order: 2;
+    }
+}

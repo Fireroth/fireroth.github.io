@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyd
+
+dist/github/*
+dist/main/*
+!dist/github/placeholder
+!dist/main/placeholder
+
+deploy/sitemap*.xml

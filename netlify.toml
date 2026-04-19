@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "https://fireroth.is-a.dev/:splat"
-  status = 301
-  force = true
