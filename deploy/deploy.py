@@ -24,6 +24,7 @@ TARGETS = {
 
 WEBSITE_ITEMS = [
     "index.html",
+    "favicon.ico",
     "404.html",
     "bg.html",
     "about",
@@ -36,7 +37,6 @@ WEBSITE_ITEMS = [
 
 
 def create_deployment_folder(target_name, robots_file, sitemap_file, cname_file):
-    """Create a deployment folder with robots.txt, sitemap.xml, and website files."""
     target_dir = os.path.join(DEPLOY_DIR, target_name)
 
     if os.path.exists(target_dir):
