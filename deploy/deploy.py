@@ -12,11 +12,13 @@ WEBSITE_ROOT = os.path.join(PROJECT_ROOT, "src")
 TARGETS = {
     "main": {
         "robots":  "robots_main.txt",
-        "sitemap": "sitemap_main.xml"
+        "sitemap": "sitemap_main.xml",
+        "cname": "CNAME_main"
     },
     "github": {
         "robots":  "robots_github.txt",
-        "sitemap": "sitemap_github.xml"
+        "sitemap": "sitemap_github.xml",
+        "cname": "CNAME_github"
     }
 }
 
@@ -33,7 +35,7 @@ WEBSITE_ITEMS = [
 ]
 
 
-def create_deployment_folder(target_name, robots_file, sitemap_file):
+def create_deployment_folder(target_name, robots_file, sitemap_file, cname_file):
     """Create a deployment folder with robots.txt, sitemap.xml, and website files."""
     target_dir = os.path.join(DEPLOY_DIR, target_name)
 
@@ -43,6 +45,10 @@ def create_deployment_folder(target_name, robots_file, sitemap_file):
 
     os.makedirs(target_dir, exist_ok=True)
     print(f"Created {target_name} folder at {target_dir}")
+
+    with open(os.path.join(target_dir, "placeholder"), "w") as f:
+        pass
+    print("Created placeholder file")
 
     # Copy robots.txt
     robots_src = os.path.join(SCRIPT_DIR, robots_file)
@@ -61,6 +67,15 @@ def create_deployment_folder(target_name, robots_file, sitemap_file):
         print(f"  Copied {sitemap_file} -> sitemap.xml")
     else:
         print(f"  WARNING: {sitemap_file} not found")
+
+    # Copy CNAME file (for GitHub Pages)
+    cname_src = os.path.join(SCRIPT_DIR, cname_file)
+    cname_dst = os.path.join(target_dir, "CNAME")
+    if os.path.exists(cname_src):
+        shutil.copy2(cname_src, cname_dst)
+        print(f"  Copied {cname_file} -> CNAME")
+    else:
+        print(f"  WARNING: {cname_file} not found")
 
     # Copy website files
     for item in WEBSITE_ITEMS:
@@ -95,7 +110,7 @@ def main():
     print()
     print("=== Building deployment folders ===")
     for target_name, files in TARGETS.items():
-        create_deployment_folder(target_name, files["robots"], files["sitemap"])
+        create_deployment_folder(target_name, files["robots"], files["sitemap"], files["cname"])
 
     print("Deployment complete!")
     print(f"Deployment folders created in: {DEPLOY_DIR}")
