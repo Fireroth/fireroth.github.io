@@ -36,4 +36,6 @@
 
 @media (max-width: 480px) {
   .section-header { flex-direction: column; align-items: flex-start; }
+  .about-avatar {width: 240px; height: 240px;}
+  .about-avatar-wrap {width: 240px;}
 }

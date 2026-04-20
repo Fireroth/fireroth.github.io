@@ -2,9 +2,15 @@ __pycache__/
 *.pyc
 *.pyd
 
+.env
+.venv
+
+.vscode/*
+!.vscode/settings.json
+
 dist/github/*
 dist/main/*
 !dist/github/placeholder
 !dist/main/placeholder
 
-deploy/sitemap*.xml
+deploy/sitemap_*.xml
