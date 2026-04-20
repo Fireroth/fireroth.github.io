@@ -964,7 +964,7 @@ body {
   opacity: 1;
 }
 
-.project-image-placeholder::before {
+.project-image-placeholder:has(img)::before {
   content: '';
   position: absolute;
   inset: 0;
