@@ -852,6 +852,15 @@ body {
   line-height: 1.7;
 }
 
+.page-header-desc a {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}
+
+.page-header-desc a:hover {
+  color: var(--accent-purple);
+}
+
 /* PROJECTS PAGE FILTERS */
 .filter-bar {
   display: flex;
