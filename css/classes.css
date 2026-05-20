@@ -941,7 +941,7 @@ body {
   transition: opacity var(--dur-base) var(--ease-smooth);
 }
 
-.project-image-wrap:hover .project-image-overlay {
+.project-card-full:hover .project-image-overlay {
   opacity: 1;
 }
 
