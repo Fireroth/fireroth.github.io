@@ -3,13 +3,13 @@
   border: 1px solid var(--glass-border);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 .glass-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
+  border-radius: 12px;
   transition: all var(--dur-base) var(--ease-smooth);
   position: relative;
   overflow: hidden;
@@ -28,12 +28,12 @@
 .glass-card:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-accent);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md), var(--shadow-glow);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .glass-card:hover::before {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 html {
@@ -103,7 +103,7 @@ body {
 .main-header-glow-1 {
   width: 500px;
   height: 500px;
-  background: rgba(124, 111, 234, 0.2);
+  background: rgba(59, 130, 246, 0.17);
   top: -100px;
   right: -100px;
 }
@@ -111,7 +111,7 @@ body {
 .main-header-glow-2 {
   width: 400px;
   height: 400px;
-  background: rgba(34, 211, 238, 0.12);
+  background: rgba(6, 182, 212, 0.1);
   bottom: 0;
   left: -50px;
 }
@@ -119,7 +119,7 @@ body {
 .main-header-glow-3 {
   width: 300px;
   height: 300px;
-  background: rgba(244, 114, 182, 0.1);
+  background: rgba(20, 184, 166, 0.06);
   top: 40%;
   left: 60%;
 }
@@ -190,7 +190,7 @@ body {
 }
 
 .logo-bracket {
-  color: #a78bfa;
+  color: var(--accent-cyan);
 }
 
 .nav-links {
@@ -380,7 +380,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.75rem;
-  border-radius: 10px;
+  border-radius: 8px;
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 500;
@@ -393,12 +393,12 @@ body {
 .btn-primary {
   background: var(--gradient-main);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(124, 111, 234, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(124, 111, 234, 0.55);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:active {
@@ -414,7 +414,7 @@ body {
 .btn-secondary:hover {
   border-color: var(--border-accent);
   background: rgba(124, 111, 234, 0.08);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .btn-ghost {
@@ -432,28 +432,6 @@ body {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-}
-
-.scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-secondary);
-  font-size: 0.75rem;
-  font-family: var(--font-mono);
-  letter-spacing: 0.1em;
-  animation: bounce 2s ease-in-out infinite;
-}
-
-.scroll-indicator svg {
-  width: 16px;
-  height: 16px;
-  opacity: 0.5;
 }
 
 .section-header {
@@ -587,7 +565,7 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 0.25rem 0.75rem;
-  border-radius: 7px;
+  border-radius: 6px;
   font-size: 0.75rem;
   font-weight: 500;
   font-family: var(--font-mono);
@@ -999,7 +977,7 @@ body {
 .download-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
+  border-radius: 12px;
   transition: all var(--dur-base) var(--ease-smooth);
   position: relative;
   overflow: hidden;
@@ -1186,8 +1164,8 @@ body {
 .skill-card:hover {
   border-color: var(--border-accent);
   background: var(--bg-card-hover);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md), var(--shadow-glow);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .skill-header {
@@ -1288,7 +1266,7 @@ body {
 .tech-tag:hover {
   background: rgba(124, 111, 234, 0.2);
   border-color: rgba(124, 111, 234, 0.4);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .interests-grid {
@@ -1309,8 +1287,8 @@ body {
 .interest-item:hover {
   background: rgba(124, 111, 234, 0.15);
   border-color: rgba(124, 111, 234, 0.35);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(124, 111, 234, 0.1);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .interest-item h3 {
@@ -1325,4 +1303,9 @@ body {
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
+}
+
+/* ======= TAB CONTENT ======= */
+.tab-content {
+  transition: opacity var(--dur-base) var(--ease-smooth), transform var(--dur-base) var(--ease-smooth);
 }

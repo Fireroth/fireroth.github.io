@@ -19,7 +19,7 @@ if (canvas) {
             this.vy = (Math.random() - 0.5) * 0.4;
             this.alpha = Math.random() * 0.5 + 0.1;
             this.radius = Math.random() * 1.5 + 1.0;
-            this.color = Math.random() > 0.5 ? '#7c6fea' : '#22d3ee';
+            this.color = Math.random() > 0.5 ? '#3b82f6' : '#22d3ee';
         }
         update() {
             this.x += this.vx;

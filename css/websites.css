@@ -8,7 +8,7 @@
 .websitesList a {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,8 +39,8 @@
 .websitesList a:hover {
   background-color: var(--bg-card-hover);
   border-color: var(--border-accent);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md), var(--shadow-glow);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .websitesList a:hover::before {
