@@ -3,8 +3,8 @@
     flex-direction: column;
     gap: 2rem;
     padding: 2rem 1.5rem;
-    background: linear-gradient(135deg, rgba(59, 54, 98, 0.2) 0%, rgba(45, 40, 80, 0.2) 100%);
-    border: 1px solid rgba(107, 97, 205, 0.2);
+    background: linear-gradient(135deg, rgba(7, 15, 32, 0.4) 0%, rgba(2, 8, 19, 0.4) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
     border-radius: 12px;
     backdrop-filter: blur(10px);
 }
@@ -13,9 +13,9 @@
     display: flex;
     gap: 0.75rem;
     overflow: hidden;
-    border: 1px solid rgba(107, 97, 205, 0.4);
+    border: 1px solid rgba(59, 130, 246, 0.4);
     border-radius: 8px;
-    background: rgba(20, 15, 50, 0.6);
+    background: rgba(7, 15, 32, 0.6);
 }
 
 .custom-protocol-input {
@@ -23,13 +23,13 @@
     padding: 0.875rem 1.25rem;
     border: none;
     background: transparent;
-    color: #e0d5ff;
+    color: var(--text-primary);
     font-size: 0.95rem;
     font-family: inherit;
 }
 
 .custom-protocol-input::placeholder {
-    color: rgba(224, 213, 255, 0.5);
+    color: rgba(148, 163, 184, 0.5);
 }
 
 .custom-protocol-input:focus {
@@ -40,16 +40,16 @@
     display: flex;
     gap: 0.75rem;
     overflow: hidden;
-    border: 1px solid rgba(107, 97, 205, 0.4);
+    border: 1px solid rgba(59, 130, 246, 0.4);
     border-radius: 8px;
-    background: rgba(20, 15, 50, 0.6);
+    background: rgba(7, 15, 32, 0.6);
 }
 
 .protocol-dropdown {
     padding: 0.875rem 1.25rem;
     border: none;
-    background: rgba(40, 35, 70, 0.8);
-    color: #e0d5ff;
+    background: rgba(12, 23, 48, 0.8);
+    color: var(--text-primary);
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
@@ -59,17 +59,17 @@
 }
 
 .protocol-dropdown:hover {
-    background: rgba(60, 50, 100, 0.9);
+    background: rgba(20, 38, 77, 0.9);
 }
 
 .protocol-dropdown:focus {
     outline: none;
-    background: rgba(80, 70, 120, 1);
+    background: rgba(30, 58, 114, 1);
 }
 
 .protocol-dropdown option {
-    background: #1a1530;
-    color: #e0d5ff;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
 }
 
 .domain-input {
@@ -77,13 +77,13 @@
     padding: 0.875rem 1.25rem;
     border: none;
     background: transparent;
-    color: #e0d5ff;
+    color: var(--text-primary);
     font-size: 0.95rem;
     font-family: inherit;
 }
 
 .domain-input::placeholder {
-    color: rgba(224, 213, 255, 0.5);
+    color: rgba(148, 163, 184, 0.5);
 }
 
 .domain-input:focus {
@@ -109,14 +109,14 @@
 }
 
 .output-label {
-    color: rgba(224, 213, 255, 0.8);
+    color: var(--text-secondary);
     font-size: 0.95rem;
     font-weight: 500;
     margin: 0;
 }
 
 .output-message {
-    color: rgba(224, 213, 255, 0.6);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     margin: 0;
     padding: 1rem;
@@ -135,9 +135,9 @@
     align-items: center;
     padding: 1.25rem;
     overflow: hidden;
-    border: 1px solid rgba(107, 97, 205, 0.4);
+    border: 1px solid rgba(59, 130, 246, 0.4);
     border-radius: 8px;
-    background: rgba(20, 15, 50, 0.6);
+    background: rgba(7, 15, 32, 0.6);
 }
 
 .link-display-container {
@@ -148,7 +148,7 @@
 }
 
 .generated-hypertext-link {
-    color: #8d7ff0;
+    color: var(--accent-purple);
     font-weight: 600;
     text-decoration: underline;
     font-size: 1rem;
@@ -157,15 +157,15 @@
 }
 
 .generated-hypertext-link:hover {
-    color: #b0a0ff;
+    color: var(--accent-cyan);
 }
 
 .generated-hypertext-link:active {
-    color: #6b61cd;
+    color: rgba(59, 130, 246, 0.8);
 }
 
 .link-url-text {
-    color: rgba(224, 213, 255, 0.5);
+    color: var(--text-secondary);
     font-size: 0.8rem;
     margin: 0;
     font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
@@ -177,11 +177,11 @@
 }
 
 .copy-btn:hover {
-    background: rgba(80, 70, 120, 1);
+    background: rgba(30, 58, 114, 1);
 }
 
 .copy-btn:active {
-    background: rgba(100, 90, 140, 1);
+    background: rgba(59, 130, 246, 1);
 }
 
 @media (max-width: 768px) {
