@@ -6,7 +6,7 @@
 }
 
 .websitesList a {
-  background-color: var(--bg-card);
+  background-color: var(--nord0-dark);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   display: flex;
@@ -30,17 +30,17 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--gradient-card);
+  background: linear-gradient(135deg, rgba(136, 192, 208, 0.06), rgba(129, 161, 193, 0.02));
   opacity: 0;
   transition: opacity var(--dur-base) var(--ease-smooth);
   pointer-events: none;
 }
 
 .websitesList a:hover {
-  background-color: var(--bg-card-hover);
+  background-color: var(--nord0);
   border-color: var(--border-accent);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--md-elevation-2);
 }
 
 .websitesList a:hover::before {
@@ -51,7 +51,7 @@
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.05rem;
-  color: var(--text-primary);
+  color: var(--nord5);
   z-index: 1;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }

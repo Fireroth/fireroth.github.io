@@ -1,3 +1,10 @@
+        <div class="footer-wave">
+            <svg viewBox="0 0 1920 250" xmlns="http://www.w3.org/2000/svg" class="footer-wave-svg" preserveAspectRatio="none">
+                <path d="M0 90C240 20 480 140 720 100S1200 10 1440 70 1920 60 1920 60V250H0V90z" class="footer-wave-path-1"></path>
+                <path d="M0 160C320 100 640 190 960 140S1600 90 1920 150V250H0V160z" class="footer-wave-path-2"></path>
+                <path d="M0 210C300 170 600 230 900 200S1500 160 1920 200V250H0V210z" class="footer-wave-path-3"></path>
+            </svg>
+        </div>
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-main">
@@ -34,10 +41,17 @@
                     </div>
 
                     <div>
+                        <p class="footer-col-title">Resources</p>
+                        <ul class="footer-links">
+                            <li><a href="https://m3.material.io/" class="footer-link">Material Design</a></li>
+                            <li><a href="https://www.nordtheme.com/" class="footer-link">Nord Theme</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
                         <p class="footer-col-title">Say hi</p>
                         <ul class="footer-links">
                             <li><a href="mailto:hi@fireroth.com" class="footer-link">hi@fireroth.com</a></li>
-                            <li><a href="#" class="footer-link">GitHub</a></li>
                         </ul>
                     </div>
                 </div>

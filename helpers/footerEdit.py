@@ -8,11 +8,11 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = BASE
 FOOTER_SOURCE = os.path.join(BASE, "helpers", "footer.txt")
 BLACKLIST = [
-    os.path.join(BASE, "projects", "side-projects", "color", "index.html"),
-    os.path.join(BASE, "projects", "side-projects", "live.edit", "index.html"),
-    os.path.join(BASE, "projects", "side-projects", "text.spammer", "index.html"),
-    os.path.join(BASE, "projects", "webGLCube", "index.html"),
-    os.path.join(BASE, "bg.html"),
+    os.path.join(BASE, "src", "projects", "side-projects", "color", "index.html"),
+    os.path.join(BASE, "src", "projects", "side-projects", "live.edit", "index.html"),
+    os.path.join(BASE, "src", "projects", "side-projects", "text.spammer", "index.html"),
+    os.path.join(BASE, "src", "projects", "webGLCube", "index.html"),
+    os.path.join(BASE, "src", "bg.html"),
 ]
 
 

@@ -2,7 +2,7 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     
-    "liveServer.settings.port": 5501,
+    "liveServer.settings.port": 5502,
     "liveServer.settings.root": "/src",
     "liveServer.settings.donotShowInfoMsg": true
 }

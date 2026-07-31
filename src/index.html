@@ -81,7 +81,7 @@
             <div class="main-header-content">
                 <h1 class="main-header-title display-xl">
                     Hi, I'm <span class="text-gradient">Máta</span><br>I build things<br>
-                    <span class="typing-cursor"><span class="typing-text" data-phrases="[&quot;for fun.&quot;,&quot;to learn.&quot;]"></span></span>
+                    <span class="typing-cursor"><span class="typing-text" data-phrases="[&quot;to learn.&quot;,&quot;for fun.&quot;,&quot;to share.&quot;,&quot;to improve.&quot;]"></span></span>
                 </h1>
 
                 <p class="main-header-subtitle">
@@ -91,12 +91,13 @@
 
                 <div class="main-header-actions">
                     <a href="/projects/" class="btn btn-primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                        </svg>
+                        <span class="material-symbols-outlined">rocket_launch</span>
                         View my work
                     </a>
-                    <a href="/about/" class="btn btn-secondary">About me</a>
+                    <a href="/about/" class="btn btn-secondary">
+                        <span class="material-symbols-outlined">person</span>
+                        About me
+                    </a>
                 </div>
             </div>
         </div>
@@ -108,13 +109,11 @@
                 <div>
                     <p class="section-label">// featured work</p>
                     <h2 class="section-title">Things I've built</h2>
-                    <p class="section-desc">A selection of my favourite recent projects.</p>
+                    <p class="section-desc">A selection of my favorite recent projects.</p>
                 </div>
                 <a href="/projects/" class="btn btn-ghost">
                     See all projects
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m9 18 6-6-6-6"></path>
-                    </svg>
+                    <span class="material-symbols-outlined">arrow_forward</span>
                 </a>
             </div>
 
@@ -141,7 +140,7 @@
                         <p class="project-desc">A fast voxel-based game written in C++ and OpenGL.</p>
                     </div>
                     <div class="project-tags">
-                        <span class="tag">C++</span>
+                        <span class="tag tag-green">C++</span>
                         <span class="tag tag-cyan">OpenGL</span>
                     </div>
                 </div>
@@ -168,7 +167,7 @@
                         <p class="project-desc">JavaScript based operating system in your browser.</p>
                     </div>
                     <div class="project-tags">
-                        <span class="tag">JavaScript</span>
+                        <span class="tag tag-green">JavaScript</span>
                         <span class="tag tag-pink">Interact.js</span>
                     </div>
                 </div>
@@ -195,8 +194,8 @@
                         <p class="project-desc">A quite complex command-based game written in python using Tkinter.</p>
                     </div>
                     <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag tag-green">Tkinter</span>
+                        <span class="tag tag-green">Python</span>
+                        <span class="tag tag-cyan">Tkinter</span>
                     </div>
                 </div>
             </div>
@@ -235,10 +234,15 @@
                             <div class="about-info-label">Focus</div>
                             <div class="about-info-value">Backend & UX</div>
                         </div>
-                        <!--<div class="about-info-item">
+                        <div class="about-info-item">
                             <div class="about-info-label">Languages</div>
                             <div class="about-info-value">CZ / EN</div>
-                        </div>-->
+
+                        </div>
+                        <div class="about-info-item">
+                            <div class="about-info-label">Primary Stack</div>
+                            <div class="about-info-value"> C++ and Python</div>
+                        </div>
                     </div>
 
                     <div class="main-header-actions">
@@ -255,6 +259,13 @@
     </section>
 
     <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1920 250" xmlns="http://www.w3.org/2000/svg" class="footer-wave-svg" preserveAspectRatio="none">
+                <path d="M0 90C240 20 480 140 720 100S1200 10 1440 70 1920 60 1920 60V250H0V90z" class="footer-wave-path-1"></path>
+                <path d="M0 160C320 100 640 190 960 140S1600 90 1920 150V250H0V160z" class="footer-wave-path-2"></path>
+                <path d="M0 210C300 170 600 230 900 200S1500 160 1920 200V250H0V210z" class="footer-wave-path-3"></path>
+            </svg>
+        </div>
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-main">
@@ -291,10 +302,17 @@
                     </div>
 
                     <div>
+                        <p class="footer-col-title">Resources</p>
+                        <ul class="footer-links">
+                            <li><a href="https://m3.material.io/" class="footer-link">Material Design</a></li>
+                            <li><a href="https://www.nordtheme.com/" class="footer-link">Nord Theme</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
                         <p class="footer-col-title">Say hi</p>
                         <ul class="footer-links">
                             <li><a href="mailto:hi@fireroth.com" class="footer-link">hi@fireroth.com</a></li>
-                            <li><a href="#" class="footer-link">GitHub</a></li>
                         </ul>
                     </div>
                 </div>
