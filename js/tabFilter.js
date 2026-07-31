@@ -19,6 +19,8 @@ tabGroups.forEach(group => {
           content.style.display = 'block';
           content.style.opacity = '0';
           content.style.transform = 'translateY(10px)';
+          
+          // Trigger reflow
           content.offsetHeight;
           
           requestAnimationFrame(() => {

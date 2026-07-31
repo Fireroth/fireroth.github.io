@@ -19,7 +19,8 @@ if (canvas) {
             this.vy = (Math.random() - 0.5) * 0.4;
             this.alpha = Math.random() * 0.5 + 0.1;
             this.radius = Math.random() * 1.5 + 1.0;
-            this.color = Math.random() > 0.5 ? '#3b82f6' : '#22d3ee';
+            const colors = ['#88C0D0', '#8FBCBB', '#81A1C1'];
+            this.color = colors[Math.floor(Math.random() * colors.length)];
         }
         update() {
             this.x += this.vx;
@@ -53,8 +54,8 @@ if (canvas) {
                     canvasBoard.beginPath();
                     canvasBoard.moveTo(particles[i].x, particles[i].y);
                     canvasBoard.lineTo(particles[j].x, particles[j].y);
-                    canvasBoard.strokeStyle = '#7c6fea';
-                    canvasBoard.globalAlpha = (1 - dist / maxDist) * 0.2;
+                    canvasBoard.strokeStyle = '#5E81AC';
+                    canvasBoard.globalAlpha = (1 - dist / maxDist) * 0.25;
                     canvasBoard.lineWidth = 0.8;
                     canvasBoard.stroke();
                 }
@@ -73,8 +74,8 @@ if (canvas) {
                 canvasBoard.beginPath();
                 canvasBoard.moveTo(mouse.x, mouse.y);
                 canvasBoard.lineTo(particles[i].x, particles[i].y);
-                canvasBoard.strokeStyle = '#22d3ee';
-                canvasBoard.globalAlpha = (1 - dist / maxDist) * 0.4;
+                canvasBoard.strokeStyle = '#88C0D0';
+                canvasBoard.globalAlpha = (1 - dist / maxDist) * 0.45;
                 canvasBoard.lineWidth = 0.8;
                 canvasBoard.stroke();
             }
@@ -85,8 +86,8 @@ if (canvas) {
         if (mouse.x === null || mouse.y === null) return;
         canvasBoard.beginPath();
         canvasBoard.arc(mouse.x, mouse.y, 4, 0, Math.PI * 2);
-        canvasBoard.fillStyle = '#22d3ee';
-        canvasBoard.globalAlpha = 0.8;
+        canvasBoard.fillStyle = '#88C0D0';
+        canvasBoard.globalAlpha = 0.9;
         canvasBoard.fill();
     }
 
